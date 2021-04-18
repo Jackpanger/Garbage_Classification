@@ -34,8 +34,8 @@ class _MeState extends State<Me> {
       child: new Column(
         children: <Widget>[
           new Container(
-            margin:
-                const EdgeInsets.only(top:30.0,left: 16.0, right: 16.0, bottom: 16.0),
+            margin: const EdgeInsets.only(
+                top: 30.0, left: 16.0, right: 16.0, bottom: 16.0),
             decoration: new BoxDecoration(
                 color: GlobalConfig.dark == true
                     ? Colors.white10

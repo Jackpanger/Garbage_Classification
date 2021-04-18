@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/global_config.dart';
-
-const searchList = ['plastic', 'bread', 'noodles', 'fish'];
-
-const recentSuggest = [
-  'plastic',
-  'fish',
-];
+import 'Search.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -17,90 +11,40 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-        theme: GlobalConfig.themeData,
-        home: new Scaffold(
-          appBar: AppBar(
-            title: Container(
-                width: MediaQuery.of(context).size.width,
-                margin: EdgeInsets.only(left: 20.0),
-                padding: EdgeInsets.only(bottom: 10.0, top: 10.0),
-                color: Colors.grey,
-                child: Text(
-                  'Search',
-                  textAlign: TextAlign.center,
-                )),
-            actions: <Widget>[
-              IconButton(
-                icon: Icon(Icons.search),
-                onPressed: () {
-                  showSearch(context: context, delegate: SearchBarDelegate());
-                },
-              )
-            ],
+      theme: GlobalConfig.themeData,
+      home: new Scaffold(
+        appBar: AppBar(title: Text("Search")),
+        body: Center(
+          child: InkWell(
+            onTap: () {
+              showSearch(context: context, delegate: SearchBarDelegate());
+            },
+            child: Container(
+              height: 178,
+              width: 150,
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      width: 150,
+                      height: 150,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                      ),
+                      child:
+                          Image.asset("images/search.jpeg", fit: BoxFit.cover),
+                    ),
+                    Container(
+                        child: Text(
+                      'Search',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 24),
+                    ))
+                  ]),
+            ),
           ),
-        ));
-  }
-}
-
-class SearchBarDelegate extends SearchDelegate<String> {
-  //清空按钮
-  @override
-  List<Widget> buildActions(BuildContext context) {
-    return [
-      IconButton(
-        icon: Icon(Icons.clear),
-        onPressed: () => query = "", //搜索值为空
-      )
-    ];
-  }
-
-  //返回上级按钮
-  @override
-  Widget buildLeading(BuildContext context) {
-    return IconButton(
-        icon: AnimatedIcon(
-            icon: AnimatedIcons.menu_arrow, progress: transitionAnimation),
-        onPressed: () => close(context, null) //点击时关闭整个搜索页面
-        );
-  }
-
-  //搜到到内容后的展现
-  @override
-  Widget buildResults(BuildContext context) {
-    return Container(
-      width: 100.0,
-      height: 100.0,
-      child: Card(
-        color: Colors.redAccent,
-        child: Center(
-          child: Text(query),
         ),
       ),
     );
-  }
-
-  //设置推荐
-  @override
-  Widget buildSuggestions(BuildContext context) {
-    final suggestionsList = query.isEmpty
-        ? recentSuggest
-        : searchList.where((input) => input.startsWith(query)).toList();
-
-    return ListView.builder(
-        itemCount: suggestionsList.length,
-        itemBuilder: (context, index) => ListTile(
-              title: RichText(
-                //富文本
-                text: TextSpan(
-                    text: suggestionsList[index].substring(0, query.length),
-                    style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
-                    children: [
-                      TextSpan(
-                          text: suggestionsList[index].substring(query.length),
-                          style: TextStyle(color: Colors.grey))
-                    ]),
-              ),
-            ));
   }
 }
