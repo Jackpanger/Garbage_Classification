@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/global_config.dart';
-import 'Help&Feedback/All Questions.dart';
-import 'Help&Feedback/Quick Help.dart';
+import 'Help&Feedback/Hot Questions.dart';
+import 'Help&Feedback/Contact Us.dart';
 import 'Help&Feedback/Feedback.dart';
 
 class HelpFeedbackPage extends StatefulWidget {
@@ -13,9 +13,9 @@ class HelpFeedbackPage extends StatefulWidget {
 class _HelpFeedbackPageState extends State<HelpFeedbackPage> {
   int _currentIndex = 0;
   List _pageList = [
-    AllQuestionsPage(),
-    QuickHelpPage(),
+    HotQuestionsPage(),
     FeedbackPage(),
+    ContactUsPage(),
   ];
 
   @override
@@ -46,16 +46,16 @@ class _HelpFeedbackPageState extends State<HelpFeedbackPage> {
 
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              title: Text("AllQuestions"),
+              icon: Icon(Icons.help_center_outlined),
+              title: Text("Hot Questions"),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.category),
-              title: Text("QuickHelp"),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
+              icon: Icon(Icons.feedback_outlined),
               title: Text("Feedback"),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.contact_page_outlined),
+              title: Text("Contact Us"),
             ),
           ],
         ),

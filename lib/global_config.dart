@@ -8,4 +8,5 @@ class GlobalConfig {
   static Color fontColor = Colors.white30;
   static Color barColor = Colors.grey;
   static Color rowColor = Colors.black45;
+  static Color arrowColor = Colors.white;
 }

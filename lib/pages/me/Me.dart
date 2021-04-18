@@ -243,6 +243,7 @@ class _MeState extends State<Me> {
                     GlobalConfig.cardBackgroundColor = Colors.white;
                     GlobalConfig.fontColor = Colors.black54;
                     GlobalConfig.rowColor = Colors.white;
+                    GlobalConfig.arrowColor = Colors.black;
                     GlobalConfig.dark = false;
                   } else {
                     GlobalConfig.themeData = new ThemeData.dark();
@@ -251,6 +252,7 @@ class _MeState extends State<Me> {
                     GlobalConfig.barColor = Colors.white;
                     GlobalConfig.fontColor = Colors.white30;
                     GlobalConfig.rowColor = Colors.black45;
+                    GlobalConfig.arrowColor = Colors.white;
                     GlobalConfig.dark = true;
                   }
                 });
