@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const searchList = ['plastic', 'bread', 'noodles', 'fish'];
+import 'kind.dart';
 
 const recentSuggest = [
   'plastic',
