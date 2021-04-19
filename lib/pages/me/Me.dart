@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:garbage_classification/global_config.dart';
-import 'Settings.dart';
+import 'package:garbage_classification/pages/tabs/Tabs.dart';
+import 'package:garbage_classification/services/UserServices.dart';
+import 'file:///D:/FlutterProject/garbage_classification/lib/config/global_config.dart';
+import 'Settings/Settings.dart';
 
 class Me extends StatefulWidget {
   @override
@@ -8,6 +10,24 @@ class Me extends StatefulWidget {
 }
 
 class _MeState extends State<Me> {
+  bool isLogin = false;
+  List userInfo = [];
+
+  @override
+  void initState() {
+    super.initState();
+    this._getUserInfo();
+  }
+
+  _getUserInfo() async {
+    var isLogin = await UserServices.getUserLoginState();
+    var userInfo = await UserServices.getUserInfo();
+    setState(() {
+      this.userInfo = userInfo;
+      this.isLogin = isLogin;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -33,35 +53,71 @@ class _MeState extends State<Me> {
       padding: const EdgeInsets.only(top: 12.0, bottom: 8.0),
       child: new Column(
         children: <Widget>[
-          new Container(
-            margin: const EdgeInsets.only(
-                top: 30.0, left: 16.0, right: 16.0, bottom: 16.0),
-            decoration: new BoxDecoration(
-                color: GlobalConfig.dark == true
-                    ? Colors.white10
-                    : new Color(0xFFF5F5F5),
-                borderRadius: new BorderRadius.all(new Radius.circular(6.0))),
-            child: new TextButton(
-                onPressed: () {},
-                child: new Container(
-                  child: new ListTile(
-                    leading: new Container(
-                      child: new CircleAvatar(
-                          backgroundImage: new NetworkImage(
-                              "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3774803854,334110598&fm=26&gp=0.jpg"),
-                          radius: 20.0),
-                    ),
-                    title: new Container(
-                      margin: const EdgeInsets.only(bottom: 2.0),
-                      child: new Text("user"),
-                    ),
-                    subtitle: new Container(
-                      margin: const EdgeInsets.only(top: 2.0),
-                      child: new Text("Login"),
-                    ),
-                  ),
-                )),
-          ),
+          !this.isLogin
+              ? new Container(
+                  margin: const EdgeInsets.only(
+                      top: 30.0, left: 16.0, right: 16.0, bottom: 16.0),
+                  decoration: new BoxDecoration(
+                      color: GlobalConfig.dark == true
+                          ? Colors.white10
+                          : new Color(0xFFF5F5F5),
+                      borderRadius:
+                          new BorderRadius.all(new Radius.circular(6.0))),
+                  child: new TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, "/login");
+                      },
+                      child: new Container(
+                        child: new ListTile(
+                          leading: new Container(
+                            child: new CircleAvatar(
+                                backgroundImage: new NetworkImage(
+                                    "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3774803854,334110598&fm=26&gp=0.jpg"),
+                                radius: 20.0),
+                          ),
+                          title: new Container(
+                            margin: const EdgeInsets.only(bottom: 2.0),
+                            child: new Text("user"),
+                          ),
+                          subtitle: new Container(
+                            margin: const EdgeInsets.only(top: 2.0),
+                            child: new Text("Login"),
+                          ),
+                        ),
+                      )),
+                )
+              : new Container(
+                  margin: const EdgeInsets.only(
+                      top: 30.0, left: 16.0, right: 16.0, bottom: 16.0),
+                  decoration: new BoxDecoration(
+                      color: GlobalConfig.dark == true
+                          ? Colors.white10
+                          : new Color(0xFFF5F5F5),
+                      borderRadius:
+                          new BorderRadius.all(new Radius.circular(6.0))),
+                  child: new TextButton(
+                      onPressed: () {
+                        ;
+                      },
+                      child: new Container(
+                        child: new ListTile(
+                          leading: new Container(
+                            child: new CircleAvatar(
+                                backgroundImage: new NetworkImage(
+                                    "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3774803854,334110598&fm=26&gp=0.jpg"),
+                                radius: 20.0),
+                          ),
+                          title: new Container(
+                            margin: const EdgeInsets.only(bottom: 2.0),
+                            child: new Text("${this.userInfo[0]['username']}"),
+                          ),
+                          subtitle: new Container(
+                            margin: const EdgeInsets.only(top: 2.0),
+                            child: new Text("${this.userInfo[0]['username']}"),
+                          ),
+                        ),
+                      )),
+                ),
           new Container(
             child: new Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -69,7 +125,9 @@ class _MeState extends State<Me> {
                 new Container(
                   width: (MediaQuery.of(context).size.width - 6.0) / 4,
                   child: new TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/mywork');
+                      },
                       child: new Container(
                         height: 50.0,
                         child: new Column(
@@ -108,7 +166,9 @@ class _MeState extends State<Me> {
                 new Container(
                   width: (MediaQuery.of(context).size.width - 6.0) / 4,
                   child: new TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/subscribes');
+                      },
                       child: new Container(
                         height: 50.0,
                         child: new Column(
@@ -147,7 +207,9 @@ class _MeState extends State<Me> {
                 new Container(
                   width: (MediaQuery.of(context).size.width - 6.0) / 4,
                   child: new TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/favorites');
+                      },
                       child: new Container(
                         height: 50.0,
                         child: new Column(
@@ -186,7 +248,9 @@ class _MeState extends State<Me> {
                 new Container(
                     width: (MediaQuery.of(context).size.width - 6.0) / 4,
                     child: new TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/recent');
+                        },
                         child: new Container(
                           height: 50.0,
                           child: new Column(
@@ -288,8 +352,9 @@ class _MeState extends State<Me> {
             margin: const EdgeInsets.only(left: 6.0),
             child: new TextButton(
                 onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => Settings()));
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) => Settings()))
+                      .then((value) => value ? _getUserInfo() : null);
                 },
                 child: new Container(
                   child: new Row(

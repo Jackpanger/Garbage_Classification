@@ -2,15 +2,25 @@ import "package:flutter/material.dart";
 import '../home/Home.dart';
 import '../category/Category.dart';
 import '../me/Me.dart';
-import 'package:garbage_classification/global_config.dart';
+import 'file:///D:/FlutterProject/garbage_classification/lib/config/global_config.dart';
 
 class Tabs extends StatefulWidget {
+  // Map arguments;
+  final index;
+  Tabs({Key key, this.index=0}) : super(key: key);
+
   @override
-  _TabState createState() => _TabState();
+  _TabState createState() => _TabState(index);
 }
 
 class _TabState extends State<Tabs> {
   int _currentIndex = 0;
+
+  _TabState(index) {
+    _currentIndex = index;
+  //   widget.arguments['index'] == null ? _currentIndex = index : _currentIndex = widget.arguments['index'];
+  }
+
   List _pageList = [
     Homepage(),
     CategoryPage(),

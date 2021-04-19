@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:garbage_classification/global_config.dart';
+import 'file:///D:/FlutterProject/garbage_classification/lib/config/global_config.dart';
 import 'Search.dart';
 
 class Homepage extends StatefulWidget {
@@ -13,7 +13,7 @@ class _HomepageState extends State<Homepage> {
     return new MaterialApp(
       theme: GlobalConfig.themeData,
       home: new Scaffold(
-        appBar: AppBar(title: Text("Search")),
+        appBar: AppBar(title: Text("Search"),centerTitle: true,),
         body: Center(
           child: InkWell(
             onTap: () {
@@ -22,8 +22,7 @@ class _HomepageState extends State<Homepage> {
             child: Container(
               height: 178,
               width: 150,
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+              child: ListView(
                   children: <Widget>[
                     Container(
                       width: 150,

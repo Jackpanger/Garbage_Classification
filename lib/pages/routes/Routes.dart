@@ -1,10 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/pages/me/user/RegisterFirst.dart';
+import 'package:garbage_classification/pages/me/user/RegisterSecond.dart';
+import 'package:garbage_classification/pages/me/user/RegisterThird.dart';
+import 'package:garbage_classification/pages/me/user/section/favorites.dart';
+import 'package:garbage_classification/pages/me/user/section/mywork.dart';
+import 'package:garbage_classification/pages/me/user/section/recent.dart';
+import 'package:garbage_classification/pages/me/user/section/subscribes.dart';
 import '../opening/Open.dart';
 import 'package:garbage_classification/pages/tabs/Tabs.dart';
+import 'package:garbage_classification/pages/me/user/Login.dart';
 
 final routes = {
   '/': (context) => Open(),
-  '/tabs':(context) => Tabs(),
+  '/tabs': (context) => Tabs(),
+  '/login': (context) => LoginPage(),
+  '/mywork': (context) => MyworkPage(),
+  '/subscribes': (context) => SubPage(),
+  '/favorites': (context) => FavoritesPage(),
+  '/recent': (context) => RecentPage(),
+  '/registerFirst': (context) => RegisterFirstPage(),
+  '/registerSecond': (context,{arguments}) => RegisterSecondPage(arguments:arguments),
+  '/registerThird': (context,{arguments}) => RegisterThirdPage(arguments:arguments),
 };
 var onGenerateRoute = (RouteSettings settings) {
   final String name = settings.name;

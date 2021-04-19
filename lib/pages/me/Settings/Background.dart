@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:garbage_classification/global_config.dart';
+import 'file:///D:/FlutterProject/garbage_classification/lib/config/global_config.dart';
 
 class BackgroundPage extends StatefulWidget {
   BackgroundPage({Key key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:garbage_classification/global_config.dart';
+import 'file:///D:/FlutterProject/garbage_classification/lib/config/global_config.dart';
 import 'res/form1.dart';
 import 'res/form2.dart';
 import 'res/form3.dart';

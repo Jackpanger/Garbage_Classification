@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:garbage_classification/global_config.dart';
+import 'file:///D:/FlutterProject/garbage_classification/lib/config/global_config.dart';
 import 'Help&Feedback/Hot Questions.dart';
 import 'Help&Feedback/Contact Us.dart';
 import 'Help&Feedback/Feedback.dart';

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:garbage_classification/global_config.dart';
-import 'Settings/Language.dart';
-import 'Settings/Text Size.dart';
-import 'Settings/Background.dart';
-import 'Settings/Other Tools.dart';
-import 'Settings/Help&Feedback.dart';
-import 'Settings/About.dart';
-import 'Settings/Services.dart';
-import 'Settings/Switch Account.dart';
+import 'package:garbage_classification/services/UserServices.dart';
+import 'file:///D:/FlutterProject/garbage_classification/lib/config/global_config.dart';
+import 'Language.dart';
+import 'Text Size.dart';
+import 'Background.dart';
+import 'Other Tools.dart';
+import 'Help&Feedback.dart';
+import 'About.dart';
+import 'Services.dart';
+import 'Switch Account.dart';
 
 class Settings extends StatefulWidget {
   @override
@@ -26,7 +27,7 @@ class _SettingsState extends State<Settings> {
             children: <Widget>[
               Container(
                 padding:
-                const EdgeInsets.only(left: 5.0, bottom: 0.0, top: 0.0),
+                    const EdgeInsets.only(left: 5.0, bottom: 0.0, top: 0.0),
                 margin: const EdgeInsets.only(bottom: 6.0),
                 width: MediaQuery.of(context).size.width,
                 color: GlobalConfig.rowColor,
@@ -194,7 +195,7 @@ class _SettingsState extends State<Settings> {
               ),
               Container(
                 padding:
-                const EdgeInsets.only(left: 5.0, bottom: 0.0, top: 0.0),
+                    const EdgeInsets.only(left: 5.0, bottom: 0.0, top: 0.0),
                 margin: const EdgeInsets.only(bottom: 6.0),
                 width: MediaQuery.of(context).size.width,
                 color: GlobalConfig.rowColor,
@@ -204,10 +205,9 @@ class _SettingsState extends State<Settings> {
                           builder: (context) => SwitchAccountPage()));
                     },
                     child: new Container(
-                            child: new Text("Switch Account",
-                                style: new TextStyle(
-                                    color: GlobalConfig.fontColor,
-                                    fontSize: 22.0)),
+                      child: new Text("Switch Account",
+                          style: new TextStyle(
+                              color: GlobalConfig.fontColor, fontSize: 22.0)),
                     )),
               ),
               Container(
@@ -215,10 +215,17 @@ class _SettingsState extends State<Settings> {
                     const EdgeInsets.only(left: 10.0, bottom: 12.0, top: 12.0),
                 width: MediaQuery.of(context).size.width,
                 color: GlobalConfig.rowColor,
-                child: Text(
-                  "Log Out",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 22, color: GlobalConfig.fontColor),
+                child: TextButton(
+                  onPressed: () {
+                    UserServices.loginOut();
+                    Navigator.pop(context,true);
+                  },
+                  child: Text(
+                    "Log Out",
+                    textAlign: TextAlign.center,
+                    style:
+                        TextStyle(fontSize: 22, color: GlobalConfig.fontColor),
+                  ),
                 ),
               ),
             ],

@@ -39,7 +39,7 @@ class _OpenState extends State<Open> {
                 style: TextStyle(color: Colors.white, fontSize: 15.0),
               ),
               onPressed: () {
-                Navigator.pushNamed(context, '/tabs');
+                navigationPage();
               },
             ),
           )
