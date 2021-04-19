@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'file:///D:/FlutterProject/garbage_classification/lib/config/global_config.dart';
+import '../../../config/global_config.dart';
 
 class SwitchAccountPage extends StatefulWidget {
   SwitchAccountPage({Key key}) : super(key: key);

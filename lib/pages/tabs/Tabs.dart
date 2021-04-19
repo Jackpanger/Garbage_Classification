@@ -2,7 +2,7 @@ import "package:flutter/material.dart";
 import '../home/Home.dart';
 import '../category/Category.dart';
 import '../me/Me.dart';
-import 'file:///D:/FlutterProject/garbage_classification/lib/config/global_config.dart';
+import '../../config/global_config.dart';
 
 class Tabs extends StatefulWidget {
   // Map arguments;

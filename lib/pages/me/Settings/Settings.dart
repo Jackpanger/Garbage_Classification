@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/services/UserServices.dart';
-import 'file:///D:/FlutterProject/garbage_classification/lib/config/global_config.dart';
+import '../../../config/global_config.dart';
 import 'Language.dart';
 import 'Text Size.dart';
 import 'Background.dart';

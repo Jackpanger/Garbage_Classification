@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'file:///D:/FlutterProject/garbage_classification/lib/config/global_config.dart';
+import '../../config/global_config.dart';
 import 'res/form1.dart';
 import 'res/form2.dart';
 import 'res/form3.dart';
@@ -59,7 +59,7 @@ class _CategoryState extends State<CategoryPage> {
                 itemBuilder: (context, index) {
                   return ListTile(
                     title: Text(form1[index]["title"]),
-                    // leading: Image.network(form1[index]['imageUrl']),
+                     leading: Image.network(form1[index]['imageUrl']),
                   );
                 }),
             ListView.builder(
