@@ -24,28 +24,28 @@ class _CategoryState extends State<CategoryPage> {
               tabs: <Widget>[
                 Tab(
                   child: Text(
-                    "干垃圾",
+                    "residual waste",
                     // textAlign: TextAlign.left,
                     style: TextStyle(color: GlobalConfig.fontColor),
                   ),
                 ),
                 Tab(
                   child: Text(
-                    "湿垃圾",
+                    "wet waste",
                     // textAlign: TextAlign.left,
                     style: TextStyle(color: GlobalConfig.fontColor),
                   ),
                 ),
                 Tab(
                   child: Text(
-                    "可回收垃圾",
+                    "recyclable waste",
                     // textAlign: TextAlign.left,
                     style: TextStyle(color: GlobalConfig.fontColor),
                   ),
                 ),
                 Tab(
                   child: Text(
-                    "其他垃圾",
+                    "other waste",
                     // textAlign: TextAlign.left,
                     style: TextStyle(color: GlobalConfig.fontColor),
                   ),

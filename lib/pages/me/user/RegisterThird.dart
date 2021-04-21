@@ -46,15 +46,17 @@ class _RegisterThirdPageState extends State<RegisterThirdPage> {
         gravity: ToastGravity.CENTER,
       );
     } else {
-      var api = '${Config.domain}api/register';
+      var api = '${Config.home}auth/register';
       var response = await Dio().post(api, data: {
         "tel": this.tel,
         "code": this.code,
         "password": this.password
       });
-      if (response.data["success"]) {
+      Map data = json.decode(response.data);
+
+      if (data["success"]) {
         //保存用户信息   
-        Storage.setString('userInfo', json.encode(response.data["userinfo"]));
+        Storage.setString('userInfo', json.encode(data["userinfo"]));
 
         //返回到根
         Navigator.of(context).pushAndRemoveUntil(
@@ -62,7 +64,7 @@ class _RegisterThirdPageState extends State<RegisterThirdPage> {
             (route) => route == null);
       } else {
         Fluttertoast.showToast(
-          msg: '${response.data["message"]}',
+          msg: '${data["message"]}',
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.CENTER,
         );

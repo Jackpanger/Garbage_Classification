@@ -20,7 +20,10 @@ class _RegisterFirstPageState extends State<RegisterFirstPage> {
     if (reg.hasMatch(this.tel)) {
       var api = '${Config.home}auth/sendCode';
       var response = await Dio().post(api, data: {"tel": this.tel});
+      print(response.data is Map);
       Map data = json.decode(response.data);
+      print(data is Map);
+      print(data);
       if (data["success"]) {
         print(response);  //演示期间服务器直接返回  给手机发送的验证码
         print({"tel": this.tel});
