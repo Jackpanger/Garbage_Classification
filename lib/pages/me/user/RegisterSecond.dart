@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import '../../../widgets/ConText.dart';
 import '../../../widgets/ConButton.dart';
@@ -52,7 +52,7 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
       this.seconds = 10;
       this._showTimer();
     });
-    var api = '${Config.domain}api/sendCode';
+    var api = '${Config.home}api/sendCode';
     var response = await Dio().post(api, data: {"tel": this.tel});
     if (response.data["success"]) {
       print(response); //演示期间服务器直接返回  给手机发送的验证码
@@ -61,17 +61,19 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
   //验证验证码
 
   validateCode() async {
-    var api = '${Config.domain}api/validateCode';
+    var api = '${Config.home}auth/validateCode';
     var response =
         await Dio().post(api, data: {"tel": this.tel, "code": this.code});
-    if (response.data["success"]) {
+    Map data = json.decode(response.data);
+    print(data);
+    if (data["success"]) {
       Navigator.pushNamed(context, '/registerThird',arguments: {
         "tel":this.tel,
         "code":this.code
       });
     } else {
       Fluttertoast.showToast(
-        msg: '${response.data["message"]}',
+        msg: '${data["message"]}',
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
       );

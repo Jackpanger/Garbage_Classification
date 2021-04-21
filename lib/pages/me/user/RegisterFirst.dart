@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import '../../../widgets/ConText.dart';
 import '../../../widgets/ConButton.dart';
 import '../../../config/Config.dart';
@@ -17,19 +18,20 @@ class _RegisterFirstPageState extends State<RegisterFirstPage> {
   sendCode() async {
     RegExp reg = new RegExp(r"^1\d{10}$");
     if (reg.hasMatch(this.tel)) {
-      var api = '${Config.domain}api/sendCode';
+      var api = '${Config.home}auth/sendCode';
       var response = await Dio().post(api, data: {"tel": this.tel});
-      if (response.data["success"]) {
-
+      Map data = json.decode(response.data);
+      if (data["success"]) {
         print(response);  //演示期间服务器直接返回  给手机发送的验证码
-
+        print({"tel": this.tel});
         Navigator.pushNamed(context, '/registerSecond',arguments: {
+
           "tel":this.tel
         });
-        
+
       } else {
         Fluttertoast.showToast(
-          msg: '${response.data["message"]}',
+          msg: '${data["message"]}',
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.CENTER,
         );
