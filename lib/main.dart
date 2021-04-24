@@ -8,7 +8,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home : Open(),
+      // home : Open(),
+      initialRoute: "/",
       onGenerateRoute: onGenerateRoute,
     );
   }

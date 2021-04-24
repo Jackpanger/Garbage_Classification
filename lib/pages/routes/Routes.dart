@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/pages/me/image.dart';
 import 'package:garbage_classification/pages/me/user/RegisterFirst.dart';
 import 'package:garbage_classification/pages/me/user/RegisterSecond.dart';
 import 'package:garbage_classification/pages/me/user/RegisterThird.dart';
@@ -12,6 +13,7 @@ import 'package:garbage_classification/pages/me/user/Login.dart';
 
 final routes = {
   '/': (context) => Open(),
+  // '/': (context) => ImagePickerPage(),
   '/tabs': (context) => Tabs(),
   '/login': (context) => LoginPage(),
   '/mywork': (context) => MyworkPage(),
@@ -21,6 +23,7 @@ final routes = {
   '/registerFirst': (context) => RegisterFirstPage(),
   '/registerSecond': (context,{arguments}) => RegisterSecondPage(arguments:arguments),
   '/registerThird': (context,{arguments}) => RegisterThirdPage(arguments:arguments),
+  "/images": (context) => ImagePickerPage(),
 };
 var onGenerateRoute = (RouteSettings settings) {
   final String name = settings.name;
