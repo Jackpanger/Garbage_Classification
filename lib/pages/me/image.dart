@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/config/Config.dart';
 import 'package:image_picker/image_picker.dart';
@@ -56,7 +54,7 @@ class _ImagePickerState extends State<ImagePickerPage> {
 /*拍照*/
   _takePhoto() async {
     final image =
-    await ImagePicker().getImage(source: ImageSource.camera, maxWidth: 400);
+        await ImagePicker().getImage(source: ImageSource.camera, maxWidth: 400);
     _uploadData(File(image.path)); //上传
     setState(() {
       if (image != null) {
@@ -72,25 +70,23 @@ class _ImagePickerState extends State<ImagePickerPage> {
     var image = await ImagePicker().getImage(source: ImageSource.gallery);
 
     setState(() {
-      _imgPath = image.path;
+      _imgPath = File(image.path);
     });
   }
 
   _uploadData(File imgPath) async {
-    // BufferedInputStream in = new BufferedInputStream(new FileInputStream("d:/tt.jpg"));
-    // final bytes = await imgPath.readAsBytes();
-    // print(bytes);
-    // print(bytes is List);
-    // print(new String.fromCharCodes(bytes));
     print(imgPath);
     print(File(imgPath.path));
     print(imgPath.path);
     print(imgPath.path is String);
     print(await MultipartFile.fromFile(imgPath.path));
-    FormData formData = new FormData.fromMap(
-        {"tel": "17615322996", 'image': await MultipartFile.fromFile(imgPath.path)});
+    FormData formData = new FormData.fromMap({
+      "tel": "17615322996",
+      'image': await MultipartFile.fromFile(imgPath.path)
+    });
     print("formData");
-    var response = await Dio().post("${Config.home}profile/images", data: formData);
+    var response =
+        await Dio().post("${Config.home}profile/images", data: formData);
     print(response is Map);
   }
 }
