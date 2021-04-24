@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/services/UserServices.dart';
-import '../../../config/global_config.dart';
-import 'Language.dart';
-import 'Text Size.dart';
-import 'Background.dart';
-import 'Other Tools.dart';
-import 'Help&Feedback.dart';
-import 'About.dart';
-import 'Services.dart';
-import 'Switch Account.dart';
+import '../../config/global_config.dart';
+import 'Settings/Language.dart';
+import 'Settings/Text Size.dart';
+import 'Settings/Background.dart';
+import 'Settings/Other Tools.dart';
+import 'Settings/Help&Feedback.dart';
+import 'Settings/About.dart';
+import 'Settings/Services.dart';
+import 'Settings/Switch Account.dart';
 
 class Settings extends StatefulWidget {
   @override
@@ -21,7 +21,16 @@ class _SettingsState extends State<Settings> {
     return new MaterialApp(
       theme: GlobalConfig.themeData,
       home: new Scaffold(
-          appBar: AppBar(title: Text("Settings"), centerTitle: true),
+          appBar: AppBar(
+            title: Text("Settings"),
+            centerTitle: true,
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back_rounded),
+              onPressed: () {
+                Navigator.pop(context,false);
+              },
+            ),
+          ),
           body: new ListView(
             padding: EdgeInsets.only(top: 6),
             children: <Widget>[
@@ -218,7 +227,7 @@ class _SettingsState extends State<Settings> {
                 child: TextButton(
                   onPressed: () {
                     UserServices.loginOut();
-                    Navigator.pop(context,true);
+                    Navigator.pop(context, true);
                   },
                   child: Text(
                     "Log Out",

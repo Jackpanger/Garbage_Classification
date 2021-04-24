@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:garbage_classification/pages/tabs/Tabs.dart';
 import 'package:garbage_classification/services/UserServices.dart';
 import '../../config/global_config.dart';
-import 'Settings/Settings.dart';
+import 'Settings.dart';
 
 class Me extends StatefulWidget {
   @override

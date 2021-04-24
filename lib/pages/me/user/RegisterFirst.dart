@@ -28,7 +28,6 @@ class _RegisterFirstPageState extends State<RegisterFirstPage> {
         print(response);  //演示期间服务器直接返回  给手机发送的验证码
         print({"tel": this.tel});
         Navigator.pushNamed(context, '/registerSecond',arguments: {
-
           "tel":this.tel
         });
 
@@ -68,7 +67,7 @@ class _RegisterFirstPageState extends State<RegisterFirstPage> {
             ),
             SizedBox(height: 20),
             ConButton(
-              text: "下一步",
+              text: "Next",
               color: Colors.red,
               height: 74,
               cb: sendCode,

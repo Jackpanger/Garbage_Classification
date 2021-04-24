@@ -122,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             SizedBox(height: 20),
             ConButton(
-              text: "登录",
+              text: "Login",
               color: Colors.red,
               height: 74,
               cb: doLogin,

@@ -49,7 +49,7 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
   sendCode() async {
     setState(() {
       this.sendCodeBtn = false;
-      this.seconds = 10;
+      this.seconds = 60;
       this._showTimer();
     });
     var api = '${Config.home}api/sendCode';
