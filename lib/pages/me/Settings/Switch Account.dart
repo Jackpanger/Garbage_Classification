@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../config/global_config.dart';
+import 'package:garbage_classification/config/global_config.dart';
 
 class SwitchAccountPage extends StatefulWidget {
   SwitchAccountPage({Key key}) : super(key: key);
@@ -8,12 +8,26 @@ class SwitchAccountPage extends StatefulWidget {
 }
 
 class _SwitchAccountPageState extends State<SwitchAccountPage> {
+  bool checka = true;
+  bool checkb = true;
+  bool checkc = true;
+
+  bool currentindexa = true;
+  bool currentindexb = false;
+  bool currentindexc = false;
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
         theme: GlobalConfig.themeData,
         home: new Scaffold(
           appBar: AppBar(
+            leading: new IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: Icon(Icons.arrow_back, size: 25),
+            ),
             title: Text("Switch Account"),
             centerTitle: true,
           ),
@@ -26,8 +40,13 @@ class _SwitchAccountPageState extends State<SwitchAccountPage> {
                 color: GlobalConfig.rowColor,
                 child: new TextButton(
                     onPressed: () {
-                      // Navigator.of(context).push(MaterialPageRoute(
-                      //     builder: (context) => LanguagePage()));
+                      setState(() {
+                        if (checka) {
+                          currentindexa = true;
+                          currentindexb = false;
+                          currentindexc = false;
+                        }
+                      });
                     },
                     child: new Container(
                       child: new ListTile(
@@ -38,12 +57,19 @@ class _SwitchAccountPageState extends State<SwitchAccountPage> {
                               radius: 20.0),
                         ),
                         title: new Container(
-                          child: new Text("孤独的根号3"),
-                        ),
-                        trailing: new Container(
-                            child: new Icon(
-                                Icons.check, color: Colors.blue,
+                          child: new Text(
+                            "Solitary square root of three",
+                            style: new TextStyle(
+                              //fontSize: GlobalConfig.fontSize,
                             ),
+                          ),
+                        ),
+                        trailing: Visibility(
+                          visible: currentindexa,
+                          child: new Icon(
+                            Icons.check,
+                            color: Colors.blue,
+                          ),
                         ),
                       ),
                     )),
@@ -54,8 +80,13 @@ class _SwitchAccountPageState extends State<SwitchAccountPage> {
                 color: GlobalConfig.rowColor,
                 child: new TextButton(
                     onPressed: () {
-                      // Navigator.of(context).push(MaterialPageRoute(
-                      //     builder: (context) => LanguagePage()));
+                      setState(() {
+                        if (checka) {
+                          currentindexa = false;
+                          currentindexb = true;
+                          currentindexc = false;
+                        }
+                      });
                     },
                     child: new Container(
                       child: new ListTile(
@@ -67,7 +98,14 @@ class _SwitchAccountPageState extends State<SwitchAccountPage> {
                         ),
                         title: new Container(
                           //margin: const EdgeInsets.only(bottom: 2.0),
-                          child: new Text("甜甜的草莓味"),
+                          child: new Text("Sweet strawberry flavor"),
+                        ),
+                        trailing: Visibility(
+                          visible: currentindexb,
+                          child: new Icon(
+                            Icons.check,
+                            color: Colors.blue,
+                          ),
                         ),
                       ),
                     )),
@@ -78,8 +116,13 @@ class _SwitchAccountPageState extends State<SwitchAccountPage> {
                 color: GlobalConfig.rowColor,
                 child: new TextButton(
                     onPressed: () {
-                      // Navigator.of(context).push(MaterialPageRoute(
-                      //     builder: (context) => LanguagePage()));
+                      setState(() {
+                        if (checka) {
+                          currentindexa = false;
+                          currentindexb = false;
+                          currentindexc = true;
+                        }
+                      });
                     },
                     child: new Container(
                       child: new ListTile(
@@ -91,7 +134,14 @@ class _SwitchAccountPageState extends State<SwitchAccountPage> {
                         ),
                         title: new Container(
                           //margin: const EdgeInsets.only(bottom: 2.0),
-                          child: new Text("祖安网友"),
+                          child: new Text("Keyboard warrior"),
+                        ),
+                        trailing: Visibility(
+                          visible: currentindexc,
+                          child: new Icon(
+                            Icons.check,
+                            color: Colors.blue,
+                          ),
                         ),
                       ),
                     )),
@@ -109,9 +159,7 @@ class _SwitchAccountPageState extends State<SwitchAccountPage> {
                       child: new ListTile(
                         leading: new Container(
                           child: new CircleAvatar(
-                              backgroundImage: new NetworkImage(
-                                  "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1933067578,1207339540&fm=26&gp=0.jpg"),
-                              radius: 20.0),
+                              child: Icon(Icons.add), radius: 20.0),
                         ),
                         title: new Container(
                           child: new Text("Add or Register an Account"),

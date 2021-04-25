@@ -38,6 +38,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   image_picker: ^0.7.4
+  flutter_cupertino_date_picker_fork: ^1.0.3
+  date_format: ^2.0.2
 
 
 dev_dependencies:

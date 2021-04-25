@@ -9,4 +9,21 @@ class GlobalConfig {
   static Color barColor = Colors.grey;
   static Color rowColor = Colors.black45;
   static Color arrowColor = Colors.white;
+
+  static double fontSize = 22.0;
+  static bool textSizeChecka = false;
+  static bool textSizeCheckb = true;
+  static bool textSizeCheckc = false;
+
+  static Color themeColor = Colors.white;
+  static bool themeColorsChecka = false;
+  static bool themeColorsCheckb = true;
+  static bool themeColorsCheckc = false;
+  static bool themeColorsCheckd = false;
+  static bool themeColorsChecke = false;
+  static bool themeColorsCheckf = false;
+
+  static bool switchAccounta = true;
+  static bool switchAccountb = false;
+  static bool switchAccountc = false;
 }

@@ -3,12 +3,12 @@ import 'package:garbage_classification/services/UserServices.dart';
 import '../../config/global_config.dart';
 import 'Settings/Language.dart';
 import 'Settings/Text Size.dart';
-import 'Settings/Background.dart';
 import 'Settings/Other Tools.dart';
 import 'Settings/Help&Feedback.dart';
 import 'Settings/About.dart';
 import 'Settings/Services.dart';
 import 'Settings/Switch Account.dart';
+import 'Settings/Theme Colors.dart';
 
 class Settings extends StatefulWidget {
   @override
@@ -91,7 +91,7 @@ class _SettingsState extends State<Settings> {
                 child: new TextButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => BackgroundPage()));
+                          builder: (context) => ThemeColorsPage()));
                     },
                     child: new Container(
                       child: new Row(

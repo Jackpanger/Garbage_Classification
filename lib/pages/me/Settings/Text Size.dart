@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../../config/global_config.dart';
 
+import '../../../services/Storage.dart';
+// import 'package:garbage_classification/services/FontSize.dart';
+import 'dart:convert';
+
 class TextSizePage extends StatefulWidget {
   TextSizePage({Key key}) : super(key: key);
 
@@ -8,12 +12,22 @@ class TextSizePage extends StatefulWidget {
 }
 
 class _TextSizePageState extends State<TextSizePage> {
+  bool checkLarge = true;
+  bool checkMiddle = true;
+  bool checkSmall = true;
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
         theme: GlobalConfig.themeData,
         home: new Scaffold(
           appBar: AppBar(
+            leading: new IconButton(
+              onPressed: (){
+                Navigator.of(context).pop();
+              },
+              icon: Icon(Icons.arrow_back, size: 25),
+            ),
             title: Text("Text Size"),
             centerTitle: true,
           ),
@@ -25,37 +39,31 @@ class _TextSizePageState extends State<TextSizePage> {
                 color: GlobalConfig.rowColor,
                 child: new TextButton(
                     onPressed: () {
-
+                      setState(() {
+                        if (checkLarge == true) {
+                          GlobalConfig.textSizeChecka = true;
+                          GlobalConfig.textSizeCheckb = false;
+                          GlobalConfig.textSizeCheckc = false;
+                          GlobalConfig.fontSize = 26.0;
+                          //Storage.setString('fontSize', 24.0);
+                        }
+                      });
                     },
                     child: new Container(
                       child: new ListTile(
-                        // leading: new Container(
-                        //
-                        // ),
                         title: new Container(
-                          child: new Text("大"),
+                          child: new Text(
+                            "Large",
+                            style: new TextStyle(
+                                fontSize: GlobalConfig.fontSize,
+                            //fontSize: FontSize.getFontSize(),
+                          ),),
                         ),
-                      ),
-                    )),
-              ),
-              Container(
-                margin: const EdgeInsets.only(bottom: 1.0),
-                color: GlobalConfig.rowColor,
-                child: new TextButton(
-                    onPressed: () {
-
-                    },
-                    child: new Container(
-                      child: new ListTile(
-                        // leading: new Container(
-                        //
-                        // ),
-                        title: new Container(
-                          child: new Text("中"),
-                        ),
-                        trailing: new Container(
+                        trailing: Visibility(
+                          visible: GlobalConfig.textSizeChecka,
                           child: new Icon(
-                            Icons.check, color: Colors.blue,
+                            Icons.check,
+                            color: Colors.blue,
                           ),
                         ),
                       ),
@@ -66,15 +74,65 @@ class _TextSizePageState extends State<TextSizePage> {
                 color: GlobalConfig.rowColor,
                 child: new TextButton(
                     onPressed: () {
-
+                      setState(() {
+                        if (checkMiddle == true) {
+                          GlobalConfig.textSizeChecka = false;
+                          GlobalConfig.textSizeCheckb = true;
+                          GlobalConfig.textSizeCheckc = false;
+                          GlobalConfig.fontSize = 22.0;
+                          //Storage.setString('fontSize', 22.0);
+                        }
+                      });
                     },
                     child: new Container(
                       child: new ListTile(
-                        // leading: new Container(
-                        //
-                        // ),
                         title: new Container(
-                          child: new Text("小"),
+                          child: new Text("Middle",
+                            style: new TextStyle(
+                              fontSize: GlobalConfig.fontSize,
+                              //fontSize: FontSize.getFontSize(),
+                            ),),
+                        ),
+                        trailing: Visibility(
+                          visible: GlobalConfig.textSizeCheckb,
+                          child: new Icon(
+                            Icons.check,
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ),
+                    )),
+              ),
+              Container(
+                margin: const EdgeInsets.only(bottom: 1.0),
+                color: GlobalConfig.rowColor,
+                child: new TextButton(
+                    onPressed: () {
+                      setState(() {
+                        if (checkSmall == true) {
+                          GlobalConfig.textSizeChecka = false;
+                          GlobalConfig.textSizeCheckb = false;
+                          GlobalConfig.textSizeCheckc = true;
+                          GlobalConfig.fontSize = 18.0;
+                          //Storage.setString('fontSize', 20.0);
+                        }
+                      });
+                    },
+                    child: new Container(
+                      child: new ListTile(
+                        title: new Container(
+                          child: new Text("Small",
+                            style: new TextStyle(
+                              fontSize: GlobalConfig.fontSize,
+                              //fontSize: FontSize.getFontSize(),
+                            ),),
+                        ),
+                        trailing: Visibility(
+                          visible: GlobalConfig.textSizeCheckc,
+                          child: new Icon(
+                            Icons.check,
+                            color: Colors.blue,
+                          ),
                         ),
                       ),
                     )),

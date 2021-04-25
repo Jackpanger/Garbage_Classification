@@ -24,6 +24,7 @@ final routes = {
   '/registerSecond': (context,{arguments}) => RegisterSecondPage(arguments:arguments),
   '/registerThird': (context,{arguments}) => RegisterThirdPage(arguments:arguments),
   "/images": (context) => ImagePickerPage(),
+
 };
 var onGenerateRoute = (RouteSettings settings) {
   final String name = settings.name;

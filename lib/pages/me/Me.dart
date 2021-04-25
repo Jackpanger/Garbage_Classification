@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/pages/me/user/profile/profile.dart';
 import 'package:garbage_classification/pages/tabs/Tabs.dart';
 import 'package:garbage_classification/services/UserServices.dart';
 import '../../config/global_config.dart';
@@ -97,7 +98,8 @@ class _MeState extends State<Me> {
                           new BorderRadius.all(new Radius.circular(6.0))),
                   child: new TextButton(
                       onPressed: () {
-                        ;
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (context) => UserMessage()));
                       },
                       child: new Container(
                         child: new ListTile(
