@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/pages/me/user/profile/userName.dart';
+import 'package:garbage_classification/services/UserServices.dart';
 import './phoneNumber.dart';
 import 'birthday.dart';
 
@@ -14,11 +14,26 @@ class UserMessage extends StatefulWidget {
 }
 
 class _UserMessageState extends State<UserMessage> {
-  String userName = '垃圾分类人';
+  String userName = "";
+  String tel = "";
   String birthday = '2000年1月1号';
+  String userSex = 'male';
 
-  String userSex = '男';
-  String phoneNumber = '1234567891';
+  @override
+  void initState() {
+    super.initState();
+    this._getUserInfo();
+  }
+
+  _getUserInfo() async {
+    var userInfo = await UserServices.getUserInfo();
+    setState(() {
+      tel = userInfo[0]["tel"];
+      userName = userInfo[0]["username"];
+      print(userInfo);
+    });
+  }
+
 
   _changeSex() async {
     showModalBottomSheet(
@@ -29,29 +44,39 @@ class _UserMessageState extends State<UserMessage> {
             child: Column(
               children: <Widget>[
                 ListTile(
-                  title: Text('男'),
+                  title: Text('male'),
                   onTap: () {
                     setState(() {
-                      this.userSex = '男';
+                      this.userSex = 'male';
                     });
 
-                    Navigator.pop(context, '男');
+                    Navigator.pop(context, 'male');
                   },
                 ),
                 Divider(),
                 ListTile(
-                  title: Text('女'),
+                  title: Text('female'),
                   onTap: () {
                     setState(() {
-                      this.userSex = '女';
+                      this.userSex = 'female';
                     });
-                    Navigator.pop(context, '女');
+                    Navigator.pop(context, 'female');
                   },
                 ),
               ],
             ),
           );
         });
+  }
+
+  upload_username() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(
+        builder: (context) =>
+            UserName(
+              arguments: {"tel":this.tel,"username":userName},
+            )))
+        .then((value) => _getName(value));
   }
 
   _getName(value) {
@@ -68,13 +93,13 @@ class _UserMessageState extends State<UserMessage> {
 
   _getNumber(value) {
     if (value == '') {
-      value = this.phoneNumber;
+      value = this.tel;
     }
     if (value == null) {
-      value = this.phoneNumber;
+      value = this.tel;
     }
     setState(() {
-      this.phoneNumber = value;
+      this.tel = value;
     });
   }
 
@@ -134,36 +159,30 @@ class _UserMessageState extends State<UserMessage> {
               Container(
                 height: 50.0,
                 child: OutlineButton(
-                  child: Container(
-                      child: Stack(
-                        children: <Widget>[
-                          Positioned(
-                            right: 100,
-                            top: 20,
-                            child: Container(
-                              child: Text(this.userName), //这里要改成this.动态的,传参数问题
+                    child: Container(
+                        child: Stack(
+                          children: <Widget>[
+                            Positioned(
+                              right: 100,
+                              top: 20,
+                              child: Container(
+                                child: Text(this
+                                    .userName), //这里要改成this.动态的,传参数问题
+                              ),
                             ),
-                          ),
-                          Positioned(
-                            child: Container(
-                              child: ListTile(
-                                  title: Container(
-                                    margin: const EdgeInsets.all(10.0),
-                                    child: Text('用户名'),
-                                  ),
-                                  trailing: Icon(Icons.chevron_right)),
+                            Positioned(
+                              child: Container(
+                                child: ListTile(
+                                    title: Container(
+                                      margin: const EdgeInsets.all(10.0),
+                                      child: Text('用户名'),
+                                    ),
+                                    trailing: Icon(Icons.chevron_right)),
+                              ),
                             ),
-                          ),
-                        ],
-                      )),
-                  onPressed: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(
-                        builder: (context) => UserName(
-                          arguments: userName,
-                        )))
-                        .then((value) => _getName(value));
-                  },
+                          ],
+                        )),
+                    onPressed:upload_username
                 ),
               ),
               Container(
@@ -176,7 +195,7 @@ class _UserMessageState extends State<UserMessage> {
                             right: 100,
                             top: 20,
                             child: Container(
-                              child: Text(this.phoneNumber), //这里要改成this.动态的
+                              child: Text(this.tel), //这里要改成this.动态的
                             ),
                           ),
                           Positioned(
@@ -194,9 +213,10 @@ class _UserMessageState extends State<UserMessage> {
                   onPressed: () {
                     Navigator.of(context)
                         .push(MaterialPageRoute(
-                        builder: (context) => PhoneNumber(
-                          arguments: phoneNumber,
-                        )))
+                        builder: (context) =>
+                            PhoneNumber(
+                              arguments: tel,
+                            )))
                         .then((value) => _getNumber(value));
                   },
                 ),
@@ -256,9 +276,10 @@ class _UserMessageState extends State<UserMessage> {
                   onPressed: () {
                     Navigator.of(context)
                         .push(MaterialPageRoute(
-                        builder: (context) => Birthday(
-                          arguments: birthday,
-                        )))
+                        builder: (context) =>
+                            Birthday(
+                              arguments: birthday,
+                            )))
                         .then((value) => _getBirthday(value));
                   },
                 ),

@@ -1,7 +1,12 @@
+import 'dart:convert';
+import '../../../../services/Storage.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:garbage_classification/config/Config.dart';
 
 class UserName extends StatefulWidget {
-  String arguments;
+  Map arguments;
   UserName({Key key, this.arguments}) : super(key: key);
 
   @override
@@ -9,10 +14,38 @@ class UserName extends StatefulWidget {
 }
 
 class _UserNameState extends State<UserName> {
-  String arguments;
+  Map arguments;
+  String tel;
   _UserNameState({this.arguments});
-
   TextEditingController userNameController = TextEditingController();
+  @override
+  void initState(){
+    this.tel = widget.arguments["tel"];
+  }
+  doUpload() async {
+
+      var api = '${Config.home}profile/username';
+      var response = await Dio().post(api, data: {
+        "tel":tel,
+        "username": this.userNameController.text
+      });
+      Map data = json.decode(response.data);
+
+      if (data["success"]) {
+        //保存用户信息
+        Storage.setString('userInfo', json.encode(data["userinfo"]));
+        //
+        //返回到根
+        Navigator.pop(context, userNameController.text);
+      } else {
+        Fluttertoast.showToast(
+          msg: '${data["message"]}',
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+        );
+      }
+    }
+
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +63,7 @@ class _UserNameState extends State<UserName> {
                         decoration: InputDecoration(
                           labelText: '请更改用户名称',
                           icon: Icon(Icons.people),
-                          hintText: arguments,
+                          hintText: widget.arguments["username"],
                         ),
                       )
                     ],
@@ -38,11 +71,10 @@ class _UserNameState extends State<UserName> {
                 ),
                 Padding(
                     padding: EdgeInsets.all(20.0),
-                    child: RaisedButton(
+                    child: ElevatedButton(
                         child: Text('确定'),
-                        onPressed: () {
-                          Navigator.pop(context, userNameController.text);
-                        })),
+                        onPressed:doUpload,
+                    )),
               ],
             )));
   }

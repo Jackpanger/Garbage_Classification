@@ -61,6 +61,10 @@ flutter:
   assets:
    - images/open.jpeg
    - images/search.jpeg
+   - images/ganlaji.png
+   - images/kehuishoulaji.png
+   - images/qitalaji.png
+   - images/shilaji.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
