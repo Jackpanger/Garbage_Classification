@@ -1,8 +1,9 @@
+import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_cupertino_date_picker_fork/flutter_cupertino_date_picker_fork.dart';
 import 'package:garbage_classification/pages/me/user/profile/userName.dart';
 import 'package:garbage_classification/services/UserServices.dart';
 import './phoneNumber.dart';
-import 'birthday.dart';
 
 class UserMessage extends StatefulWidget {
   UserMessage({
@@ -14,6 +15,7 @@ class UserMessage extends StatefulWidget {
 }
 
 class _UserMessageState extends State<UserMessage> {
+  DateTime _dateTime = DateTime.now();
   String userName = "";
   String tel = "";
   String birthday = '2000年1月1号';
@@ -69,7 +71,7 @@ class _UserMessageState extends State<UserMessage> {
         });
   }
 
-  upload_username() async {
+  _upload_username() async {
     Navigator.of(context)
         .push(MaterialPageRoute(
         builder: (context) =>
@@ -77,6 +79,35 @@ class _UserMessageState extends State<UserMessage> {
               arguments: {"tel":this.tel,"username":userName},
             )))
         .then((value) => _getName(value));
+  }
+  _showDatePicker() {
+    DatePicker.showDatePicker(
+      context,
+      onMonthChangeStartWithFirstDate: true,
+      pickerTheme: DateTimePickerTheme(
+        showTitle: true,
+        confirm: Text('确定', style: TextStyle(color: Colors.red)),
+      ),
+      minDateTime: DateTime.parse("1980-01-01"),
+      maxDateTime: DateTime.parse("2021-05-05"),
+      initialDateTime: _dateTime,
+      dateFormat: "yyyy-MMM-dd",
+      locale: DateTimePickerLocale.zh_cn,
+      onClose: () => print("----- onClose -----"),
+      onCancel: () => print('onCancel'),
+      // onChange: (dateTime, List<int> index) {
+      //   setState(() {
+      //     _dateTime = dateTime;
+      //   });
+      // },
+      onConfirm: (dateTime, List<int> index) {
+        setState(() {
+          _dateTime = dateTime;
+          this.birthday =
+          '${formatDate(_dateTime, [yyyy, '年', mm, '月', 'dd'])}';
+        });
+      },
+    );
   }
 
   _getName(value) {
@@ -182,7 +213,7 @@ class _UserMessageState extends State<UserMessage> {
                             ),
                           ],
                         )),
-                    onPressed:upload_username
+                    onPressed:_upload_username
                 ),
               ),
               Container(
@@ -273,15 +304,7 @@ class _UserMessageState extends State<UserMessage> {
                           ),
                         ],
                       )),
-                  onPressed: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(
-                        builder: (context) =>
-                            Birthday(
-                              arguments: birthday,
-                            )))
-                        .then((value) => _getBirthday(value));
-                  },
+                  onPressed: _showDatePicker
                 ),
               ),
             ],
