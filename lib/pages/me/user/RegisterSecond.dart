@@ -52,9 +52,10 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
       this.seconds = 60;
       this._showTimer();
     });
-    var api = '${Config.home}api/sendCode';
+    var api = '${Config.home}auth/sendCode';
     var response = await Dio().post(api, data: {"tel": this.tel});
-    if (response.data["success"]) {
+    Map data = json.decode(response.data);
+    if (data["success"]) {
       print(response); //演示期间服务器直接返回  给手机发送的验证码
     }
   }

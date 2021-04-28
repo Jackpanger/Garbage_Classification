@@ -53,7 +53,7 @@ class _RegisterThirdPageState extends State<RegisterThirdPage> {
         "password": this.password
       });
       Map data = json.decode(response.data);
-
+      print(data);
       if (data["success"]) {
         //保存用户信息   
         Storage.setString('userInfo', json.encode(data["userinfo"]));
