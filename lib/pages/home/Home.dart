@@ -22,7 +22,7 @@ class _HomepageState extends State<Homepage> {
             child: Container(
               height: 178,
               width: 150,
-              child: ListView(
+              child: Column(
                   children: <Widget>[
                     Container(
                       width: 150,
@@ -31,7 +31,7 @@ class _HomepageState extends State<Homepage> {
                         borderRadius: BorderRadius.all(Radius.circular(20.0)),
                       ),
                       child:
-                          Image.asset("images/search.jpeg", fit: BoxFit.cover),
+                          Image.asset("images/search.png", fit: BoxFit.cover),
                     ),
                     Container(
                         child: Text(

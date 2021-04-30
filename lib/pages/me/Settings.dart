@@ -9,6 +9,7 @@ import 'Settings/About.dart';
 import 'Settings/Services.dart';
 import 'Settings/Switch Account.dart';
 import 'Settings/Theme Colors.dart';
+import 'package:garbage_classification/pages/tabs/Tabs.dart';
 
 class Settings extends StatefulWidget {
   @override
@@ -27,7 +28,8 @@ class _SettingsState extends State<Settings> {
             leading: IconButton(
               icon: Icon(Icons.arrow_back_rounded),
               onPressed: () {
-                Navigator.pop(context,false);
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Tabs()));
               },
             ),
           ),
@@ -52,7 +54,7 @@ class _SettingsState extends State<Settings> {
                             child: new Text("Language",
                                 style: new TextStyle(
                                     color: GlobalConfig.fontColor,
-                                    fontSize: 22.0)),
+                                    fontSize: GlobalConfig.fontSize)),
                           )
                         ],
                       ),
@@ -76,7 +78,7 @@ class _SettingsState extends State<Settings> {
                             child: new Text("Text Size",
                                 style: new TextStyle(
                                     color: GlobalConfig.fontColor,
-                                    fontSize: 22.0)),
+                                    fontSize: GlobalConfig.fontSize)),
                           )
                         ],
                       ),
@@ -97,10 +99,10 @@ class _SettingsState extends State<Settings> {
                       child: new Row(
                         children: <Widget>[
                           new Container(
-                            child: new Text("Background",
+                            child: new Text("Theme Colors",
                                 style: new TextStyle(
                                     color: GlobalConfig.fontColor,
-                                    fontSize: 22.0)),
+                                    fontSize: GlobalConfig.fontSize)),
                           )
                         ],
                       ),
@@ -124,7 +126,7 @@ class _SettingsState extends State<Settings> {
                             child: new Text("Other Tools",
                                 style: new TextStyle(
                                     color: GlobalConfig.fontColor,
-                                    fontSize: 22.0)),
+                                    fontSize: GlobalConfig.fontSize)),
                           )
                         ],
                       ),
@@ -148,7 +150,7 @@ class _SettingsState extends State<Settings> {
                             child: new Text("Help & Feedback",
                                 style: new TextStyle(
                                     color: GlobalConfig.fontColor,
-                                    fontSize: 22.0)),
+                                    fontSize: GlobalConfig.fontSize)),
                           )
                         ],
                       ),
@@ -172,7 +174,7 @@ class _SettingsState extends State<Settings> {
                             child: new Text("About",
                                 style: new TextStyle(
                                     color: GlobalConfig.fontColor,
-                                    fontSize: 22.0)),
+                                    fontSize: GlobalConfig.fontSize)),
                           )
                         ],
                       ),
@@ -196,15 +198,13 @@ class _SettingsState extends State<Settings> {
                             child: new Text("Services",
                                 style: new TextStyle(
                                     color: GlobalConfig.fontColor,
-                                    fontSize: 22.0)),
+                                    fontSize: GlobalConfig.fontSize)),
                           )
                         ],
                       ),
                     )),
               ),
               Container(
-                padding:
-                    const EdgeInsets.only(left: 5.0, bottom: 0.0, top: 0.0),
                 margin: const EdgeInsets.only(bottom: 6.0),
                 width: MediaQuery.of(context).size.width,
                 color: GlobalConfig.rowColor,
@@ -216,12 +216,10 @@ class _SettingsState extends State<Settings> {
                     child: new Container(
                       child: new Text("Switch Account",
                           style: new TextStyle(
-                              color: GlobalConfig.fontColor, fontSize: 22.0)),
+                              color: GlobalConfig.fontColor, fontSize: GlobalConfig.fontSize)),
                     )),
               ),
               Container(
-                padding:
-                    const EdgeInsets.only(left: 10.0, bottom: 12.0, top: 12.0),
                 width: MediaQuery.of(context).size.width,
                 color: GlobalConfig.rowColor,
                 child: TextButton(
@@ -233,7 +231,7 @@ class _SettingsState extends State<Settings> {
                     "Log Out",
                     textAlign: TextAlign.center,
                     style:
-                        TextStyle(fontSize: 22, color: GlobalConfig.fontColor),
+                        TextStyle(fontSize: GlobalConfig.fontSize, color: GlobalConfig.fontColor),
                   ),
                 ),
               ),

@@ -6,6 +6,7 @@ class ButtonColors {
   static Color colorChedked = Colors.grey;
   static List colorList = [colorOrigin, colorChedked];
 }
+
 class LanguagePage extends StatefulWidget {
   LanguagePage({Key key}) : super(key: key);
 
@@ -20,19 +21,29 @@ class _LanguagePageState extends State<LanguagePage> {
   int currentindexa = 0;
   int currentindexb = 0;
   int currentindexc = 0;
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text('Language'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Row(
+    return new MaterialApp(
+        theme: GlobalConfig.themeData,
+        home: Scaffold(
+            appBar: AppBar(
+              leading: new IconButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                icon: Icon(Icons.arrow_back, size: 25),
+              ),
+              title: Text('Language'),
+              centerTitle: true,
+            ),
+            body: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                Expanded(
-                    child: Container(
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                        child: Container(
                       height: 100,
                       margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
                       color: Colors.white,
@@ -40,7 +51,7 @@ class _LanguagePageState extends State<LanguagePage> {
                         color: ButtonColors.colorList[currentindexa],
                         child: Text(
                           '繁體中文',
-                          style: TextStyle(fontSize: 20.0),
+                          style: TextStyle(fontSize: GlobalConfig.fontSize),
                         ),
                         textColor: Colors.black,
                         onPressed: () {
@@ -54,15 +65,15 @@ class _LanguagePageState extends State<LanguagePage> {
                         },
                       ),
                     ))
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: <Widget>[
-                Expanded(
-                    child: Container(
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                        child: Container(
                       height: 100,
                       margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
                       color: Colors.white,
@@ -70,7 +81,7 @@ class _LanguagePageState extends State<LanguagePage> {
                         color: ButtonColors.colorList[currentindexb],
                         child: Text(
                           '简体中文',
-                          style: TextStyle(fontSize: 20.0),
+                          style: TextStyle(fontSize: GlobalConfig.fontSize),
                         ),
                         textColor: Colors.black,
                         onPressed: () {
@@ -84,15 +95,15 @@ class _LanguagePageState extends State<LanguagePage> {
                         },
                       ),
                     ))
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: <Widget>[
-                Expanded(
-                    child: Container(
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                        child: Container(
                       height: 100,
                       margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
                       color: Colors.white,
@@ -100,7 +111,7 @@ class _LanguagePageState extends State<LanguagePage> {
                         color: ButtonColors.colorList[currentindexc],
                         child: Text(
                           'English',
-                          style: TextStyle(fontSize: 20.0),
+                          style: TextStyle(fontSize: GlobalConfig.fontSize),
                         ),
                         textColor: Colors.black,
                         onPressed: () {
@@ -114,9 +125,9 @@ class _LanguagePageState extends State<LanguagePage> {
                         },
                       ),
                     ))
+                  ],
+                ),
               ],
-            ),
-          ],
-        ));
+            )));
   }
 }

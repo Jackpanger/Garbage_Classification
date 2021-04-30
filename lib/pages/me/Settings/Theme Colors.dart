@@ -64,7 +64,11 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         ),
                       ),
                       title: new Container(
-                        child: new Text("White"),
+                        child: new Text("White",
+                          style: new TextStyle(
+                            fontSize: GlobalConfig.fontSize,
+                          ),
+                        ),
                       ),
                       trailing: Visibility(
                         visible: GlobalConfig.themeColorsChecka,
@@ -107,7 +111,11 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         ),
                       ),
                       title: new Container(
-                        child: new Text("Pink"),
+                        child: new Text("Pink",
+                          style: new TextStyle(
+                            fontSize: GlobalConfig.fontSize,
+                          ),
+                        ),
                       ),
                       trailing: Visibility(
                         visible: GlobalConfig.themeColorsCheckb,
@@ -150,7 +158,11 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         ),
                       ),
                       title: new Container(
-                        child: new Text("Yellow"),
+                        child: new Text("Yellow",
+                          style: new TextStyle(
+                            fontSize: GlobalConfig.fontSize,
+                          ),
+                        ),
                       ),
                       trailing: Visibility(
                         visible: GlobalConfig.themeColorsCheckc,
@@ -193,7 +205,11 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         ),
                       ),
                       title: new Container(
-                        child: new Text("Blue (5 coins/mouth)"),
+                        child: new Text("Blue",
+                          style: new TextStyle(
+                            fontSize: GlobalConfig.fontSize,
+                          ),
+                        ),
                       ),
                       trailing: Visibility(
                         visible: GlobalConfig.themeColorsCheckd,
@@ -236,7 +252,11 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         ),
                       ),
                       title: new Container(
-                        child: new Text("Red (5 coins/mouth)"),
+                        child: new Text("Red",
+                          style: new TextStyle(
+                            fontSize: GlobalConfig.fontSize,
+                          ),
+                        ),
                       ),
                       trailing: Visibility(
                         visible: GlobalConfig.themeColorsChecke,
@@ -279,7 +299,11 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         ),
                       ),
                       title: new Container(
-                        child: new Text("Green (5 coins/mouth)"),
+                        child: new Text("Green",
+                          style: new TextStyle(
+                            fontSize: GlobalConfig.fontSize,
+                          ),
+                        ),
                       ),
                       trailing: Visibility(
                         visible: GlobalConfig.themeColorsCheckf,

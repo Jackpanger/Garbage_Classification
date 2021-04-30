@@ -13,50 +13,62 @@ class _ServicesPageState extends State<ServicesPage> {
       theme: GlobalConfig.themeData,
       home: new Scaffold(
         appBar: AppBar(
+          leading: new IconButton(
+            onPressed: (){
+              Navigator.of(context).pop();
+            },
+            icon: Icon(Icons.arrow_back, size: 25),
+          ),
           title: Text("XXX Services"),
           centerTitle: true,
         ),
-        body: new Container(
-          child: new ListView(
-            padding: EdgeInsets.only(top: 30),
+        body: Container(
+          child: Stack(
             children: <Widget>[
-              Container(
-                margin: const EdgeInsets.only(bottom: 50.0),
-                child: new TextButton(
+          Container(
+            width: 500,
+            height: 1000,
+              child: Image.asset("images/ServicesBackground.jpg", fit: BoxFit.cover),
+          ),
+              Align(
+                alignment: Alignment(0,-0.8),
+                child: Container(
+                    margin: const EdgeInsets.only(bottom: 3.0),
                     child: new Container(
                       child: new ListTile(
                         title: new Container(
-                          child: new Row(
-                            children: <Widget>[
-                              new Container(
-                                padding: EdgeInsets.fromLTRB(128, 0, 0, 0),
-                                child: new Icon(Icons.lightbulb_outline,
-                                    color: GlobalConfig.arrowColor),
-                              ),
-                              new Container(
-                                child: new Text(" XXX Services",
-                                    textAlign: TextAlign.center,
-                                    style: new TextStyle(fontSize: 23.0)),
-                              ),
-                            ],
+                          child: new Text(
+                            "XXX Services",
+                            style: new TextStyle(fontSize: GlobalConfig.fontSize),
+                            textAlign: TextAlign.center,
                           ),
                         ),
                         subtitle: new Container(
-                          child: new Text("Explore recently released XXX services",
-                              textAlign: TextAlign.center,
-                              style: new TextStyle(fontSize: 15.0)),
+                          //margin: const EdgeInsets.only(top: 2.0),
+                          child: new Text(
+                            "Explore recently released XXX services",
+                            style: new TextStyle(fontSize: GlobalConfig.fontSize-4.0),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                       ),
                     )),
               ),
-              Container(
-                child: new ListTile(
-                  title: new Container(
-                    child: new Text("————  No services available  ————",
-                        textAlign: TextAlign.center,
-                        style: new TextStyle(fontSize: 13.0)),
-                  ),
-                ),
+              Align(
+                alignment: Alignment(0,-0.3),
+                child: Container(
+                    margin: const EdgeInsets.only(bottom: 3.0),
+                    child: new Container(
+                      child: new ListTile(
+                        title: new Container(
+                          child: new Text(
+                            "————  No services available  ————",
+                            style: new TextStyle(fontSize: GlobalConfig.fontSize-6.0),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    )),
               ),
             ],
           ),

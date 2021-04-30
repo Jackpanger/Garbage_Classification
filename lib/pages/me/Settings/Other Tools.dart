@@ -14,6 +14,12 @@ class _OtherToolsPageState extends State<OtherToolsPage> {
       theme: GlobalConfig.themeData,
       home: new Scaffold(
         appBar: AppBar(
+          leading: new IconButton(
+            onPressed: (){
+              Navigator.of(context).pop();
+            },
+            icon: Icon(Icons.arrow_back, size: 25),
+          ),
           title: Text("Other Tools"),
           centerTitle: true,
         ),
@@ -30,7 +36,7 @@ class _OtherToolsPageState extends State<OtherToolsPage> {
                         ),
                         title: new Container(
                           child: new Text("Enabled",
-                              style: new TextStyle(fontSize: 15.0)),
+                              style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                         ),
                       ),
                     )),
@@ -47,7 +53,7 @@ class _OtherToolsPageState extends State<OtherToolsPage> {
                       child: new ListTile(
                         title: new Container(
                           child: new Text("苏州话语言输入功能",
-                              style: new TextStyle(fontSize: 15.0)),
+                              style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                         ),
                         trailing: new Container(
                           child:
@@ -70,7 +76,7 @@ class _OtherToolsPageState extends State<OtherToolsPage> {
                       child: new ListTile(
                         title: new Container(
                           child: new Text("粤语语言输入功能",
-                              style: new TextStyle(fontSize: 15.0)),
+                              style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                         ),
                         trailing: new Container(
                           child:
@@ -91,7 +97,7 @@ class _OtherToolsPageState extends State<OtherToolsPage> {
                         ),
                         title: new Container(
                           child: new Text("Disabled",
-                              style: new TextStyle(fontSize: 15.0)),
+                              style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                         ),
                       ),
                     )),
@@ -108,7 +114,7 @@ class _OtherToolsPageState extends State<OtherToolsPage> {
                       child: new ListTile(
                         title: new Container(
                           child: new Text("XXX News",
-                              style: new TextStyle(fontSize: 15.0)),
+                              style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                         ),
                         trailing: new Container(
                           child:
@@ -131,7 +137,7 @@ class _OtherToolsPageState extends State<OtherToolsPage> {
                       child: new ListTile(
                         title: new Container(
                           child: new Text("XXX Mail",
-                              style: new TextStyle(fontSize: 15.0)),
+                              style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                         ),
                         trailing: new Container(
                           child:

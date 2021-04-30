@@ -16,8 +16,8 @@ class GlobalConfig {
   static bool textSizeCheckc = false;
 
   static Color themeColor = Colors.white;
-  static bool themeColorsChecka = false;
-  static bool themeColorsCheckb = true;
+  static bool themeColorsChecka = true;
+  static bool themeColorsCheckb = false;
   static bool themeColorsCheckc = false;
   static bool themeColorsCheckd = false;
   static bool themeColorsChecke = false;
@@ -26,4 +26,5 @@ class GlobalConfig {
   static bool switchAccounta = true;
   static bool switchAccountb = false;
   static bool switchAccountc = false;
+
 }

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../config/global_config.dart';
-
-import '../../../services/Storage.dart';
-// import 'package:garbage_classification/services/FontSize.dart';
-import 'dart:convert';
+import 'package:garbage_classification/pages/me/Settings.dart';
 
 class TextSizePage extends StatefulWidget {
   TextSizePage({Key key}) : super(key: key);
@@ -23,8 +20,9 @@ class _TextSizePageState extends State<TextSizePage> {
         home: new Scaffold(
           appBar: AppBar(
             leading: new IconButton(
-              onPressed: (){
-                Navigator.of(context).pop();
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Settings()));
               },
               icon: Icon(Icons.arrow_back, size: 25),
             ),
@@ -44,7 +42,7 @@ class _TextSizePageState extends State<TextSizePage> {
                           GlobalConfig.textSizeChecka = true;
                           GlobalConfig.textSizeCheckb = false;
                           GlobalConfig.textSizeCheckc = false;
-                          GlobalConfig.fontSize = 26.0;
+                          GlobalConfig.fontSize = 24.0;
                           //Storage.setString('fontSize', 24.0);
                         }
                       });
@@ -55,9 +53,9 @@ class _TextSizePageState extends State<TextSizePage> {
                           child: new Text(
                             "Large",
                             style: new TextStyle(
-                                fontSize: GlobalConfig.fontSize,
-                            //fontSize: FontSize.getFontSize(),
-                          ),),
+                              fontSize: GlobalConfig.fontSize,
+                            ),
+                          ),
                         ),
                         trailing: Visibility(
                           visible: GlobalConfig.textSizeChecka,
@@ -79,7 +77,7 @@ class _TextSizePageState extends State<TextSizePage> {
                           GlobalConfig.textSizeChecka = false;
                           GlobalConfig.textSizeCheckb = true;
                           GlobalConfig.textSizeCheckc = false;
-                          GlobalConfig.fontSize = 22.0;
+                          GlobalConfig.fontSize = 20.0;
                           //Storage.setString('fontSize', 22.0);
                         }
                       });
@@ -87,11 +85,13 @@ class _TextSizePageState extends State<TextSizePage> {
                     child: new Container(
                       child: new ListTile(
                         title: new Container(
-                          child: new Text("Middle",
+                          child: new Text(
+                            "Middle",
                             style: new TextStyle(
                               fontSize: GlobalConfig.fontSize,
                               //fontSize: FontSize.getFontSize(),
-                            ),),
+                            ),
+                          ),
                         ),
                         trailing: Visibility(
                           visible: GlobalConfig.textSizeCheckb,
@@ -113,7 +113,7 @@ class _TextSizePageState extends State<TextSizePage> {
                           GlobalConfig.textSizeChecka = false;
                           GlobalConfig.textSizeCheckb = false;
                           GlobalConfig.textSizeCheckc = true;
-                          GlobalConfig.fontSize = 18.0;
+                          GlobalConfig.fontSize = 16.0;
                           //Storage.setString('fontSize', 20.0);
                         }
                       });
@@ -121,11 +121,13 @@ class _TextSizePageState extends State<TextSizePage> {
                     child: new Container(
                       child: new ListTile(
                         title: new Container(
-                          child: new Text("Small",
+                          child: new Text(
+                            "Small",
                             style: new TextStyle(
                               fontSize: GlobalConfig.fontSize,
                               //fontSize: FontSize.getFontSize(),
-                            ),),
+                            ),
+                          ),
                         ),
                         trailing: Visibility(
                           visible: GlobalConfig.textSizeCheckc,

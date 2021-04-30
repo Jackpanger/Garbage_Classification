@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../config/global_config.dart';
+import 'package:garbage_classification/pages/me/Settings.dart';
+
 
 class HotQuestionsPage extends StatelessWidget {
   const HotQuestionsPage({Key key}) : super (key: key);
@@ -10,6 +12,13 @@ class HotQuestionsPage extends StatelessWidget {
       theme: GlobalConfig.themeData,
       home: new Scaffold(
         appBar: AppBar(
+          leading: new IconButton(
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => Settings()));
+            },
+            icon: Icon(Icons.arrow_back, size: 25),
+          ),
           title: Text("Hot Questions"),
           centerTitle: true,
         ),
@@ -29,7 +38,7 @@ class HotQuestionsPage extends StatelessWidget {
                       child: new ListTile(
                         title: new Container(
                           child: new Text("怎么才能吃不胖？",
-                              style: new TextStyle(fontSize: 15.0)),
+                              style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                         ),
                         trailing: new Container(
                           child:
@@ -52,7 +61,7 @@ class HotQuestionsPage extends StatelessWidget {
                       child: new ListTile(
                         title: new Container(
                           child: new Text("女朋友去哪里可以领？",
-                              style: new TextStyle(fontSize: 15.0)),
+                              style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                         ),
                         trailing: new Container(
                           child:
@@ -75,7 +84,7 @@ class HotQuestionsPage extends StatelessWidget {
                       child: new ListTile(
                         title: new Container(
                           child: new Text("为什么我的头像不够帅？",
-                              style: new TextStyle(fontSize: 15.0)),
+                              style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                         ),
                         trailing: new Container(
                           child:

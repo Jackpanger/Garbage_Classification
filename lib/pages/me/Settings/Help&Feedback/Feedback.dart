@@ -43,21 +43,21 @@ class _FeedbackPageState extends State<FeedbackPage> {
 
               Row(
                 children: <Widget>[
-                  Text("微信"),
+                  Text("微信", style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                   Radio(
                     value: 1,
                     onChanged: _contactWay,
                     groupValue: this.contactWay,
                   ),
                   SizedBox(width: 20,),
-                  Text("QQ"),
+                  Text("QQ", style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                   Radio(
                     value: 2,
                     onChanged: _contactWay,
                     groupValue: this.contactWay,
                   ),
                   SizedBox(width: 20,),
-                  Text("邮箱"),
+                  Text("邮箱", style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                   Radio(
                     value: 3,
                     onChanged: _contactWay,

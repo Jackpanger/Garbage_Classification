@@ -60,7 +60,7 @@ class _SwitchAccountPageState extends State<SwitchAccountPage> {
                           child: new Text(
                             "Solitary square root of three",
                             style: new TextStyle(
-                              //fontSize: GlobalConfig.fontSize,
+                              fontSize: GlobalConfig.fontSize,
                             ),
                           ),
                         ),
@@ -98,7 +98,11 @@ class _SwitchAccountPageState extends State<SwitchAccountPage> {
                         ),
                         title: new Container(
                           //margin: const EdgeInsets.only(bottom: 2.0),
-                          child: new Text("Sweet strawberry flavor"),
+                          child: new Text("Sweet strawberry flavor",
+                            style: new TextStyle(
+                              fontSize: GlobalConfig.fontSize,
+                            ),
+                          ),
                         ),
                         trailing: Visibility(
                           visible: currentindexb,
@@ -134,7 +138,11 @@ class _SwitchAccountPageState extends State<SwitchAccountPage> {
                         ),
                         title: new Container(
                           //margin: const EdgeInsets.only(bottom: 2.0),
-                          child: new Text("Keyboard warrior"),
+                          child: new Text("Keyboard warrior",
+                            style: new TextStyle(
+                              fontSize: GlobalConfig.fontSize,
+                            ),
+                          ),
                         ),
                         trailing: Visibility(
                           visible: currentindexc,
@@ -162,7 +170,11 @@ class _SwitchAccountPageState extends State<SwitchAccountPage> {
                               child: Icon(Icons.add), radius: 20.0),
                         ),
                         title: new Container(
-                          child: new Text("Add or Register an Account"),
+                          child: new Text("Add or Register an Account",
+                            style: new TextStyle(
+                              fontSize: GlobalConfig.fontSize,
+                            ),
+                          ),
                         ),
                       ),
                     )),

@@ -40,6 +40,9 @@ class _TabState extends State<Tabs> {
             this._currentIndex = index;
           });
         },
+
+        fixedColor: Colors.blue,
+
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
