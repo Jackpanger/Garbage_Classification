@@ -50,14 +50,12 @@ class _AboutPageState extends State<AboutPage> {
                 padding: EdgeInsets.fromLTRB(190, 60, 190, 0),
                 child: Container(
                   height: 100,
+                  // width: 300,
                   decoration: BoxDecoration(
                     color: Colors.blue,
                     borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
-                      image: NetworkImage(
-                          "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fdownza.img.zz314.com%2Fnews%2Fyejie%2Fother-1021%2F2016-03-15%2F6a9f5c78c4ec4d76bb956177b1efda72.jpg&refer=http%3A%2F%2Fdownza.img.zz314.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1621109893&t=90938776ba14c95b8d85e1536c627229"),
-                      fit: BoxFit.cover,
-                    ),
+                    image: DecorationImage(image:AssetImage("images/search.png"),
+                        fit: BoxFit.cover)
                   ),
                 ),
               ),

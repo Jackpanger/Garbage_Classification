@@ -76,7 +76,7 @@ class _RegisterThirdPageState extends State<RegisterThirdPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("用户注册-第三步"),
+        title: Text("User registration-Third"),
       ),
       body: Container(
         padding: EdgeInsets.all(20),
@@ -84,7 +84,7 @@ class _RegisterThirdPageState extends State<RegisterThirdPage> {
           children: <Widget>[
             SizedBox(height: 50),
             ConText(
-              text: "请输入密码",
+              text: "Please input your password",
               password: true,
               onChanged: (value) {
                 this.password=value;
@@ -92,7 +92,7 @@ class _RegisterThirdPageState extends State<RegisterThirdPage> {
             ),
             SizedBox(height: 10),
             ConText(
-              text: "请输入确认密码",
+              text: "Please confirm your password",
               password: true,
               onChanged: (value) {
                 this.rpassword=value;
@@ -100,7 +100,7 @@ class _RegisterThirdPageState extends State<RegisterThirdPage> {
             ),
             SizedBox(height: 20),
             ConButton(
-              text: "注册",
+              text: "Registration",
               color: Colors.red,
               height: 74,
               cb: doRegister,

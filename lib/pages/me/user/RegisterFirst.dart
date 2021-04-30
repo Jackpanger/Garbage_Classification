@@ -40,7 +40,7 @@ class _RegisterFirstPageState extends State<RegisterFirstPage> {
       }
     } else {
       Fluttertoast.showToast(
-        msg: '手机号格式不对',
+        msg: 'Format of phone number is wrong',
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
       );
@@ -51,7 +51,7 @@ class _RegisterFirstPageState extends State<RegisterFirstPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("用户注册-第一步"),
+        title: Text("User registration-First"),
       ),
       body: Container(
         padding: EdgeInsets.all(20),
@@ -59,7 +59,7 @@ class _RegisterFirstPageState extends State<RegisterFirstPage> {
           children: <Widget>[
             SizedBox(height: 50),
             ConText(
-              text: "请输入手机号",
+              text: "Please type in your number",
               onChanged: (value) {
                 // print(value);
                 this.tel = value;

@@ -23,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
   doLogin() async {
     if (password.length < 6) {
       Fluttertoast.showToast(
-        msg: '密码长度不能小于6位',
+        msg: 'Length of password can not be less than 6',
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
       );
@@ -32,10 +32,7 @@ class _LoginPageState extends State<LoginPage> {
       var response = await Dio().post(api,
           data: {"username": this.username, "password": this.password});
       if (response.data["success"]) {
-        //保存用户信息
         Storage.setString('userInfo', json.encode(response.data["userinfo"]));
-
-        //返回到根
         Navigator.of(context).pushAndRemoveUntil(
             new MaterialPageRoute(builder: (context) => new Tabs(index: 2)),
             (route) => route == null);
@@ -60,11 +57,10 @@ class _LoginPageState extends State<LoginPage> {
             Navigator.pop(context);
           },
         ),
-        // title: Text("登录页面"),
         actions: <Widget>[
           TextButton(
             child: Text(
-              "客服",
+              "Serve",
               style: TextStyle(color: Colors.white),
             ),
             onPressed: () {},
@@ -86,14 +82,14 @@ class _LoginPageState extends State<LoginPage> {
             ),
             SizedBox(height: 30),
             ConText(
-              text: "请输入用户名",
+              text: "Username",
               onChanged: (value) {
                 this.username = value;
               },
             ),
             SizedBox(height: 10),
             ConText(
-              text: "请输入密码",
+              text: "Password",
               password: true,
               onChanged: (value) {
                 this.password = value;
@@ -106,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: <Widget>[
                   Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('忘记密码'),
+                    child: Text('Forget password'),
                   ),
                   Align(
                     alignment: Alignment.centerRight,
@@ -114,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
                       onTap: () {
                         Navigator.pushNamed(context, '/registerFirst');
                       },
-                      child: Text('新用户注册'),
+                      child: Text('Sign in'),
                     ),
                   )
                 ],

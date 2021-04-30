@@ -1,50 +1,69 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/pages/category/res/form1.dart';
+import 'package:garbage_classification/pages/category/res/form2.dart';
+import 'package:garbage_classification/pages/category/res/form3.dart';
+import 'package:garbage_classification/pages/category/res/form4.dart';
 
 import 'kind.dart';
 
 const recentSuggest = [
-  'plastic',
-  'fish',
+
 ];
 
 class SearchBarDelegate extends SearchDelegate<String> {
-  //清空按钮
+
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
       IconButton(
         icon: Icon(Icons.clear),
-        onPressed: () => query = "", //搜索值为空
+        onPressed: () => query = "",
       )
     ];
   }
 
-  //返回上级按钮
+  @override
+  Widget buildResults(BuildContext context) {
+    var result;
+    for(int i = 0; i<form1.length;i++){
+      if(query == form1[i]['title']){
+        result = "Residual waste";
+      }
+    }
+    for(int i = 0; i<form2.length;i++){
+      if(query == form2[i]['title']){
+        result = "Wet waste";
+      }
+    }
+    for(int i = 0; i<form3.length;i++){
+      if(query == form3[i]['title']){
+        result = "Recyclable waste";
+      }
+    }
+    for(int i = 0; i<form4.length;i++){
+      if(query == form4[i]['title']){
+        result = "other waste";
+      }
+    }
+    if(result==null){
+      result = "Not found";
+    }
+    print(result);
+    return Center(
+      child: Text(result,style:TextStyle(fontSize: 24)),
+    );
+  }
+
   @override
   Widget buildLeading(BuildContext context) {
     return IconButton(
         icon: AnimatedIcon(
             icon: AnimatedIcons.menu_arrow, progress: transitionAnimation),
-        onPressed: () => close(context, null) //点击时关闭整个搜索页面
+        onPressed: () => close(context, null)
         );
   }
 
-  //搜到到内容后的展现
-  @override
-  Widget buildResults(BuildContext context) {
-    return Container(
-      width: 100.0,
-      height: 100.0,
-      child: Card(
-        color: Colors.redAccent,
-        child: Center(
-          child: Text(query),
-        ),
-      ),
-    );
-  }
 
-  //设置推荐
   @override
   Widget buildSuggestions(BuildContext context) {
     final suggestionsList = query.isEmpty
@@ -66,6 +85,11 @@ class SearchBarDelegate extends SearchDelegate<String> {
                           style: TextStyle(color: Colors.grey))
                     ]),
               ),
+              onTap: () {
+                query = suggestionsList[index];
+                buildResults(context);
+              },
             ));
   }
+
 }

@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import '../../../widgets/ConText.dart';
 import '../../../widgets/ConButton.dart';
-import 'dart:async'; //Timer定时器需要引入
 import '../../../config/Config.dart';
 import 'package:dio/dio.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -29,7 +28,6 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
     this._showTimer();
   }
 
-  //倒计时
   _showTimer() {
     Timer t;
     t = Timer.periodic(Duration(milliseconds: 1000), (timer) {
@@ -37,7 +35,7 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
         this.seconds--;
       });
       if (this.seconds == 0) {
-        t.cancel(); //清除定时器
+        t.cancel();
         setState(() {
           this.sendCodeBtn = true;
         });
@@ -45,7 +43,6 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
     });
   }
 
-  //重新发送验证码
   sendCode() async {
     setState(() {
       this.sendCodeBtn = false;
@@ -56,10 +53,9 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
     var response = await Dio().post(api, data: {"tel": this.tel});
     Map data = json.decode(response.data);
     if (data["success"]) {
-      print(response); //演示期间服务器直接返回  给手机发送的验证码
+      print(response);
     }
   }
-  //验证验证码
 
   validateCode() async {
     var api = '${Config.home}auth/validateCode';
@@ -85,7 +81,7 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("用户注册-第二步"),
+        title: Text("User registration-Second"),
       ),
       body: Container(
         padding: EdgeInsets.all(20),
@@ -94,14 +90,14 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
             SizedBox(height: 50),
             Container(
               padding: EdgeInsets.only(left: 10),
-              child: Text("验证码已经发送到了您的${this.tel}手机，请输入${this.tel}手机号收到的验证码"),
+              child: Text("Code has sent to your number ${this.tel}，Please type in the code"),
             ),
             SizedBox(height: 40),
             Stack(
               children: <Widget>[
                 Container(
                   child: ConText(
-                    text: "请输入验证码",
+                    text: "Code",
                     onChanged: (value) {
                       // print(value);
                       this.code = value;
@@ -114,11 +110,11 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
                   top: 0,
                   child: this.sendCodeBtn
                       ? ElevatedButton(
-                          child: Text('重新发送'),
+                          child: Text('Resend'),
                           onPressed: this.sendCode,
                         )
                       : ElevatedButton(
-                          child: Text('${this.seconds}秒后重发'),
+                          child: Text('Send after ${this.seconds}'),
                           onPressed: () {},
                         ),
                 )
@@ -126,7 +122,7 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
             ),
             SizedBox(height: 20),
             ConButton(
-              text: "下一步",
+              text: "Next",
               color: Colors.red,
               height: 74,
               cb: this.validateCode,
