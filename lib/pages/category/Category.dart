@@ -84,7 +84,7 @@ class _CategoryState extends State<CategoryPage> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: GlobalConfig.fontColor,
-                        fontSize: GlobalConfig.fontSize * 0.9),
+                        fontSize: 18.0),
                   ),
                 ),
                 Tab(
@@ -93,7 +93,7 @@ class _CategoryState extends State<CategoryPage> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: GlobalConfig.fontColor,
-                        fontSize: GlobalConfig.fontSize * 0.9),
+                        fontSize: 18.0),
                   ),
                 ),
                 Tab(
@@ -102,7 +102,7 @@ class _CategoryState extends State<CategoryPage> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: GlobalConfig.fontColor,
-                        fontSize: GlobalConfig.fontSize * 0.9),
+                        fontSize: 18.0),
                   ),
                 ),
                 Tab(
@@ -111,7 +111,7 @@ class _CategoryState extends State<CategoryPage> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: GlobalConfig.fontColor,
-                        fontSize: GlobalConfig.fontSize * 0.9),
+                        fontSize: 18.0),
                   ),
                 ),
               ],
@@ -130,7 +130,8 @@ class _CategoryState extends State<CategoryPage> {
                             title: Text(_data1[index],
                                 style: TextStyle(
                                     fontSize: GlobalConfig.fontSize * 0.9)),
-                            leading: Image.asset("images/ganlaji.png"),
+                            leading:
+                              Image.asset(GlobalConfig.pic1),
                           )));
                 }),
             ListView.builder(
@@ -145,7 +146,7 @@ class _CategoryState extends State<CategoryPage> {
                             title: Text(_data2[index],
                                 style: TextStyle(
                                     fontSize: GlobalConfig.fontSize * 0.9)),
-                            leading: Image.asset("images/shilaji.png"),
+                            leading: Image.asset(GlobalConfig.pic2),
                           )));
                 }),
             ListView.builder(
@@ -160,7 +161,7 @@ class _CategoryState extends State<CategoryPage> {
                             title: Text(_data3[index],
                                 style: TextStyle(
                                     fontSize: GlobalConfig.fontSize * 0.9)),
-                            leading: Image.asset("images/kehuishoulaji.png"),
+                            leading: Image.asset(GlobalConfig.pic3),
                           )));
                 }),
             ListView.builder(
@@ -175,7 +176,7 @@ class _CategoryState extends State<CategoryPage> {
                             title: Text(_data4[index],
                                 style: TextStyle(
                                     fontSize: GlobalConfig.fontSize * 0.9)),
-                            leading: Image.asset("images/qitalaji.png"),
+                            leading: Image.asset(GlobalConfig.pic4),
                           )));
                 }),
           ]),

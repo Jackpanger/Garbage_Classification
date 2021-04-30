@@ -30,4 +30,9 @@ class GlobalConfig {
   static bool Languagea = true;
   static bool Languageb = false;
   static bool Languagec = false;
+
+  static String pic1 = "images/ganlaji2.png";
+  static String pic2 = "images/shilaji2.png";
+  static String pic3 = "images/kehuishoulaji2.png";
+  static String pic4 = "images/qitalaji2.png";
 }

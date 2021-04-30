@@ -65,6 +65,10 @@ flutter:
    - images/kehuishoulaji.png
    - images/qitalaji.png
    - images/shilaji.png
+   - images/ganlaji2.png
+   - images/kehuishoulaji2.png
+   - images/qitalaji2.png
+   - images/shilaji2.png
    - images/ServicesBackground.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see

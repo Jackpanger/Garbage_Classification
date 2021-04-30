@@ -311,6 +311,10 @@ class _MeState extends State<Me> {
                     GlobalConfig.rowColor = Colors.white;
                     GlobalConfig.arrowColor = Colors.black;
                     GlobalConfig.dark = false;
+                    GlobalConfig.pic1 = "images/ganlaji.png";
+                    GlobalConfig.pic2 = "images/shilaji.png";
+                    GlobalConfig.pic3 = "images/kehuishoulaji.png";
+                    GlobalConfig.pic4 = "images/qitalaji.png";
                   } else {
                     GlobalConfig.themeData = new ThemeData.dark();
                     GlobalConfig.searchBackgroundColor = Colors.white10;
@@ -320,6 +324,10 @@ class _MeState extends State<Me> {
                     GlobalConfig.rowColor = Colors.black45;
                     GlobalConfig.arrowColor = Colors.white;
                     GlobalConfig.dark = true;
+                    GlobalConfig.pic1 = "images/ganlaji2.png";
+                    GlobalConfig.pic2 = "images/shilaji2.png";
+                    GlobalConfig.pic3 = "images/kehuishoulaji2.png";
+                    GlobalConfig.pic4 = "images/qitalaji2.png";
                   }
                 });
               },
