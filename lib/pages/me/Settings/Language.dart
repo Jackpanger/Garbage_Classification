@@ -18,10 +18,6 @@ class _LanguagePageState extends State<LanguagePage> {
   bool checkb = true;
   bool checkc = true;
 
-  int currentindexa = 0;
-  int currentindexb = 0;
-  int currentindexc = 0;
-
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -37,97 +33,111 @@ class _LanguagePageState extends State<LanguagePage> {
               title: Text('Language'),
               centerTitle: true,
             ),
-            body: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Expanded(
-                        child: Container(
-                      height: 100,
-                      margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
-                      color: Colors.white,
-                      child: RaisedButton(
-                        color: ButtonColors.colorList[currentindexa],
-                        child: Text(
-                          '繁體中文',
-                          style: TextStyle(fontSize: GlobalConfig.fontSize),
+          body: new ListView(
+            padding: EdgeInsets.only(top: 5),
+            children: <Widget>[
+              Container(
+                margin: const EdgeInsets.only(bottom: 3.0),
+                color: GlobalConfig.rowColor,
+                child: new TextButton(
+                    onPressed: () {
+                      setState(() {
+                        if (checka == true) {
+                          GlobalConfig.Languagea = true;
+                          GlobalConfig.Languageb = false;
+                          GlobalConfig.Languagec = false;
+                        }
+                      });
+                    },
+                    child: new Container(
+                      child: new ListTile(
+                        title: new Container(
+                          child: new Text(
+                            "English",
+                            style: new TextStyle(
+                              fontSize: GlobalConfig.fontSize,
+                            ),
+                          ),
                         ),
-                        textColor: Colors.black,
-                        onPressed: () {
-                          setState(() {
-                            if (checka) {
-                              currentindexa = 1;
-                              currentindexb = 0;
-                              currentindexc = 0;
-                            }
-                          });
-                        },
-                      ),
-                    ))
-                  ],
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  children: <Widget>[
-                    Expanded(
-                        child: Container(
-                      height: 100,
-                      margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
-                      color: Colors.white,
-                      child: RaisedButton(
-                        color: ButtonColors.colorList[currentindexb],
-                        child: Text(
-                          '简体中文',
-                          style: TextStyle(fontSize: GlobalConfig.fontSize),
+                        trailing: Visibility(
+                          visible: GlobalConfig.Languagea,
+                          child: new Icon(
+                            Icons.check,
+                            color: Colors.blue,
+                          ),
                         ),
-                        textColor: Colors.black,
-                        onPressed: () {
-                          setState(() {
-                            if (checkb) {
-                              currentindexa = 0;
-                              currentindexb = 1;
-                              currentindexc = 0;
-                            }
-                          });
-                        },
                       ),
-                    ))
-                  ],
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  children: <Widget>[
-                    Expanded(
-                        child: Container(
-                      height: 100,
-                      margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
-                      color: Colors.white,
-                      child: RaisedButton(
-                        color: ButtonColors.colorList[currentindexc],
-                        child: Text(
-                          'English',
-                          style: TextStyle(fontSize: GlobalConfig.fontSize),
+                    )),
+              ),
+              Container(
+                margin: const EdgeInsets.only(bottom: 3.0),
+                color: GlobalConfig.rowColor,
+                child: new TextButton(
+                    onPressed: () {
+                      setState(() {
+                        if (checkb == true) {
+                          GlobalConfig.Languagea = false;
+                          GlobalConfig.Languageb = true;
+                          GlobalConfig.Languagec = false;
+                        }
+                      });
+                    },
+                    child: new Container(
+                      child: new ListTile(
+                        title: new Container(
+                          child: new Text(
+                            "简体中文",
+                            style: new TextStyle(
+                              fontSize: GlobalConfig.fontSize,
+                              //fontSize: FontSize.getFontSize(),
+                            ),
+                          ),
                         ),
-                        textColor: Colors.black,
-                        onPressed: () {
-                          setState(() {
-                            if (checkc) {
-                              currentindexa = 0;
-                              currentindexb = 0;
-                              currentindexc = 1;
-                            }
-                          });
-                        },
+                        trailing: Visibility(
+                          visible: GlobalConfig.Languageb,
+                          child: new Icon(
+                            Icons.check,
+                            color: Colors.blue,
+                          ),
+                        ),
                       ),
-                    ))
-                  ],
-                ),
-              ],
-            )));
+                    )),
+              ),
+              Container(
+                margin: const EdgeInsets.only(bottom: 3.0),
+                color: GlobalConfig.rowColor,
+                child: new TextButton(
+                    onPressed: () {
+                      setState(() {
+                        if (checkc == true) {
+                          GlobalConfig.Languagea = false;
+                          GlobalConfig.Languageb = false;
+                          GlobalConfig.Languagec = true;
+                        }
+                      });
+                    },
+                    child: new Container(
+                      child: new ListTile(
+                        title: new Container(
+                          child: new Text(
+                            "繁體中文",
+                            style: new TextStyle(
+                              fontSize: GlobalConfig.fontSize,
+                            ),
+                          ),
+                        ),
+                        trailing: Visibility(
+                          visible: GlobalConfig.Languagec,
+                          child: new Icon(
+                            Icons.check,
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ),
+                    )),
+              ),
+            ],
+          ),
+        ));
   }
 }

@@ -70,7 +70,9 @@ class _CategoryState extends State<CategoryPage> {
   Widget build(BuildContext context) {
     return DefaultTabController(
         length: 4,
-        child: Scaffold(
+        child: new MaterialApp(
+            theme: GlobalConfig.themeData,
+            home: Scaffold(
           appBar: AppBar(
             backgroundColor: GlobalConfig.cardBackgroundColor,
             bottom: TabBar(
@@ -78,30 +80,38 @@ class _CategoryState extends State<CategoryPage> {
               tabs: <Widget>[
                 Tab(
                   child: Text(
-                    "residual waste",
-                    // textAlign: TextAlign.left,
-                    style: TextStyle(color: GlobalConfig.fontColor),
+                    "Residual",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: GlobalConfig.fontColor,
+                        fontSize: GlobalConfig.fontSize * 0.9),
                   ),
                 ),
                 Tab(
                   child: Text(
-                    "wet waste",
-                    // textAlign: TextAlign.left,
-                    style: TextStyle(color: GlobalConfig.fontColor),
+                    "Wet",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: GlobalConfig.fontColor,
+                        fontSize: GlobalConfig.fontSize * 0.9),
                   ),
                 ),
                 Tab(
                   child: Text(
-                    "recyclable waste",
-                    // textAlign: TextAlign.left,
-                    style: TextStyle(color: GlobalConfig.fontColor),
+                    "Recyclable",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: GlobalConfig.fontColor,
+                        fontSize: GlobalConfig.fontSize * 0.9),
                   ),
                 ),
                 Tab(
                   child: Text(
-                    "other waste",
-                    // textAlign: TextAlign.left,
-                    style: TextStyle(color: GlobalConfig.fontColor),
+                    "Other",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: GlobalConfig.fontColor,
+                        fontSize: GlobalConfig.fontSize * 0.9),
                   ),
                 ),
               ],
@@ -111,36 +121,64 @@ class _CategoryState extends State<CategoryPage> {
             ListView.builder(
                 itemCount: _data1.length,
                 itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(_data1[index]),
-                    leading: Image.asset("images/ganlaji.png"),
-                  );
+                  return Container(
+                      margin: const EdgeInsets.only(bottom: 4.0),
+                      color: GlobalConfig.rowColor,
+                      child: new TextButton(
+                          onPressed: () {},
+                          child: ListTile(
+                            title: Text(_data1[index],
+                                style: TextStyle(
+                                    fontSize: GlobalConfig.fontSize * 0.9)),
+                            leading: Image.asset("images/ganlaji.png"),
+                          )));
                 }),
             ListView.builder(
                 itemCount: _data1.length,
                 itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(_data2[index]),
-                    leading: Image.asset("images/shilaji.png"),
-                  );
+                  return Container(
+                      margin: const EdgeInsets.only(bottom: 4.0),
+                      color: GlobalConfig.rowColor,
+                      child: new TextButton(
+                          onPressed: () {},
+                          child: ListTile(
+                            title: Text(_data2[index],
+                                style: TextStyle(
+                                    fontSize: GlobalConfig.fontSize * 0.9)),
+                            leading: Image.asset("images/shilaji.png"),
+                          )));
                 }),
             ListView.builder(
                 itemCount: _data3.length,
                 itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(_data3[index]),
-                    leading: Image.asset("images/kehuishoulaji.png"),
-                  );
+                  return Container(
+                      margin: const EdgeInsets.only(bottom: 4.0),
+                      color: GlobalConfig.rowColor,
+                      child: new TextButton(
+                          onPressed: () {},
+                          child: ListTile(
+                            title: Text(_data3[index],
+                                style: TextStyle(
+                                    fontSize: GlobalConfig.fontSize * 0.9)),
+                            leading: Image.asset("images/kehuishoulaji.png"),
+                          )));
                 }),
             ListView.builder(
                 itemCount: _data4.length,
                 itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(_data4[index]),
-                    leading: Image.asset("images/qitalaji.png"),
-                  );
+                  return Container(
+                      margin: const EdgeInsets.only(bottom: 4.0),
+                      color: GlobalConfig.rowColor,
+                      child: new TextButton(
+                          onPressed: () {},
+                          child: ListTile(
+                            title: Text(_data4[index],
+                                style: TextStyle(
+                                    fontSize: GlobalConfig.fontSize * 0.9)),
+                            leading: Image.asset("images/qitalaji.png"),
+                          )));
                 }),
           ]),
-        ));
+        )));
   }
 }

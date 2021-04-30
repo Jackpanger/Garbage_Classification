@@ -27,4 +27,7 @@ class GlobalConfig {
   static bool switchAccountb = false;
   static bool switchAccountc = false;
 
+  static bool Languagea = true;
+  static bool Languageb = false;
+  static bool Languagec = false;
 }

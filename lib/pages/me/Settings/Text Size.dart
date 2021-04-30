@@ -33,7 +33,7 @@ class _TextSizePageState extends State<TextSizePage> {
             padding: EdgeInsets.only(top: 5),
             children: <Widget>[
               Container(
-                margin: const EdgeInsets.only(bottom: 1.0),
+                margin: const EdgeInsets.only(bottom: 3.0),
                 color: GlobalConfig.rowColor,
                 child: new TextButton(
                     onPressed: () {
@@ -43,7 +43,6 @@ class _TextSizePageState extends State<TextSizePage> {
                           GlobalConfig.textSizeCheckb = false;
                           GlobalConfig.textSizeCheckc = false;
                           GlobalConfig.fontSize = 24.0;
-                          //Storage.setString('fontSize', 24.0);
                         }
                       });
                     },
@@ -68,7 +67,7 @@ class _TextSizePageState extends State<TextSizePage> {
                     )),
               ),
               Container(
-                margin: const EdgeInsets.only(bottom: 1.0),
+                margin: const EdgeInsets.only(bottom: 3.0),
                 color: GlobalConfig.rowColor,
                 child: new TextButton(
                     onPressed: () {
@@ -78,7 +77,6 @@ class _TextSizePageState extends State<TextSizePage> {
                           GlobalConfig.textSizeCheckb = true;
                           GlobalConfig.textSizeCheckc = false;
                           GlobalConfig.fontSize = 20.0;
-                          //Storage.setString('fontSize', 22.0);
                         }
                       });
                     },
@@ -104,7 +102,7 @@ class _TextSizePageState extends State<TextSizePage> {
                     )),
               ),
               Container(
-                margin: const EdgeInsets.only(bottom: 1.0),
+                margin: const EdgeInsets.only(bottom: 3.0),
                 color: GlobalConfig.rowColor,
                 child: new TextButton(
                     onPressed: () {
@@ -114,7 +112,6 @@ class _TextSizePageState extends State<TextSizePage> {
                           GlobalConfig.textSizeCheckb = false;
                           GlobalConfig.textSizeCheckc = true;
                           GlobalConfig.fontSize = 16.0;
-                          //Storage.setString('fontSize', 20.0);
                         }
                       });
                     },
