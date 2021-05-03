@@ -1,9 +1,15 @@
 import 'package:date_format/date_format.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cupertino_date_picker_fork/flutter_cupertino_date_picker_fork.dart';
+import 'package:garbage_classification/config/Config.dart';
+import 'package:garbage_classification/config/global_config.dart';
 import 'package:garbage_classification/pages/me/user/profile/userName.dart';
 import 'package:garbage_classification/services/UserServices.dart';
 import './phoneNumber.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
+
 
 class UserMessage extends StatefulWidget {
   UserMessage({
@@ -20,6 +26,9 @@ class _UserMessageState extends State<UserMessage> {
   String tel = "";
   String birthday = '2000年1月1号';
   String userSex = 'male';
+  String avatar = "";
+
+  var _imgPath;
 
   @override
   void initState() {
@@ -36,6 +45,90 @@ class _UserMessageState extends State<UserMessage> {
     });
   }
 
+  _changeAvatar() async {
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            height: 200.0,
+            child: Column(
+              children: <Widget>[
+                _ImageView(_imgPath),
+                TextButton(
+                    onPressed: _takePhoto,
+                    child: ListTile(
+                      title: Text('拍照'),
+                )
+                ),
+                Divider(),
+                TextButton(
+                    onPressed: _openGallery,
+                    child: ListTile(
+                      title: Text('本地照片'),
+                    )
+                ),
+              ],
+            ),
+          );
+        });
+  }
+
+  /*图片控件*/
+  Widget _ImageView(imgPath) {
+    if (imgPath == null) {
+      return Center(
+        child: Text("请选择图片或拍照"),
+
+      );
+    } else {
+      return Image.file(
+        imgPath,
+      );
+    }
+  }
+
+  /*拍照*/
+  _takePhoto() async {
+    final image =
+        await ImagePicker().getImage(source: ImageSource.camera, maxWidth: 400);
+    _uploadData(File(image.path)); //上传
+    setState(() {
+      if (image != null) {
+        _imgPath = File(image.path);
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
+
+  /*相册*/
+  _openGallery() async {
+    var image = await ImagePicker().getImage(source: ImageSource.gallery);
+    _uploadData(File(image.path)); //
+    setState(() {
+      if (image != null) {
+        _imgPath = File(image.path);
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
+
+  _uploadData(File imgPath) async {
+    print(imgPath);
+    print(File(imgPath.path));
+    print(imgPath.path);
+    print(imgPath.path is String);
+    print(await MultipartFile.fromFile(imgPath.path));
+    FormData formData = new FormData.fromMap({
+      "tel": "17615322996",
+      'image': await MultipartFile.fromFile(imgPath.path)
+    });
+    print("formData");
+    var response =
+        await Dio().post("${Config.home}profile/images", data: formData);
+    print(response is Map);
+  }
 
   _changeSex() async {
     showModalBottomSheet(
@@ -74,12 +167,12 @@ class _UserMessageState extends State<UserMessage> {
   _upload_username() async {
     Navigator.of(context)
         .push(MaterialPageRoute(
-        builder: (context) =>
-            UserName(
-              arguments: {"tel":this.tel,"username":userName},
-            )))
+            builder: (context) => UserName(
+                  arguments: {"tel": this.tel, "username": userName},
+                )))
         .then((value) => _getName(value));
   }
+
   _showDatePicker() {
     DatePicker.showDatePicker(
       context,
@@ -104,7 +197,7 @@ class _UserMessageState extends State<UserMessage> {
         setState(() {
           _dateTime = dateTime;
           this.birthday =
-          '${formatDate(_dateTime, [yyyy, '年', mm, '月', 'dd'])}';
+              '${formatDate(_dateTime, [yyyy, '年', mm, '月', 'dd'])}';
         });
       },
     );
@@ -151,9 +244,18 @@ class _UserMessageState extends State<UserMessage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Scaffold(
+      child: new MaterialApp(
+        theme: GlobalConfig.themeData,
+        home: Scaffold(
           appBar: AppBar(
-            title: Text('Profile'),
+            title: Text('用户信息'),
+            centerTitle: true,
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back_rounded),
+              onPressed: (){
+                Navigator.of(context).pop();
+              },
+            ),
           ),
           body: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -161,93 +263,92 @@ class _UserMessageState extends State<UserMessage> {
               Container(
                   height: 100.0,
                   child: OutlineButton(
-                    child: Container(
-                        child: Stack(
-                          children: <Widget>[
-                            Positioned(
-                              right: 100,
-                              top: 20,
-                              child: Container(
-                                child: Text('Profile'), //!!!!!!!!!这里需要改正！！换成图片
-                              ),
-                            ),
-                            Positioned(
-                              child: Container(
-                                child: ListTile(
-                                    title: Container(
-                                      margin: const EdgeInsets.all(10.0),
-                                      child: Text('Profile'),
-                                    ),
-                                    trailing: Icon(Icons.chevron_right)),
-                              ),
-                            )
-                          ],
-                        )),
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'profilePhoto');
-                    },
-                  )),
-              Container(
-                height: 50.0,
-                child: OutlineButton(
-                    child: Container(
-                        child: Stack(
-                          children: <Widget>[
-                            Positioned(
-                              right: 100,
-                              top: 20,
-                              child: Container(
-                                child: Text(this
-                                    .userName), //这里要改成this.动态的,传参数问题
-                              ),
-                            ),
-                            Positioned(
-                              child: Container(
-                                child: ListTile(
-                                    title: Container(
-                                      margin: const EdgeInsets.all(10.0),
-                                      child: Text('Username'),
-                                    ),
-                                    trailing: Icon(Icons.chevron_right)),
-                              ),
-                            ),
-                          ],
-                        )),
-                    onPressed:_upload_username
-                ),
-              ),
-              Container(
-                height: 50.0,
-                child: OutlineButton(
-                  child: Container(
-                      child: Stack(
+                      child: Container(
+                          child: Stack(
                         children: <Widget>[
                           Positioned(
                             right: 100,
-                            top: 20,
-                            child: Container(
-                              child: Text(this.tel), //这里要改成this.动态的
-                            ),
+                            top: 10,
+                            child: new CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    "../../images/proimage.jpg"),
+                                radius: 20.0),
                           ),
                           Positioned(
                             child: Container(
                               child: ListTile(
                                   title: Container(
                                     margin: const EdgeInsets.all(10.0),
-                                    child: Text('Tel'),
+                                    child: Text('头像'),
                                   ),
                                   trailing: Icon(Icons.chevron_right)),
                             ),
-                          ),
+                          )
                         ],
                       )),
+                      onPressed: _changeAvatar
+                      // onPressed: () {
+                      //   Navigator.pushNamed(context, 'profilePhoto');
+                      // },
+                      )),
+              Container(
+                height: 50.0,
+                child: OutlineButton(
+                    child: Container(
+                        child: Stack(
+                      children: <Widget>[
+                        Positioned(
+                          right: 100,
+                          top: 20,
+                          child: Container(
+                            child: Text(this.userName), //这里要改成this.动态的,传参数问题
+                          ),
+                        ),
+                        Positioned(
+                          child: Container(
+                            child: ListTile(
+                                title: Container(
+                                  margin: const EdgeInsets.all(10.0),
+                                  child: Text('用户名'),
+                                ),
+                                trailing: Icon(Icons.chevron_right)),
+                          ),
+                        ),
+                      ],
+                    )),
+                    onPressed: _upload_username),
+              ),
+              Container(
+                height: 50.0,
+                child: OutlineButton(
+                  child: Container(
+                      child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                        right: 100,
+                        top: 20,
+                        child: Container(
+                          child: Text(this.tel), //这里要改成this.动态的
+                        ),
+                      ),
+                      Positioned(
+                        child: Container(
+                          child: ListTile(
+                              title: Container(
+                                margin: const EdgeInsets.all(10.0),
+                                child: Text('手机号'),
+                              ),
+                              trailing: Icon(Icons.chevron_right)),
+                        ),
+                      ),
+                    ],
+                  )),
                   onPressed: () {
                     Navigator.of(context)
                         .push(MaterialPageRoute(
-                        builder: (context) =>
-                            PhoneNumber(
-                              arguments: tel,
-                            )))
+                            builder: (context) => PhoneNumber(
+                                  arguments: tel,
+                                )))
                         .then((value) => _getNumber(value));
                   },
                 ),
@@ -257,58 +358,57 @@ class _UserMessageState extends State<UserMessage> {
                 child: OutlineButton(
                     child: Container(
                         child: Stack(
-                          children: <Widget>[
-                            Positioned(
-                              right: 100,
-                              top: 20,
-                              child: Container(
-                                child: Text(this.userSex), //这里要改成this.动态的
-                              ),
-                            ),
-                            Positioned(
-                              child: Container(
-                                child: ListTile(
-                                    title: Container(
-                                      margin: const EdgeInsets.all(10.0),
-                                      child: Text('Gender'),
-                                    ),
-                                    trailing: Icon(Icons.chevron_right)),
-                              ),
-                            ),
-                          ],
-                        )),
+                      children: <Widget>[
+                        Positioned(
+                          right: 100,
+                          top: 20,
+                          child: Container(
+                            child: Text(this.userSex), //这里要改成this.动态的
+                          ),
+                        ),
+                        Positioned(
+                          child: Container(
+                            child: ListTile(
+                                title: Container(
+                                  margin: const EdgeInsets.all(10.0),
+                                  child: Text('性别'),
+                                ),
+                                trailing: Icon(Icons.chevron_right)),
+                          ),
+                        ),
+                      ],
+                    )),
                     onPressed: _changeSex),
               ),
               Container(
                 height: 50.0,
                 child: OutlineButton(
-                  child: Container(
-                      child: Stack(
-                        children: <Widget>[
-                          Positioned(
-                            right: 100,
-                            top: 20,
-                            child: Container(
-                              child: Text(birthday), //这里要改成this.动态的
-                            ),
+                    child: Container(
+                        child: Stack(
+                      children: <Widget>[
+                        Positioned(
+                          right: 100,
+                          top: 20,
+                          child: Container(
+                            child: Text(birthday), //这里要改成this.动态的
                           ),
-                          Positioned(
-                            child: Container(
-                              child: ListTile(
-                                  title: Container(
-                                    margin: const EdgeInsets.all(10.0),
-                                    child: Text('Birthday'),
-                                  ),
-                                  trailing: Icon(Icons.chevron_right)),
-                            ),
+                        ),
+                        Positioned(
+                          child: Container(
+                            child: ListTile(
+                                title: Container(
+                                  margin: const EdgeInsets.all(10.0),
+                                  child: Text('出生日期'),
+                                ),
+                                trailing: Icon(Icons.chevron_right)),
                           ),
-                        ],
-                      )),
-                  onPressed: _showDatePicker
-                ),
+                        ),
+                      ],
+                    )),
+                    onPressed: _showDatePicker),
               ),
             ],
           )),
-    );
+      ) );
   }
 }

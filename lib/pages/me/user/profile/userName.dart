@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'package:garbage_classification/config/global_config.dart';
+
 import '../../../../services/Storage.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -49,9 +51,18 @@ class _UserNameState extends State<UserName> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Scaffold(
-            appBar: (AppBar(title: Text('用户名称'))),
+    return new MaterialApp(
+        theme: GlobalConfig.themeData,
+        home: Scaffold(
+            appBar: (AppBar(title: Text('用户名称'),
+              centerTitle: true,
+              leading: IconButton(
+                icon: Icon(Icons.arrow_back_rounded),
+                onPressed: (){
+                  Navigator.of(context).pop();
+                },
+              ),
+            )),
             body: Column(
               children: <Widget>[
                 Padding(

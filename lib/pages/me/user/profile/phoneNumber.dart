@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/config/global_config.dart';
 
 class PhoneNumber extends StatefulWidget {
   String arguments;
@@ -16,9 +17,18 @@ class _PhoneNumberState extends State<PhoneNumber> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Scaffold(
-            appBar: (AppBar(title: Text('电话号码'))),
+    return new MaterialApp(
+        theme: GlobalConfig.themeData,
+        home: Scaffold(
+            appBar: (AppBar(title: Text('电话号码'),
+              centerTitle: true,
+              leading: IconButton(
+                icon: Icon(Icons.arrow_back_rounded),
+                onPressed: (){
+                  Navigator.of(context).pop();
+                },
+              ),
+            )),
             body: Column(
               children: <Widget>[
                 Padding(
