@@ -13,10 +13,10 @@ class _ProfilePhotoState extends State<ProfilePhoto> {
     return Container(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('你的头像'),
+          title: Text('Profile'),
         ),
         body: Container(
-          child: Text('头像'),
+          child: Text('Profile'),
         ),
       ),
     );

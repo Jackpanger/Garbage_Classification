@@ -20,7 +20,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
     return new MaterialApp(
         theme: GlobalConfig.themeData,
         home: Scaffold(
-            appBar: (AppBar(title: Text('电话号码'),
+            appBar: (AppBar(title: Text('Tel'),
               centerTitle: true,
               leading: IconButton(
                 icon: Icon(Icons.arrow_back_rounded),
@@ -38,7 +38,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
                       TextField(
                         controller: phoneController,
                         decoration: InputDecoration(
-                          labelText: '请更改用户电话号码',
+                          labelText: 'Please change phone number',
                           icon: Icon(Icons.phone),
                           hintText: arguments,
                         ),
@@ -49,7 +49,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
                 Padding(
                     padding: EdgeInsets.all(20.0),
                     child: RaisedButton(
-                        child: Text('确定'),
+                        child: Text('Confirm'),
                         onPressed: () {
                           Navigator.pop(context, phoneController.text);
                         })),

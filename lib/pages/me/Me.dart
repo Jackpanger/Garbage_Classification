@@ -103,7 +103,7 @@ class _MeState extends State<Me> {
                   child: new TextButton(
                       onPressed: () {
                         Navigator.of(context)
-                            .push(MaterialPageRoute(builder: (context) => UserMessage()));
+                            .push(MaterialPageRoute(builder: (context) => UserMessage())).then((value) => value?_getUserInfo():null);
                       },
                       child: new Container(
                         child: new ListTile(
@@ -119,7 +119,7 @@ class _MeState extends State<Me> {
                           ),
                           subtitle: new Container(
                             margin: const EdgeInsets.only(top: 2.0),
-                            child: new Text("${this.userInfo[0]['username']}"),
+                            child: new Text("${this.userInfo[0]['tel']}"),
                           ),
                         ),
                       )),

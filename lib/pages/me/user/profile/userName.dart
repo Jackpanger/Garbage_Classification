@@ -54,7 +54,7 @@ class _UserNameState extends State<UserName> {
     return new MaterialApp(
         theme: GlobalConfig.themeData,
         home: Scaffold(
-            appBar: (AppBar(title: Text('用户名称'),
+            appBar: (AppBar(title: Text('Username'),
               centerTitle: true,
               leading: IconButton(
                 icon: Icon(Icons.arrow_back_rounded),
@@ -72,7 +72,7 @@ class _UserNameState extends State<UserName> {
                       TextField(
                         controller: userNameController,
                         decoration: InputDecoration(
-                          labelText: '请更改用户名称',
+                          labelText: 'Please change username',
                           icon: Icon(Icons.people),
                           hintText: widget.arguments["username"],
                         ),
@@ -83,7 +83,7 @@ class _UserNameState extends State<UserName> {
                 Padding(
                     padding: EdgeInsets.all(20.0),
                     child: ElevatedButton(
-                        child: Text('确定'),
+                        child: Text('Confirm'),
                         onPressed:doUpload,
                     )),
               ],
