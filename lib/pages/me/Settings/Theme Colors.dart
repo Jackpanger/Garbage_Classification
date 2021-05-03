@@ -9,8 +9,9 @@ class ThemeColorsPage extends StatefulWidget {
 
 class _ThemeColorsPageState extends State<ThemeColorsPage> {
   bool checkWhite = true;
-  bool checkPink = true;
   bool checkBlack = true;
+  bool checkPink = true;
+  bool checkYellow = true;
   bool checkBlue = true;
   bool checkRed = true;
   bool checkGreen = true;
@@ -40,12 +41,13 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                   onPressed: () {
                     setState(() {
                       if (checkWhite == true) {
-                        GlobalConfig.themeColorsChecka = true;
-                        GlobalConfig.themeColorsCheckb = false;
-                        GlobalConfig.themeColorsCheckc = false;
-                        GlobalConfig.themeColorsCheckd = false;
-                        GlobalConfig.themeColorsChecke = false;
-                        GlobalConfig.themeColorsCheckf = false;
+                        GlobalConfig.themeColorsCheckWhite = true;
+                        GlobalConfig.themeColorsCheckBlack = false;
+                        GlobalConfig.themeColorsCheckPink = false;
+                        GlobalConfig.themeColorsCheckYellow = false;
+                        GlobalConfig.themeColorsCheckBlue = false;
+                        GlobalConfig.themeColorsCheckRed = false;
+                        GlobalConfig.themeColorsCheckGreen = false;
                         GlobalConfig.themeColor = Colors.white;
                         //GlobalConfig.dark = false;
                       }
@@ -71,7 +73,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         ),
                       ),
                       trailing: Visibility(
-                        visible: GlobalConfig.themeColorsChecka,
+                        visible: GlobalConfig.themeColorsCheckWhite,
                         child: new Icon(
                           Icons.check,
                           color: Colors.blue,
@@ -87,13 +89,61 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
               child: new TextButton(
                   onPressed: () {
                     setState(() {
+                      if (checkBlack == true) {
+                        GlobalConfig.themeColorsCheckWhite = false;
+                        GlobalConfig.themeColorsCheckBlack = true;
+                        GlobalConfig.themeColorsCheckPink = false;
+                        GlobalConfig.themeColorsCheckYellow = false;
+                        GlobalConfig.themeColorsCheckBlue = false;
+                        GlobalConfig.themeColorsCheckRed = false;
+                        GlobalConfig.themeColorsCheckGreen = false;
+                        GlobalConfig.themeColor = Colors.black45;
+                      }
+                    });
+                  },
+                  child: new Container(
+                    child: new ListTile(
+                      leading: new Container(
+                        height: 25,
+                        width: 25,
+                        decoration: BoxDecoration(
+                          color: Colors.black45,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(5),
+                          ),
+                        ),
+                      ),
+                      title: new Container(
+                        child: new Text("Black",
+                          style: new TextStyle(
+                            fontSize: GlobalConfig.fontSize,
+                          ),
+                        ),
+                      ),
+                      trailing: Visibility(
+                        visible: GlobalConfig.themeColorsCheckBlack,
+                        child: new Icon(
+                          Icons.check,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                  )),
+            ),
+            Container(
+              margin: const EdgeInsets.only(bottom: 1.0),
+              color: GlobalConfig.rowColor,
+              child: new TextButton(
+                  onPressed: () {
+                    setState(() {
                       if (checkPink == true) {
-                        GlobalConfig.themeColorsChecka = false;
-                        GlobalConfig.themeColorsCheckb = true;
-                        GlobalConfig.themeColorsCheckc = false;
-                        GlobalConfig.themeColorsCheckd = false;
-                        GlobalConfig.themeColorsChecke = false;
-                        GlobalConfig.themeColorsCheckf = false;
+                        GlobalConfig.themeColorsCheckWhite = false;
+                        GlobalConfig.themeColorsCheckBlack = false;
+                        GlobalConfig.themeColorsCheckPink = true;
+                        GlobalConfig.themeColorsCheckYellow = false;
+                        GlobalConfig.themeColorsCheckBlue = false;
+                        GlobalConfig.themeColorsCheckRed = false;
+                        GlobalConfig.themeColorsCheckGreen = false;
                         GlobalConfig.themeColor = new Color(0xFFF06292);
                       }
                     });
@@ -118,7 +168,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         ),
                       ),
                       trailing: Visibility(
-                        visible: GlobalConfig.themeColorsCheckb,
+                        visible: GlobalConfig.themeColorsCheckPink,
                         child: new Icon(
                           Icons.check,
                           color: Colors.blue,
@@ -134,13 +184,14 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
               child: new TextButton(
                   onPressed: () {
                     setState(() {
-                      if (checkBlack == true) {
-                        GlobalConfig.themeColorsChecka = false;
-                        GlobalConfig.themeColorsCheckb = false;
-                        GlobalConfig.themeColorsCheckc = true;
-                        GlobalConfig.themeColorsCheckd = false;
-                        GlobalConfig.themeColorsChecke = false;
-                        GlobalConfig.themeColorsCheckf = false;
+                      if (checkYellow == true) {
+                        GlobalConfig.themeColorsCheckWhite = false;
+                        GlobalConfig.themeColorsCheckBlack = false;
+                        GlobalConfig.themeColorsCheckPink = false;
+                        GlobalConfig.themeColorsCheckYellow = true;
+                        GlobalConfig.themeColorsCheckBlue = false;
+                        GlobalConfig.themeColorsCheckRed = false;
+                        GlobalConfig.themeColorsCheckGreen = false;
                         GlobalConfig.themeColor = Colors.yellow;
                       }
                     });
@@ -165,7 +216,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         ),
                       ),
                       trailing: Visibility(
-                        visible: GlobalConfig.themeColorsCheckc,
+                        visible: GlobalConfig.themeColorsCheckYellow,
                         child: new Icon(
                           Icons.check,
                           color: Colors.blue,
@@ -182,12 +233,13 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                   onPressed: () {
                     setState(() {
                       if (checkBlue == true) {
-                        GlobalConfig.themeColorsChecka = false;
-                        GlobalConfig.themeColorsCheckb = false;
-                        GlobalConfig.themeColorsCheckc = false;
-                        GlobalConfig.themeColorsCheckd = true;
-                        GlobalConfig.themeColorsChecke = false;
-                        GlobalConfig.themeColorsCheckf = false;
+                        GlobalConfig.themeColorsCheckWhite = false;
+                        GlobalConfig.themeColorsCheckBlack = false;
+                        GlobalConfig.themeColorsCheckPink = false;
+                        GlobalConfig.themeColorsCheckYellow = false;
+                        GlobalConfig.themeColorsCheckBlue = true;
+                        GlobalConfig.themeColorsCheckRed = false;
+                        GlobalConfig.themeColorsCheckGreen = false;
                         GlobalConfig.themeColor = Colors.blue;
                       }
                     });
@@ -212,7 +264,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         ),
                       ),
                       trailing: Visibility(
-                        visible: GlobalConfig.themeColorsCheckd,
+                        visible: GlobalConfig.themeColorsCheckBlue,
                         child: new Icon(
                           Icons.check,
                           color: Colors.blue,
@@ -229,12 +281,13 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                   onPressed: () {
                     setState(() {
                       if (checkRed == true) {
-                        GlobalConfig.themeColorsChecka = false;
-                        GlobalConfig.themeColorsCheckb = false;
-                        GlobalConfig.themeColorsCheckc = false;
-                        GlobalConfig.themeColorsCheckd = false;
-                        GlobalConfig.themeColorsChecke = true;
-                        GlobalConfig.themeColorsCheckf = false;
+                        GlobalConfig.themeColorsCheckWhite = false;
+                        GlobalConfig.themeColorsCheckBlack = false;
+                        GlobalConfig.themeColorsCheckPink = false;
+                        GlobalConfig.themeColorsCheckYellow = false;
+                        GlobalConfig.themeColorsCheckBlue = false;
+                        GlobalConfig.themeColorsCheckRed = true;
+                        GlobalConfig.themeColorsCheckGreen = false;
                         GlobalConfig.themeColor = Colors.red;
                       }
                     });
@@ -259,7 +312,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         ),
                       ),
                       trailing: Visibility(
-                        visible: GlobalConfig.themeColorsChecke,
+                        visible: GlobalConfig.themeColorsCheckRed,
                         child: new Icon(
                           Icons.check,
                           color: Colors.blue,
@@ -276,12 +329,13 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                   onPressed: () {
                     setState(() {
                       if (checkGreen == true) {
-                        GlobalConfig.themeColorsChecka = false;
-                        GlobalConfig.themeColorsCheckb = false;
-                        GlobalConfig.themeColorsCheckc = false;
-                        GlobalConfig.themeColorsCheckd = false;
-                        GlobalConfig.themeColorsChecke = false;
-                        GlobalConfig.themeColorsCheckf = true;
+                        GlobalConfig.themeColorsCheckWhite = false;
+                        GlobalConfig.themeColorsCheckBlack = false;
+                        GlobalConfig.themeColorsCheckPink = false;
+                        GlobalConfig.themeColorsCheckYellow = false;
+                        GlobalConfig.themeColorsCheckBlue = false;
+                        GlobalConfig.themeColorsCheckRed = false;
+                        GlobalConfig.themeColorsCheckGreen = true;
                         GlobalConfig.themeColor = Colors.green;
                       }
                     });
@@ -306,7 +360,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         ),
                       ),
                       trailing: Visibility(
-                        visible: GlobalConfig.themeColorsCheckf,
+                        visible: GlobalConfig.themeColorsCheckGreen,
                         child: new Icon(
                           Icons.check,
                           color: Colors.blue,

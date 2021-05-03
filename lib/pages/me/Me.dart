@@ -78,11 +78,15 @@ class _MeState extends State<Me> {
                           ),
                           title: new Container(
                             margin: const EdgeInsets.only(bottom: 2.0),
-                            child: new Text("user"),
+                            child: new Text(
+                                "user",
+                                style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                           ),
                           subtitle: new Container(
                             margin: const EdgeInsets.only(top: 2.0),
-                            child: new Text("Login"),
+                            child: new Text(
+                                "Login",
+                                style: new TextStyle(fontSize: GlobalConfig.fontSize-2)),
                           ),
                         ),
                       )),
@@ -350,7 +354,7 @@ class _MeState extends State<Me> {
                       child: new Text(
                           GlobalConfig.dark == true ? "Day" : "Night",
                           style: new TextStyle(
-                              color: GlobalConfig.fontColor, fontSize: 16.0)),
+                              color: GlobalConfig.fontColor, fontSize: GlobalConfig.fontSize-2)),
                     )
                   ],
                 ),
@@ -381,7 +385,7 @@ class _MeState extends State<Me> {
                       new Container(
                         child: new Text("Settings",
                             style: new TextStyle(
-                                color: GlobalConfig.fontColor, fontSize: 16.0)),
+                                color: GlobalConfig.fontColor, fontSize: GlobalConfig.fontSize-2)),
                       )
                     ],
                   ),
