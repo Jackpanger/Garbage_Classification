@@ -109,8 +109,8 @@ class _MeState extends State<Me> {
                         child: new ListTile(
                           leading: new Container(
                             child: new CircleAvatar(
-                                backgroundImage: new NetworkImage(
-                                    "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3774803854,334110598&fm=26&gp=0.jpg"),
+                                backgroundImage: AssetImage(
+                                    "images/proimage.jpg"),
                                 radius: 20.0),
                           ),
                           title: new Container(

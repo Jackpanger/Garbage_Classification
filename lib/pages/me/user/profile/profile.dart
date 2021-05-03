@@ -153,7 +153,7 @@ class _UserMessageState extends State<UserMessage> {
     return Container(
       child: Scaffold(
           appBar: AppBar(
-            title: Text('用户信息'),
+            title: Text('Profile'),
           ),
           body: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -168,7 +168,7 @@ class _UserMessageState extends State<UserMessage> {
                               right: 100,
                               top: 20,
                               child: Container(
-                                child: Text('这里是个头像'), //!!!!!!!!!这里需要改正！！换成图片
+                                child: Text('Profile'), //!!!!!!!!!这里需要改正！！换成图片
                               ),
                             ),
                             Positioned(
@@ -176,7 +176,7 @@ class _UserMessageState extends State<UserMessage> {
                                 child: ListTile(
                                     title: Container(
                                       margin: const EdgeInsets.all(10.0),
-                                      child: Text('头像'),
+                                      child: Text('Profile'),
                                     ),
                                     trailing: Icon(Icons.chevron_right)),
                               ),
@@ -206,7 +206,7 @@ class _UserMessageState extends State<UserMessage> {
                                 child: ListTile(
                                     title: Container(
                                       margin: const EdgeInsets.all(10.0),
-                                      child: Text('用户名'),
+                                      child: Text('Username'),
                                     ),
                                     trailing: Icon(Icons.chevron_right)),
                               ),
@@ -234,7 +234,7 @@ class _UserMessageState extends State<UserMessage> {
                               child: ListTile(
                                   title: Container(
                                     margin: const EdgeInsets.all(10.0),
-                                    child: Text('手机号'),
+                                    child: Text('Tel'),
                                   ),
                                   trailing: Icon(Icons.chevron_right)),
                             ),
@@ -270,7 +270,7 @@ class _UserMessageState extends State<UserMessage> {
                                 child: ListTile(
                                     title: Container(
                                       margin: const EdgeInsets.all(10.0),
-                                      child: Text('性别'),
+                                      child: Text('Gender'),
                                     ),
                                     trailing: Icon(Icons.chevron_right)),
                               ),
@@ -297,7 +297,7 @@ class _UserMessageState extends State<UserMessage> {
                               child: ListTile(
                                   title: Container(
                                     margin: const EdgeInsets.all(10.0),
-                                    child: Text('出生日期'),
+                                    child: Text('Birthday'),
                                   ),
                                   trailing: Icon(Icons.chevron_right)),
                             ),
