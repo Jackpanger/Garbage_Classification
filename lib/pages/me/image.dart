@@ -68,9 +68,13 @@ class _ImagePickerState extends State<ImagePickerPage> {
 /*相册*/
   _openGallery() async {
     var image = await ImagePicker().getImage(source: ImageSource.gallery);
-
+    _uploadData(File(image.path)); //
     setState(() {
-      _imgPath = File(image.path);
+      if (image != null) {
+        _imgPath = File(image.path);
+      } else {
+        print('No image selected.');
+      }
     });
   }
 
