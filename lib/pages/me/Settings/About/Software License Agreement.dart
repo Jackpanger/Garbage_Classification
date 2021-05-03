@@ -22,7 +22,7 @@ class _softwareLicenseAgreementPageState
                 },
                 icon: Icon(Icons.arrow_back, size: 25),
               ),
-              title: Text("Software License agreement"),
+              title: Text("Software License Agreement"),
               centerTitle: true,
             ),
             body: ListView(children: <Widget>[

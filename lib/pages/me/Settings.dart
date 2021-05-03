@@ -29,7 +29,7 @@ class _SettingsState extends State<Settings> {
               icon: Icon(Icons.arrow_back_rounded),
               onPressed: () {
                 Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => Tabs()));
+                    .push(MaterialPageRoute(builder: (context) => Tabs(index: 2,)));
               },
             ),
           ),

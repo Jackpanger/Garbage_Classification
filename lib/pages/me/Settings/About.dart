@@ -135,7 +135,7 @@ class _AboutPageState extends State<AboutPage> {
                     child: new Container(
                       child: new ListTile(
                         title: new Container(
-                          child: new Text("Software License agreement",
+                          child: new Text("Software License Agreement",
                               style: new TextStyle(
                                   fontSize: GlobalConfig.fontSize)),
                         ),
