@@ -1,0 +1,1322 @@
+[
+  {
+    "title": 'A paper towel',
+    "kind": residual waste
+  },
+  {
+    "title": 'A toothpick',
+    "kind": residual waste
+  },
+  {
+    "title": 'mop',
+    "kind": residual waste
+  },
+  {
+    "title": 'cloth',
+    "kind": residual waste
+  },
+  {
+    "title": 'Disposable chopsticks',
+    "kind": residual waste
+  },
+  {
+    "title": 'ceramic',
+    "kind": residual waste
+  },
+  {
+    "title": 'waste',
+    "kind": residual waste
+  },
+  {
+    "title": 'Slag and Waste Removal',
+    "kind": residual waste
+  },
+  {
+    "title": 'Soil ceramic',
+    "kind": residual waste
+  },
+  {
+    "title": 'dishes',
+    "kind": residual waste
+  },
+  {
+    "title": 'Large bone',
+    "kind": residual waste
+  },
+  {
+    "title": 'shell',
+    "kind": residual waste
+  },
+  {
+    "title": 'Plastic bags',
+    "kind": residual waste
+  },
+  {
+    "title": 'Plastic wrap',
+    "kind": residual waste
+  },
+  {
+    "title": 'A4 paper',
+    "kind": residual waste
+  },
+  {
+    "title": 'paper',
+    "kind": residual waste
+  },
+  {
+    "title": 'Packaging bags',
+    "kind": residual waste
+  },
+  {
+    "title": 'Snack bag',
+    "kind": residual waste
+  },
+  {
+    "title": 'Express bag',
+    "kind": residual waste
+  },
+  {
+    "title": 'Hot lid',
+    "kind": residual waste
+  },
+  {
+    "title": 'The lid of a coffee cup',
+    "kind": residual waste
+  },
+  {
+    "title": 'The button',
+    "kind": residual waste
+  },
+  {
+    "title": 'Dry battery (mercury free)',
+    "kind": residual waste
+  },
+  {
+    "title": 'The mask',
+    "kind": residual waste
+  },
+  {
+    "title": 'Meat bones',
+    "kind": residual waste
+  },
+  {
+    "title": 'diapers',
+    "kind": residual waste
+  },
+  {
+    "title": 'pads',
+    "kind": residual waste
+  },
+  {
+    "title": 'The toilet paper',
+    "kind": residual waste
+  },
+  {
+    "title": 'The outer layer of sanitary napkin is thin plastic paper',
+    "kind": residual waste
+  },
+  {
+    "title": 'Wet paper towels',
+    "kind": residual waste
+  },
+  {
+    "title": 'The old bath crock',
+    "kind": residual waste
+  },
+  {
+    "title": 'basin',
+    "kind": residual waste
+  },
+  {
+    "title": 'Old sink',
+    "kind": residual waste
+  },
+  {
+    "title": 'condoms',
+    "kind": residual waste
+  },
+  {
+    "title": 'Ice sticks',
+    "kind": residual waste
+  },
+  {
+    "title": 'Ice bag',
+    "kind": residual waste
+  },
+  {
+    "title": 'Pen bag',
+    "kind": residual waste
+  },
+  {
+    "title": 'The bone',
+    "kind": residual waste
+  },
+  {
+    "title": 'shell',
+    "kind": residual waste
+  },
+  {
+    "title": 'Anti-condensation agent',
+    "kind": residual waste
+  },
+  {
+    "title": 'firecrackers',
+    "kind": residual waste
+  },
+  {
+    "title": 'Post-it notes',
+    "kind": residual waste
+  },
+  {
+    "title": 'The label',
+    "kind": residual waste
+  },
+  {
+    "title": 'Ice cream bag',
+    "kind": residual waste
+  },
+  {
+    "title": 'Ice stick',
+    "kind": residual waste
+  },
+  {
+    "title": 'The nasal stick',
+    "kind": residual waste
+  },
+  {
+    "title": 'The cup',
+    "kind": residual waste
+  },
+  {
+    "title": 'toilet paper',
+    "kind": residual waste
+  },
+  {
+    "title": 'Woven bag',
+    "kind": residual waste
+  },
+  {
+    "title": 'Cutting board',
+    "kind": residual waste
+  },
+  {
+    "title": 'Tea bag',
+    "kind": residual waste
+  },
+  {
+    "title": 'Vinegar package',
+    "kind": residual waste
+  },
+  {
+    "title": 'tape',
+    "kind": residual waste
+  },
+  {
+    "title": 'The draft paper',
+    "kind": residual waste
+  },
+  {
+    "title": 'ruler',
+    "kind": residual waste
+  },
+  {
+    "title": 'kitchen paper',
+    "kind": residual waste
+  },
+  {
+    "title": 'The teapot',
+    "kind": residual waste
+  },
+  {
+    "title": 'The tea bag',
+    "kind": residual waste
+  },
+  {
+    "title": 'Plant ash',
+    "kind": residual waste
+  },
+  {
+    "title": 'colored clay',
+    "kind": residual waste
+  },
+  {
+    "title": 'Porcelain pieces',
+    "kind": residual waste
+  },
+  {
+    "title": 'Hamster sand mat',
+    "kind": residual waste
+  },
+  {
+    "title": 'Broken ceramics',
+    "kind": residual waste
+  },
+  {
+    "title": 'mat',
+    "kind": residual waste
+  },
+  {
+    "title": 'Catering Takeaway Paper',
+    "kind": residual waste
+  },
+  {
+    "title": 'Cake bags',
+    "kind": residual waste
+  },
+  {
+    "title": 'The cake box',
+    "kind": residual waste
+  },
+  {
+    "title": 'straw',
+    "kind": residual waste
+  },
+  {
+    "title": 'Tag',
+    "kind": residual waste
+  },
+  {
+    "title": 'Staples',
+    "kind": residual waste
+  },
+  {
+    "title": 'pin',
+    "kind": residual waste
+  },
+  {
+    "title": 'CD',
+    "kind": residual waste
+  },
+  {
+    "title": 'card',
+    "kind": residual waste
+  },
+  {
+    "title": 'sponge',
+    "kind": residual waste
+  },
+  {
+    "title": 'Hair spray',
+    "kind": residual waste
+  },
+  {
+    "title": 'Discarded paper',
+    "kind": residual waste
+  },
+  {
+    "title": 'dry ice',
+    "kind": residual waste
+  },
+  {
+    "title": 'hay',
+    "kind": residual waste
+  },
+  {
+    "title": 'pen',
+    "kind": residual waste
+  },
+  {
+    "title": 'Solid glue',
+    "kind": residual waste
+  },
+  {
+    "title": 'sponge',
+    "kind": residual waste
+  },
+  {
+    "title": 'Flower mud',
+    "kind": residual waste
+  },
+  {
+    "title": 'Activated carbon',
+    "kind": residual waste
+  },
+  {
+    "title": 'wig',
+    "kind": residual waste
+  },
+  {
+    "title": 'Chicken feathers',
+    "kind": residual waste
+  },
+  {
+    "title": 'Capsule coffee',
+    "kind": residual waste
+  },
+  {
+    "title": 'metal',
+    "kind": residual waste
+  },
+  {
+    "title": 'Paper roll',
+    "kind": residual waste
+  },
+  {
+    "title": 'mirror',
+    "kind": residual waste
+  },
+  {
+    "title": 'Lipstick',
+    "kind": residual waste
+  },
+  {
+    "title": 'chewing gum',
+    "kind": residual waste
+  },
+  {
+    "title": 'basketball',
+    "kind": residual waste
+  },
+  {
+    "title": 'Durian Shell',
+    "kind": residual waste
+  },
+
+  {
+    "title":'Cereals and processed foods',
+    "kind": wet waste
+  },
+  {
+    "title":'Meat, eggs and processed foods',
+    "kind": wet waste
+  },
+  {
+    "title":'Aquatic products and processed foods',
+    "kind": wet waste
+  },
+  {
+    "title":'vegetables',
+    "kind": wet waste
+  },
+  {
+    "title":'Sauce',
+    "kind": wet waste
+  },
+  {
+    "title":'Leftovers',
+    "kind": wet waste
+  },
+
+  {
+    "title":'Hot pot soup base',
+    "kind": wet waste
+  },{
+    "title":'fish bone',
+    "kind": wet waste
+  },{
+    "title":'Broken bones',
+    "kind": wet waste
+  },
+  {
+    "title":'Tea dregs',
+    "kind": wet waste
+  },{
+    "title":'Coffee grounds',
+    "kind": wet waste
+  },{
+    "title":'Chinese medicine dregs',
+    "kind": wet waste
+  },{
+    "title":'expired food',
+    "kind": wet waste
+  },{
+    "title":'cake',
+    "kind": wet waste
+  },{
+    "title":'candy',
+    "kind": wet waste
+  },{
+    "title":'Air-dried food',
+    "kind": wet waste
+  },{
+    "title":'Powdered food',
+    "kind": wet waste
+  },{
+    "title":'Pet feed',
+    "kind": wet waste
+  },{
+    "title":'Melon peel and core',
+    "kind": wet waste
+  },{
+    "title":'Fruit pulp',
+    "kind": wet waste
+  },{
+    "title":'Fruit peel',
+    "kind": wet waste
+  },{
+    "title":'Fruit stems',
+    "kind": wet waste
+  },{
+    "title":'fruit',
+    "kind": wet waste
+  },{
+    "title":'Flower plant',
+    "kind": wet waste
+  },{
+    "title":'Domestic green plants',
+    "kind": wet waste
+  },{
+    "title":'flowers',
+    "kind": wet waste
+  },{
+    "title":'petal',
+    "kind": wet waste
+  },{
+    "title":'branches and leaves',
+    "kind": wet waste
+  },{
+    "title":'Porridge',
+    "kind": wet waste
+  },{
+    "title":'White tea',
+    "kind": wet waste
+  },{
+    "title":'pineapple',
+    "kind": wet waste
+  },{
+    "title":'Barbecued pork',
+    "kind": wet waste
+  },{
+    "title":'herb',
+    "kind": wet waste
+  },{
+    "title":'insect',
+    "kind": wet waste
+  },{
+    "title":'Vegetable leaf',
+    "kind": wet waste
+  },{
+    "title":'Vegetable leaves',
+    "kind": wet waste
+  },{
+    "title":'leftovers',
+    "kind": wet waste
+  },{
+    "title":'peels',
+    "kind": wet waste
+  },{
+    "title":'egg shells',
+    "kind": wet waste
+  },{
+    "title":'egg shells',
+    "kind": wet waste
+  },{
+    "title":'bones',
+    "kind": wet waste
+  },{
+    "title":'animal organs',
+    "kind": wet waste
+  },{
+    "title":'fish scales',
+    "kind": wet waste
+  },{
+    "title":'leaves',
+    "kind": wet waste
+  },{
+    "title":'weeds',
+    "kind": wet waste
+  },{
+    "title":'Food waste',
+    "kind": wet waste
+  },{
+    "title":'Cereals and processed foods',
+    "kind": wet waste
+  },{
+    "title":'Rice',
+    "kind": wet waste
+  },
+  {
+    "title":'noodles',
+    "kind": wet waste
+  },
+  {
+    "title":'bread',
+    "kind": wet waste
+  },{
+    "title":'beans',
+    "kind": wet waste
+  },{
+    "title":'Chicken',
+    "kind": wet waste
+  },{
+    "title":'duck',
+    "kind": wet waste
+  },{
+    "title":'pig',
+    "kind": wet waste
+  },{
+    "title":'lamb',
+    "kind": wet waste
+  },{
+    "title":'egg',
+    "kind": wet waste
+  },{
+    "title":'animal offal',
+    "kind": wet waste
+  },{
+    "title":'bacon',
+    "kind": wet waste
+  },{
+    "title":'luncheon meat',
+    "kind": wet waste
+  },{
+    "title":'eggshell',
+    "kind": wet waste
+  },{
+    "title":'aquatic products',
+    "kind": wet waste
+  },{
+    "title":'processed foods',
+    "kind": wet waste
+  },{
+    "title":'fish',
+    "kind": wet waste
+  },{
+    "title":'fish scales',
+    "kind": wet waste
+  },{
+    "title":'shrimp,',
+    "kind": wet waste
+  },{
+    "title":'shrimp shells',
+    "kind": wet waste
+  },{
+    "title":'squid',
+    "kind": wet waste
+  },{
+    "title":'vegetables',
+    "kind": wet waste
+  },{
+    "title":'green leafy vegetables',
+    "kind": wet waste
+  },{
+    "title":'root vegetables',
+    "kind": wet waste
+  },{
+    "title":'Mushrooms',
+    "kind": wet waste
+  },{
+    "title":'seasonings',
+    "kind": wet waste
+  },{
+    "title":'sauces',
+    "kind": wet waste
+  },{
+    "title":'Leftovers leftovers',
+    "kind": wet waste
+  },{
+    "title":'fish bones',
+    "kind": wet waste
+  },{
+    "title":'broken bones',
+    "kind": wet waste
+  },{
+    "title":'tea grounds',
+    "kind": wet waste
+  },{
+    "title":'coffee grounds',
+    "kind": wet waste
+  },{
+    "title":'Expired foods',
+    "kind": wet waste
+  },{
+    "title":'Expired foods',
+    "kind": wet waste
+  },{
+    "title":'pastries',
+    "kind": wet waste
+  },{
+    "title":'candies',
+    "kind": wet waste
+  },{
+    "title":'dried foods',
+    "kind": wet waste
+  },{
+    "title":'Flower plants',
+    "kind": wet waste
+  },{
+    "title":'domestic green plants',
+    "kind": wet waste
+  },{
+    "title":'flowers, petals',
+    "kind": wet waste
+  },{
+    "title":'branches and leaves',
+    "kind": wet waste
+  },{
+    "title":'Chinese medicine dregs',
+    "kind": wet waste
+  },{
+    "title":'domestic green plants',
+    "kind": wet waste
+  },{
+    "title":'flowers',
+    "kind": wet waste
+  },{
+    "title":'petals',
+    "kind": wet waste
+  },{
+    "title":'Cucumber peel',
+    "kind": wet waste
+  },{
+    "title":'Dragon fruit',
+    "kind": wet waste
+  },{
+    "title":'peanut',
+    "kind": wet waste
+  },{
+    "title":'sweet potato',
+    "kind": wet waste
+  },{
+    "title":'Red dates',
+    "kind": wet waste
+  },{
+    "title":'ravioli',
+    "kind": wet waste
+  },{
+    "title":'chicken',
+    "kind": wet waste
+  },{
+    "title":'Enoki mushroom',
+    "kind": wet waste
+  },{
+    "title":'Bitter gourd',
+    "kind": wet waste
+  },{
+    "title":'mouse',
+    "kind": wet waste
+  },{
+    "title":'Plum',
+    "kind": wet waste
+  },
+  {
+    "title": 'newspaper',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Copy paper',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'leaflets',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'envelope',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'cardboard',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Wrapping paper',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Kraft paper',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'carton',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Tissue box',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Snack box',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'milk carton',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Drink box',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Ice cream box',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Plastic bottles',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'bottles',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Water bottles',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'yogurt cup',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Soft bucket',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Plastic bags',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Plastic wrap',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Plastic foam',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Plastic stationery',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Plastic toys',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'glass',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Glass bottle',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Glass products',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'metal',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'cans',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Metal bottle',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Metal cup',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Metal products',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Metal cabinet',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'sofa',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'table',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'belt',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'chair',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'computer',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'host',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Canned food',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'School bag',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Perfume bottles',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'shoes',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'handbag',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'toys',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'pots',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'barrel',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'caps',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'umbrella',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'lock',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Advertising paper',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'clothes',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'tablecloth',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Plastic packaging',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Abandoned vehicles',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'light bulb',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'ashtray',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'furniture',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Artificial flowers',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'compass',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'candle',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'tire',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'headset',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'socks',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Bamboo stick',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Metal stick',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'card',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Floor tile',
+    "kind": recyclable waste
+  },
+  {
+    "title": 'Express box',
+    "kind": recyclable waste
+  },
+  {
+    "title":'Tin foil',
+    "kind": recyclable waste
+  },
+  {
+    "title":'Waste electronic products',
+    "kind": recyclable waste
+  },
+  {
+    "title":'insoles',
+    "kind": recyclable waste
+  },
+  {
+    "title":'bank card',
+    "kind": recyclable waste
+  },
+  {
+    "title":'hair dryer',
+    "kind": recyclable waste
+  },
+  {
+    "title":'scissors',
+    "kind": recyclable waste
+  },
+  {
+    "title":'knife',
+    "kind": recyclable waste
+  },
+  {
+    "title":'mouse',
+    "kind": recyclable waste
+  },
+  {
+    "title":'socket',
+    "kind": recyclable waste
+  },
+  {
+    "title":'wire',
+    "kind": recyclable waste
+  },
+  {
+    "title":'wood',
+    "kind": recyclable waste
+  },
+  {
+    "title":'screen',
+    "kind": recyclable waste
+  },
+  {
+    "title":'filter',
+    "kind": recyclable waste
+  },
+  {
+    "title":'Hold pillow',
+    "kind": recyclable waste
+  },
+  {
+    "title":'phone',
+    "kind": recyclable waste
+  },
+  {
+    "title":'bicycle',
+    "kind": recyclable waste
+  },
+  {
+    "title":'Aluminum foil',
+    "kind": recyclable waste
+  },
+  {
+    "title":'Rice cooker',
+    "kind": recyclable waste
+  },
+  {
+    "title":'sheets',
+    "kind": recyclable waste
+  },
+  {
+    "title":'Water pipe',
+    "kind": recyclable waste
+  },
+  {
+    "title":'camera',
+    "kind": recyclable waste
+  },
+  {
+    "title":'Cosmetics bottles',
+    "kind": recyclable waste
+  },
+  {
+    "title":'battery',
+    "kind": other waste
+  },
+  {
+    "title":'Rechargeable batteries',
+    "kind": other waste
+  },
+  {
+    "title":'phone batteries',
+    "kind": other waste
+  },
+  {
+    "title":'waste bottle',
+    "kind": other waste
+  },
+  {
+    "title":'waste fluorescent tubes',
+    "kind": other waste
+  },
+  {
+    "title":'waste mercury thermometer',
+    "kind": other waste
+  },
+  {
+    "title":'waste mercury blood pressure monitor',
+    "kind": other waste
+  },
+  {
+    "title":'Expired medicines',
+    "kind": other waste
+  },
+  {
+    "title":'paint',
+    "kind": other waste
+  },
+  {
+    "title":'pesticide',
+    "kind": other waste
+  },
+  {
+    "title":'pesticides',
+    "kind": other waste
+  },
+  {
+    "title":'Energy-saving lamps',
+    "kind": other waste
+  },
+  {
+    "title":'paint bucket',
+    "kind": other waste
+  },
+  {
+    "title":'Nickel cadmium battery',
+    "kind": other waste
+  },
+  {
+    "title":'alcohol',
+    "kind": other waste
+  },
+  {
+    "title":'Medical cotton swabs',
+    "kind": other waste
+  },
+  {
+    "title":'Medical gloves',
+    "kind": other waste
+  },
+  {
+    "title":'Medical gauze',
+    "kind": other waste
+  },
+  {
+    "title":'Medical items',
+    "kind": other waste
+  },
+  {
+    "title":'syringe',
+    "kind": other waste
+  },
+  {
+    "title":'Abandoned the light bulb',
+    "kind": other waste
+  },
+  {
+    "title":'Quick lime',
+    "kind": other waste
+  },
+  {
+    "title":'Film negatives',
+    "kind": other waste
+  },
+  {
+    "title":'Neutral pen',
+    "kind": other waste
+  },
+  {
+    "title":'The waste mineral oil',
+    "kind": other waste
+  },
+  {
+    "title":'film',
+    "kind": other waste
+  },
+  {
+    "title":'Industrial glue',
+    "kind": other waste
+  },
+  {
+    "title":'cement',
+    "kind": other waste
+  },
+  {
+    "title":'resin',
+    "kind": other waste
+  },
+  {
+    "title":'pigment',
+    "kind": other waste
+  },
+  {
+    "title":'Paint tube',
+    "kind": other waste
+  },
+  {
+    "title":'Hair dye',
+    "kind": other waste
+  },
+  {
+    "title":'cartridge',
+    "kind": other waste
+  },
+  {
+    "title":'Drum unit',
+    "kind": other waste
+  },
+  {
+    "title":'Nail polish',
+    "kind": other waste
+  },
+  {
+    "title":'Nail polish bottle',
+    "kind": other waste
+  },
+  {
+    "title":'plaster',
+    "kind": other waste
+  },
+  {
+    "title":'The bottle',
+    "kind": other waste
+  },
+  {
+    "title":'The needle',
+    "kind": other waste
+  },
+  {
+    "title":'cylinder',
+    "kind": other waste
+  },
+  {
+    "title":'packaging',
+    "kind": other waste
+  },
+  {
+    "title":'Disposable syringe',
+    "kind": other waste
+  },
+  {
+    "title":'Open plug dew',
+    "kind": other waste
+  },
+  {
+    "title":'Open plug dew',
+    "kind": other waste
+  },
+  {
+    "title":'Oral liquid',
+    "kind": other waste
+  },
+  {
+    "title":'Fluorescent lamp',
+    "kind": other waste
+  },
+  {
+    "title":'Rat poison',
+    "kind": other waste
+  },
+  {
+    "title":' X-ray',
+    "kind": other waste
+  },
+  {
+    "title":'Eye drops',
+    "kind": other waste
+  },
+  {
+    "title":'video',
+    "kind": other waste
+  },
+  {
+    "title":'producing',
+    "kind": other waste
+  },
+  {
+    "title":'capsule',
+    "kind": other waste
+  },
+  {
+    "title":'Calcium tablet',
+    "kind": other waste
+  },
+  {
+    "title":'Health care products',
+    "kind": other waste
+  },
+  {
+    "title":'disinfectant',
+    "kind": other waste
+  },
+  {
+    "title":'Disinfectant bottle',
+    "kind": other waste
+  },
+  {
+    "title":'Disinfectant packing',
+    "kind": other waste
+  },
+  {
+    "title":'Waste cosmetics',
+    "kind": other waste
+  },
+  {
+    "title":'solvent',
+    "kind": other waste
+  },
+  {
+    "title":'Waste film',
+    "kind": other waste
+  },
+  {
+    "title":'Waste rechargeable battery',
+    "kind": other waste
+  },
+  {
+    "title":'Waste button batteries',
+    "kind": other waste
+  },
+  {
+    "title":'Mineral oil containers',
+    "kind": other waste
+  },
+  {
+    "title":'Pesticide container',
+    "kind": other waste
+  },
+  {
+    "title":'The paint bucket',
+    "kind": other waste
+  },
+  {
+    "title":'Pesticide container',
+    "kind": other waste
+  },
+  {
+    "title":'Fast food lunch box',
+    "kind": other waste
+  },
+
+
+]

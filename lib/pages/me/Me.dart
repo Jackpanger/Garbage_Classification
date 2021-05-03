@@ -72,8 +72,8 @@ class _MeState extends State<Me> {
                         child: new ListTile(
                           leading: new Container(
                             child: new CircleAvatar(
-                                backgroundImage: new NetworkImage(
-                                    "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3774803854,334110598&fm=26&gp=0.jpg"),
+                                backgroundImage: AssetImage(
+                                    "images/proimage.jpg"),
                                 radius: 20.0),
                           ),
                           title: new Container(
@@ -315,10 +315,10 @@ class _MeState extends State<Me> {
                     GlobalConfig.rowColor = Colors.white;
                     GlobalConfig.arrowColor = Colors.black;
                     GlobalConfig.dark = false;
-                    GlobalConfig.pic1 = "images/ganlaji.png";
-                    GlobalConfig.pic2 = "images/shilaji.png";
-                    GlobalConfig.pic3 = "images/kehuishoulaji.png";
-                    GlobalConfig.pic4 = "images/qitalaji.png";
+                    GlobalConfig.pic1 = "images/residual.png";
+                    GlobalConfig.pic2 = "images/wet.png";
+                    GlobalConfig.pic3 = "images/recyclable.png";
+                    GlobalConfig.pic4 = "images/other.png";
                   } else {
                     GlobalConfig.themeData = new ThemeData.dark();
                     GlobalConfig.searchBackgroundColor = Colors.white10;
@@ -328,10 +328,10 @@ class _MeState extends State<Me> {
                     GlobalConfig.rowColor = Colors.black45;
                     GlobalConfig.arrowColor = Colors.white;
                     GlobalConfig.dark = true;
-                    GlobalConfig.pic1 = "images/ganlaji2.png";
-                    GlobalConfig.pic2 = "images/shilaji2.png";
-                    GlobalConfig.pic3 = "images/kehuishoulaji2.png";
-                    GlobalConfig.pic4 = "images/qitalaji2.png";
+                    GlobalConfig.pic1 = "images/residual2.png";
+                    GlobalConfig.pic2 = "images/wet2.png";
+                    GlobalConfig.pic3 = "images/recyclable2.png";
+                    GlobalConfig.pic4 = "images/other2.png";
                   }
                 });
               },

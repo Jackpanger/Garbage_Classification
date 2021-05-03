@@ -61,14 +61,14 @@ flutter:
   assets:
    - images/open.jpeg
    - images/search.png
-   - images/ganlaji.png
-   - images/kehuishoulaji.png
-   - images/qitalaji.png
-   - images/shilaji.png
-   - images/ganlaji2.png
-   - images/kehuishoulaji2.png
-   - images/qitalaji2.png
-   - images/shilaji2.png
+   - images/residual.png
+   - images/recyclable.png
+   - images/other.png
+   - images/wet.png
+   - images/residual2.png
+   - images/recyclable2.png
+   - images/other2.png
+   - images/wet2.png
    - images/ServicesBackground.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see

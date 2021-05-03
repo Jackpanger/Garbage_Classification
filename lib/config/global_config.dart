@@ -10,7 +10,7 @@ class GlobalConfig {
   static Color rowColor = Colors.black45;
   static Color arrowColor = Colors.white;
 
-  static double fontSize = 22.0;
+  static double fontSize = 20.0;
   static bool textSizeChecka = false;
   static bool textSizeCheckb = true;
   static bool textSizeCheckc = false;
@@ -32,8 +32,8 @@ class GlobalConfig {
   static bool Languageb = false;
   static bool Languagec = false;
 
-  static String pic1 = "images/ganlaji2.png";
-  static String pic2 = "images/shilaji2.png";
-  static String pic3 = "images/kehuishoulaji2.png";
-  static String pic4 = "images/qitalaji2.png";
+  static String pic1 = "images/residual2.png";
+  static String pic2 = "images/wet2.png";
+  static String pic3 = "images/recyclable2.png";
+  static String pic4 = "images/other2.png";
 }

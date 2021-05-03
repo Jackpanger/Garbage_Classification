@@ -31,14 +31,15 @@ class _LoginPageState extends State<LoginPage> {
       var api = '${Config.home}auth/login';
       var response = await Dio().post(api,
           data: {"username": this.username, "password": this.password});
-      if (response.data["success"]) {
-        Storage.setString('userInfo', json.encode(response.data["userinfo"]));
+      Map data = json.decode(response.data);
+      if (data["success"]) {
+        Storage.setString('userInfo', json.encode(data["userinfo"]));
         Navigator.of(context).pushAndRemoveUntil(
             new MaterialPageRoute(builder: (context) => new Tabs(index: 2)),
             (route) => route == null);
       } else {
         Fluttertoast.showToast(
-          msg: '${response.data["message"]}',
+          msg: '${data["message"]}',
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.CENTER,
         );
