@@ -271,7 +271,7 @@ class _UserMessageState extends State<UserMessage> {
                             top: 10,
                             child: new CircleAvatar(
                                 backgroundImage: AssetImage(
-                                    "../../images/proimage.jpg"),
+                                    "images/proimage.jpg"),
                                 radius: 20.0),
                           ),
                           Positioned(
