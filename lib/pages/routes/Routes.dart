@@ -12,8 +12,8 @@ import 'package:garbage_classification/pages/tabs/Tabs.dart';
 import 'package:garbage_classification/pages/me/user/Login.dart';
 
 final routes = {
-  // '/': (context) => Open(),
-  '/': (context) => ImagePickerPage(),
+  '/': (context) => Open(),
+  // '/': (context) => ImagePickerPage(),
   '/tabs': (context) => Tabs(),
   '/login': (context) => LoginPage(),
   '/mywork': (context) => MyworkPage(),
