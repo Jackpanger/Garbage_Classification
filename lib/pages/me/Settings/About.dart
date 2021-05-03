@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../config/global_config.dart';
 import 'About/Development Team.dart';
+import 'About/Software License Agreement.dart';
 
 class AboutPage extends StatefulWidget {
   AboutPage({Key key}) : super(key: key);
@@ -66,7 +67,7 @@ class _AboutPageState extends State<AboutPage> {
                   child: new ListTile(
                     title: new Container(
                       child: new Text(
-                        "你算什么垃圾APP",
+                        "Trash Assistant",
                         style: new TextStyle(fontSize: GlobalConfig.fontSize),
                         textAlign: TextAlign.center,
                       ),
@@ -128,13 +129,13 @@ class _AboutPageState extends State<AboutPage> {
                 color: GlobalConfig.rowColor,
                 child: new TextButton(
                     onPressed: () {
-                      // Navigator.of(context).push(MaterialPageRoute(
-                      //     builder: (context) => LanguagePage()));
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => softwareLicenseAgreementPage()));
                     },
                     child: new Container(
                       child: new ListTile(
                         title: new Container(
-                          child: new Text("软件许可使用协议",
+                          child: new Text("Software License agreement",
                               style: new TextStyle(
                                   fontSize: GlobalConfig.fontSize)),
                         ),

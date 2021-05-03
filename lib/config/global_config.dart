@@ -16,12 +16,13 @@ class GlobalConfig {
   static bool textSizeCheckc = false;
 
   static Color themeColor = Colors.white;
-  static bool themeColorsChecka = true;
-  static bool themeColorsCheckb = false;
-  static bool themeColorsCheckc = false;
-  static bool themeColorsCheckd = false;
-  static bool themeColorsChecke = false;
-  static bool themeColorsCheckf = false;
+  static bool themeColorsCheckWhite = true;
+  static bool themeColorsCheckBlack = false;
+  static bool themeColorsCheckPink = false;
+  static bool themeColorsCheckYellow = false;
+  static bool themeColorsCheckBlue = false;
+  static bool themeColorsCheckRed = false;
+  static bool themeColorsCheckGreen = false;
 
   static bool switchAccounta = true;
   static bool switchAccountb = false;
