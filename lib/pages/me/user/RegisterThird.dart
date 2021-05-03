@@ -35,13 +35,13 @@ class _RegisterThirdPageState extends State<RegisterThirdPage> {
   doRegister() async {
     if (password.length < 6) {
       Fluttertoast.showToast(
-        msg: '密码长度不能小于6位',
+        msg: 'Length of password cannot less than 6',
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
       );
     } else if (rpassword != password) {
       Fluttertoast.showToast(
-        msg: '密码和确认密码不一致',
+        msg: 'Not consistent',
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
       );

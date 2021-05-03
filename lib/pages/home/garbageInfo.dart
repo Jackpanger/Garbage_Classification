@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
 
-class GarbeageInfo extends StatefulWidget {
+class GarbageInfo extends StatefulWidget {
   Map arguments;
-  GarbeageInfo({Key key, this.arguments}) : super(key: key);
+  GarbageInfo({Key key, this.arguments}) : super(key: key);
 
   @override
-  _GarbeageInfoState createState() => _GarbeageInfoState();
+  _GarbageInfoState createState() => _GarbageInfoState();
 }
 
-class _GarbeageInfoState extends State<GarbeageInfo> {
+class _GarbageInfoState extends State<GarbageInfo> {
   Map arguments;
-  String name = '隐形眼镜';
-  String type = '3';
-  String explain = '干垃圾即其它垃圾，指除可回收物、有害垃圾、厨余垃圾（湿垃圾）以外的其它生活废弃物。';
-  String contain = '常见包括砖瓦陶瓷、渣土、卫生间废纸、猫砂、污损塑料、毛发、硬壳、一次性制品、灰土、瓷器碎片等难以回收的废弃物';
-  String tip = '尽量沥干水分；难以辨识类别的生活垃圾都可以投入干垃圾容器内';
+  // String name = '隐形眼镜';
+  // String type = '3';
+  // String explain = '干垃圾即其它垃圾，指除可回收物、有害垃圾、厨余垃圾（湿垃圾）以外的其它生活废弃物。';
+  // String contain = '常见包括砖瓦陶瓷、渣土、卫生间废纸、猫砂、污损塑料、毛发、硬壳、一次性制品、灰土、瓷器碎片等难以回收的废弃物';
+  // String tip = '尽量沥干水分；难以辨识类别的生活垃圾都可以投入干垃圾容器内';
+  String name;
+  String type;
+  String explain;
+  String contain;
+  String tip;
   @override
   void initState() {
     // TODO: implement initState

@@ -18,7 +18,6 @@ class _TabState extends State<Tabs> {
 
   _TabState(index) {
     _currentIndex = index;
-  //   widget.arguments['index'] == null ? _currentIndex = index : _currentIndex = widget.arguments['index'];
   }
 
   List _pageList = [
@@ -53,8 +52,8 @@ class _TabState extends State<Tabs> {
             label: "Category",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: "Settings",
+            icon: Icon(Icons.person_rounded),
+            label: "Me",
           ),
         ],
       ),

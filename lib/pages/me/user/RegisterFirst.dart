@@ -25,7 +25,7 @@ class _RegisterFirstPageState extends State<RegisterFirstPage> {
       print(data is Map);
       print(data);
       if (data["success"]) {
-        print(response);  //演示期间服务器直接返回  给手机发送的验证码
+        print(response);
         print({"tel": this.tel});
         Navigator.pushNamed(context, '/registerSecond',arguments: {
           "tel":this.tel
