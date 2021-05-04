@@ -28,11 +28,8 @@ class SearchBarDelegate extends SearchDelegate<String> {
             query);
     var response = await Dio().post(apiUrl.toString());
     print(response.data is Map);
-    return await Future.delayed(Duration(seconds: 5), () {
-      // 模拟有数据
+    return await Future.delayed(Duration(seconds: 2), () {
       return response.data;
-      // 模拟加载出错
-      // throw AssertionError("ERROR");
     });
   }
 
