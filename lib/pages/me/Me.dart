@@ -336,7 +336,7 @@ class _MeState extends State<Me> {
                     GlobalConfig.arrowColor = Colors.white;
                     GlobalConfig.dark = true;
                     GlobalConfig.fourPic['pic1'] = "images/residual2.png";
-                    GlobalConfig.fourPic['pic2'] = "images/wet2.png2";
+                    GlobalConfig.fourPic['pic2'] = "images/wet2.png";
                     GlobalConfig.fourPic['pic3'] = "images/recyclable2.png";
                     GlobalConfig.fourPic['pic4'] = "images/other2.png";
                   }
