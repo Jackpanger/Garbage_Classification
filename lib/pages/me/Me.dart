@@ -315,10 +315,10 @@ class _MeState extends State<Me> {
                     GlobalConfig.rowColor = Colors.white;
                     GlobalConfig.arrowColor = Colors.black;
                     GlobalConfig.dark = false;
-                    GlobalConfig.pic1 = "images/residual.png";
-                    GlobalConfig.pic2 = "images/wet.png";
-                    GlobalConfig.pic3 = "images/recyclable.png";
-                    GlobalConfig.pic4 = "images/other.png";
+                    GlobalConfig.fourPic['pic1'] = "images/residual.png";
+                    GlobalConfig.fourPic['pic2'] = "images/wet.png";
+                    GlobalConfig.fourPic['pic3'] = "images/recyclable.png";
+                    GlobalConfig.fourPic['pic4'] = "images/other.png";
                   } else {
                     GlobalConfig.themeData = new ThemeData.dark();
                     GlobalConfig.searchBackgroundColor = Colors.white10;
@@ -328,10 +328,10 @@ class _MeState extends State<Me> {
                     GlobalConfig.rowColor = Colors.black45;
                     GlobalConfig.arrowColor = Colors.white;
                     GlobalConfig.dark = true;
-                    GlobalConfig.pic1 = "images/residual2.png";
-                    GlobalConfig.pic2 = "images/wet2.png";
-                    GlobalConfig.pic3 = "images/recyclable2.png";
-                    GlobalConfig.pic4 = "images/other2.png";
+                    GlobalConfig.fourPic['pic1'] = "images/residual2.png";
+                    GlobalConfig.fourPic['pic2'] = "images/wet2.png2";
+                    GlobalConfig.fourPic['pic3'] = "images/recyclable2.png";
+                    GlobalConfig.fourPic['pic4'] = "images/other2.png";
                   }
                 });
               },
