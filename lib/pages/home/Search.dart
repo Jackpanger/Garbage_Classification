@@ -9,19 +9,20 @@ import 'kind.dart';
 import 'dart:convert';
 import 'package:dio/dio.dart';
 
-const recentSuggest = [];
+const recentSuggest = ['fish', 'aaa', 'b'];
+const popSuggest = [
+  'a',
+  'b',
+  'c',
+  'd',
+  'e',
+  'f',
+  'g',
+  'h'
+];
 
 class SearchBarDelegate extends SearchDelegate<String> {
-  // Future<Map> _getData(query, context) async {
-  //   var apiUrl = Uri.parse(
-  //       'http://api.tianapi.com/txapi/lajifenlei/index?key=c68b31c7fd6da492daceb9b059456e41&word=' +
-  //           query);
-  //   print(apiUrl.toString());
-  //   var response = await Dio().post(apiUrl.toString());
-  //   print(response.data is Map);
-  //   Map data = json.decode(response.data);
-  //   return data;
-  // }
+
   Future<Map> _getData(query, context) async {
     var apiUrl = Uri.parse(
         'http://api.tianapi.com/txapi/lajifenlei/index?key=c68b31c7fd6da492daceb9b059456e41&word=' +
@@ -132,26 +133,58 @@ class SearchBarDelegate extends SearchDelegate<String> {
         ? recentSuggest
         : searchList.where((input) => input.startsWith(query)).toList();
 
-    return ListView.builder(
-        itemCount: suggestionsList.length,
-        itemBuilder: (context, index) => ListTile(
-              title: RichText(
-                //富文本
-                text: TextSpan(
-                    text: suggestionsList[index].substring(0, query.length),
-                    style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
-                    children: [
-                      TextSpan(
-                          text: suggestionsList[index].substring(query.length),
-                          style: TextStyle(color: Colors.grey))
-                    ]),
+    if (query.isEmpty) {
+      return Column(
+        children: [
+          ListTile(
+            title: Text(
+              '常用搜索',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 20.0,
               ),
-              onTap: () {
-                query = suggestionsList[index];
-                buildResults(context);
-              },
-            ));
+            ),
+            trailing: Icon(Icons.restore),
+          ),
+          recommendButtom(recentSuggest),
+          ListTile(
+            title: Text(
+              '热门搜索',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 20.0,
+              ),
+            ),
+            trailing: Icon(Icons.search),
+          ),
+          recommendButtom(popSuggest),
+        ],
+      );
+    } else {
+      return ListView.builder(
+          itemCount: suggestionsList.length,
+          itemBuilder: (context, index) => ListTile(
+                title: RichText(
+                  //富文本
+                  text: TextSpan(
+                      text: suggestionsList[index].substring(0, query.length),
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold),
+                      children: [
+                        TextSpan(
+                            text:
+                                suggestionsList[index].substring(query.length),
+                            style: TextStyle(color: Colors.grey))
+                      ]),
+                ),
+                onTap: () {
+                  query = suggestionsList[index];
+                  print(query);
+                  print(context);
+                  buildResults(context);
+                },
+              ));
+    }
   }
 
   Widget garbageInfo(
@@ -165,105 +198,126 @@ class SearchBarDelegate extends SearchDelegate<String> {
         theme: ThemeData.dark(),
         home: Scaffold(
             body: Column(
-                children: <Widget>[
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        child: Image.asset('images/search.png', fit: BoxFit.cover),
-                        width: 200,
-                        height: 200,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      SizedBox(
-                        width: 20.0,
-                      ),
-                      Text('Name:  $name'),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text('Type:  $type'),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20.0,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Expanded(
-                          child: Text(
-                        '  Comment：',
-                        style: TextStyle(fontSize: 23.0, color: Colors.green),
-                      )),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Expanded(child: Text('$explain')),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Expanded(
-                          child: Text(
-                        '  Same type：',
-                        style: TextStyle(fontSize: 23.0, color: Colors.green),
-                      )),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Expanded(child: Text('$contain')),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Expanded(
-                          child: Text(
-                        '  Dispose ：',
-                        style: TextStyle(fontSize: 23.0, color: Colors.green),
-                      )),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Expanded(child: Text('$tip')),
+          children: <Widget>[
+            SizedBox(
+              height: 10.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  child: Image.asset('images/search.png', fit: BoxFit.cover),
+                  width: 200,
+                  height: 200,
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                SizedBox(
+                  width: 20.0,
+                ),
+                Text('Name:  $name'),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                SizedBox(
+                  width: 10.0,
+                ),
+                Text('Type:  $type'),
+              ],
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Expanded(
+                    child: Text(
+                  '  Comment：',
+                  style: TextStyle(fontSize: 23.0, color: Colors.green),
+                )),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                SizedBox(
+                  width: 15,
+                ),
+                Expanded(child: Text('$explain')),
+              ],
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Expanded(
+                    child: Text(
+                  '  Same type：',
+                  style: TextStyle(fontSize: 23.0, color: Colors.green),
+                )),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                SizedBox(
+                  width: 15,
+                ),
+                Expanded(child: Text('$contain')),
+              ],
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Expanded(
+                    child: Text(
+                  '  Dispose ：',
+                  style: TextStyle(fontSize: 23.0, color: Colors.green),
+                )),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                SizedBox(
+                  width: 15,
+                ),
+                Expanded(child: Text('$tip')),
               ],
             ),
           ],
         )));
+  }
+
+  Widget recommendButtom(List list) {
+    List buttonList = <Widget>[];
+    for (int i = 0; i < list.length; i++) {
+      buttonList.add(RaisedButton(
+          child: Text(list[i]),
+          textColor: Colors.black,
+          onPressed: () {
+            query = list[i];
+            print(query);
+          },
+          shape: RoundedRectangleBorder(
+              side: BorderSide.none,
+              borderRadius: BorderRadius.all(Radius.circular(50)))));
+    }
+
+    return Wrap(
+      spacing: 20,
+      children: buttonList,
+    );
   }
 }

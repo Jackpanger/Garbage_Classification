@@ -26,7 +26,7 @@ class _CategoryState extends State<CategoryPage> {
     var response1 = await Dio().post(api, data: {"kind": "residual waste"});
     setState(() {
       _data1 = response1.data["message"];
-      print(_data1.toString());
+      // print(_data1.toString());
     });
   }
 
@@ -35,7 +35,7 @@ class _CategoryState extends State<CategoryPage> {
     var response1 = await Dio().post(api, data: {"kind": "wet waste"});
     setState(() {
       _data2 = response1.data["message"];
-      print(_data1.toString());
+      // print(_data1.toString());
     });
   }
 
@@ -44,7 +44,7 @@ class _CategoryState extends State<CategoryPage> {
     var response1 = await Dio().post(api, data: {"kind": "recyclable waste"});
     setState(() {
       _data3 = response1.data["message"];
-      print(_data1.toString());
+      // print(_data1.toString());
     });
   }
 
@@ -53,7 +53,7 @@ class _CategoryState extends State<CategoryPage> {
     var response1 = await Dio().post(api, data: {"kind": "other waste"});
     setState(() {
       _data4 = response1.data["message"];
-      print(_data1.toString());
+      // print(_data1.toString());
     });
   }
 
@@ -67,11 +67,9 @@ class _CategoryState extends State<CategoryPage> {
     _getData4();
   }
 
-  @override
   void _favorites() {
     Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => favoritesPage())
-    );
+        builder: (context) => favoritesPage()));
   }
 
   @override
