@@ -28,6 +28,7 @@ class _TabState extends State<Tabs> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: this._pageList[this._currentIndex],
       bottomNavigationBar: BottomNavigationBar(

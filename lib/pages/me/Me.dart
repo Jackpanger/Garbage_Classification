@@ -4,10 +4,15 @@ import 'package:garbage_classification/pages/tabs/Tabs.dart';
 import 'package:garbage_classification/services/UserServices.dart';
 import '../../config/global_config.dart';
 import 'Settings.dart';
+import '../../services/Storage.dart';
 
 class Me extends StatefulWidget {
+  Me({
+    Key key,
+  }) : super(key: key);
+
   @override
-  _MeState createState() => _MeState();
+  _MeState createState({Key key}) => _MeState();
 }
 
 class _MeState extends State<Me> {
@@ -72,21 +77,21 @@ class _MeState extends State<Me> {
                         child: new ListTile(
                           leading: new Container(
                             child: new CircleAvatar(
-                                backgroundImage: AssetImage(
-                                    "images/proimage.jpg"),
+                                backgroundImage:
+                                    AssetImage("images/proimage.jpg"),
                                 radius: 20.0),
                           ),
                           title: new Container(
                             margin: const EdgeInsets.only(bottom: 2.0),
-                            child: new Text(
-                                "user",
-                                style: new TextStyle(fontSize: GlobalConfig.fontSize)),
+                            child: new Text("user",
+                                style: new TextStyle(
+                                    fontSize: GlobalConfig.fontSize)),
                           ),
                           subtitle: new Container(
                             margin: const EdgeInsets.only(top: 2.0),
-                            child: new Text(
-                                "Login",
-                                style: new TextStyle(fontSize: GlobalConfig.fontSize-2)),
+                            child: new Text("Login",
+                                style: new TextStyle(
+                                    fontSize: GlobalConfig.fontSize - 2)),
                           ),
                         ),
                       )),
@@ -103,14 +108,16 @@ class _MeState extends State<Me> {
                   child: new TextButton(
                       onPressed: () {
                         Navigator.of(context)
-                            .push(MaterialPageRoute(builder: (context) => UserMessage())).then((value) => value?_getUserInfo():null);
+                            .push(MaterialPageRoute(
+                                builder: (context) => UserMessage()))
+                            .then((value) => value ? _getUserInfo() : null);
                       },
                       child: new Container(
                         child: new ListTile(
                           leading: new Container(
                             child: new CircleAvatar(
-                                backgroundImage: AssetImage(
-                                    "images/proimage.jpg"),
+                                backgroundImage:
+                                    AssetImage("images/proimage.jpg"),
                                 radius: 20.0),
                           ),
                           title: new Container(
@@ -333,6 +340,12 @@ class _MeState extends State<Me> {
                     GlobalConfig.fourPic['pic3'] = "images/recyclable2.png";
                     GlobalConfig.fourPic['pic4'] = "images/other2.png";
                   }
+                  // Storage.setString('barColor', "hhh");
+                  // Navigator.pushReplacement(context, new MaterialPageRoute(builder: (BuildContext context){
+                  //   return Tabs(index: 2,);
+                  // }
+                  // )
+                  // );
                 });
               },
               child: new Container(
@@ -354,7 +367,8 @@ class _MeState extends State<Me> {
                       child: new Text(
                           GlobalConfig.dark == true ? "Day" : "Night",
                           style: new TextStyle(
-                              color: GlobalConfig.fontColor, fontSize: GlobalConfig.fontSize-2)),
+                              color: GlobalConfig.fontColor,
+                              fontSize: GlobalConfig.fontSize - 2)),
                     )
                   ],
                 ),
@@ -385,7 +399,8 @@ class _MeState extends State<Me> {
                       new Container(
                         child: new Text("Settings",
                             style: new TextStyle(
-                                color: GlobalConfig.fontColor, fontSize: GlobalConfig.fontSize-2)),
+                                color: GlobalConfig.fontColor,
+                                fontSize: GlobalConfig.fontSize - 2)),
                       )
                     ],
                   ),
