@@ -165,102 +165,102 @@ class SearchBarDelegate extends SearchDelegate<String> {
         theme: ThemeData.dark(),
         home: Scaffold(
             body: Column(
-          children: <Widget>[
-            SizedBox(
-              height: 10.0,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  child: Image.asset('images/search.png', fit: BoxFit.cover),
-                  width: 200,
-                  height: 200,
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                SizedBox(
-                  width: 20.0,
-                ),
-                Text('Name:  $name'),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                SizedBox(
-                  width: 10.0,
-                ),
-                Text('Type:  $type'),
-              ],
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Expanded(
-                    child: Text(
-                  '  Comment：',
-                  style: TextStyle(fontSize: 23.0, color: Colors.green),
-                )),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                SizedBox(
-                  width: 15,
-                ),
-                Expanded(child: Text('$explain')),
-              ],
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Expanded(
-                    child: Text(
-                  '  Same type：',
-                  style: TextStyle(fontSize: 23.0, color: Colors.green),
-                )),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                SizedBox(
-                  width: 15,
-                ),
-                Expanded(child: Text('$contain')),
-              ],
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Expanded(
-                    child: Text(
-                  '  Dispose ：',
-                  style: TextStyle(fontSize: 23.0, color: Colors.green),
-                )),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                SizedBox(
-                  width: 15,
-                ),
-                Expanded(child: Text('$tip')),
+                children: <Widget>[
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        child: Image.asset('images/search.png', fit: BoxFit.cover),
+                        width: 200,
+                        height: 200,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      SizedBox(
+                        width: 20.0,
+                      ),
+                      Text('Name:  $name'),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Text('Type:  $type'),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Expanded(
+                          child: Text(
+                        '  Comment：',
+                        style: TextStyle(fontSize: 23.0, color: Colors.green),
+                      )),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Expanded(child: Text('$explain')),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Expanded(
+                          child: Text(
+                        '  Same type：',
+                        style: TextStyle(fontSize: 23.0, color: Colors.green),
+                      )),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Expanded(child: Text('$contain')),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Expanded(
+                          child: Text(
+                        '  Dispose ：',
+                        style: TextStyle(fontSize: 23.0, color: Colors.green),
+                      )),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Expanded(child: Text('$tip')),
               ],
             ),
           ],
