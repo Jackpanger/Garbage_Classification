@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/pages/home/voice.dart';
 import 'package:garbage_classification/pages/me/image.dart';
 import 'package:garbage_classification/pages/me/user/RegisterFirst.dart';
 import 'package:garbage_classification/pages/me/user/RegisterSecond.dart';
@@ -24,6 +25,7 @@ final routes = {
   '/registerSecond': (context,{arguments}) => RegisterSecondPage(arguments:arguments),
   '/registerThird': (context,{arguments}) => RegisterThirdPage(arguments:arguments),
   "/images": (context) => ImagePickerPage(),
+  "/voice":(context) => VoicePage(),
 
 };
 var onGenerateRoute = (RouteSettings settings) {

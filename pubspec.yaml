@@ -23,7 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  provider: ^3.1.0+1
+  provider: ^5.0.0
 #  flutter_screenutil: ^5.0.0
   fluttertoast: ^8.0.4
   dio: ^4.0.0
@@ -41,6 +41,9 @@ dependencies:
   flutter_cupertino_date_picker_fork: ^1.0.3
   date_format: ^2.0.2
   flutter_swiper: ^1.1.6
+  flutter_sound: ^8.1.1
+  permission_handler: ^7.1.0
+  path_provider: ^2.0.1
 
 
 dev_dependencies:
