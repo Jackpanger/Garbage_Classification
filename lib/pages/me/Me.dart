@@ -64,9 +64,9 @@ class _MeState extends State<Me> {
                   margin: const EdgeInsets.only(
                       top: 30.0, left: 16.0, right: 16.0, bottom: 16.0),
                   decoration: new BoxDecoration(
-                      color: GlobalConfig.dark == true
-                          ? Colors.white10
-                          : new Color(0xFFF5F5F5),
+                      color: GlobalConfig.dark == true || GlobalConfig.themeColorsCheckWhite == true
+                          ? Colors.blue
+                          : GlobalConfig.themeColor,
                       borderRadius:
                           new BorderRadius.all(new Radius.circular(6.0))),
                   child: new TextButton(
@@ -306,7 +306,7 @@ class _MeState extends State<Me> {
         children: <Widget>[
           new Container(
             width: MediaQuery.of(context).size.width,
-            margin: const EdgeInsets.only(left: 6.0),
+            margin: const EdgeInsets.only(left: 6.0,),
             child: new TextButton(
               onPressed: () {
                 setState(() {
@@ -321,6 +321,14 @@ class _MeState extends State<Me> {
                     GlobalConfig.fontColor = Colors.black54;
                     GlobalConfig.rowColor = Colors.white;
                     GlobalConfig.arrowColor = Colors.black;
+                    GlobalConfig.themeColor = Colors.white;
+                    GlobalConfig.themeColorsCheckWhite = true;
+                    GlobalConfig.themeColorsCheckBlack = false;
+                    GlobalConfig.themeColorsCheckPink = false;
+                    GlobalConfig.themeColorsCheckYellow = false;
+                    GlobalConfig.themeColorsCheckBlue = false;
+                    GlobalConfig.themeColorsCheckRed = false;
+                    GlobalConfig.themeColorsCheckGreen = false;
                     GlobalConfig.dark = false;
                     GlobalConfig.fourPic['pic1'] = "images/residual.png";
                     GlobalConfig.fourPic['pic2'] = "images/wet.png";
@@ -334,6 +342,14 @@ class _MeState extends State<Me> {
                     GlobalConfig.fontColor = Colors.white30;
                     GlobalConfig.rowColor = Colors.black45;
                     GlobalConfig.arrowColor = Colors.white;
+                    GlobalConfig.themeColor = new Color(0xFF222222);
+                    GlobalConfig.themeColorsCheckWhite = false;
+                    GlobalConfig.themeColorsCheckBlack = true;
+                    GlobalConfig.themeColorsCheckPink = false;
+                    GlobalConfig.themeColorsCheckYellow = false;
+                    GlobalConfig.themeColorsCheckBlue = false;
+                    GlobalConfig.themeColorsCheckRed = false;
+                    GlobalConfig.themeColorsCheckGreen = false;
                     GlobalConfig.dark = true;
                     GlobalConfig.fourPic['pic1'] = "images/residual2.png";
                     GlobalConfig.fourPic['pic2'] = "images/wet2.png";
@@ -349,6 +365,7 @@ class _MeState extends State<Me> {
                 });
               },
               child: new Container(
+                //margin: const EdgeInsets.only(bottom: 10),
                 child: new Row(
                   children: <Widget>[
                     new Container(

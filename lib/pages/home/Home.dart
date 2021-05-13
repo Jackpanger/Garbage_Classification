@@ -95,6 +95,7 @@ class _HomepageState extends State<Homepage> {
       theme: GlobalConfig.themeData,
       home: new Scaffold(
         appBar: AppBar(
+          backgroundColor: GlobalConfig.themeColor,
           title: Text("Search"),
           centerTitle: true,
         ),

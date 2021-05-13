@@ -41,7 +41,9 @@ class _TabState extends State<Tabs> {
           });
         },
 
-        fixedColor: Colors.blue,
+        fixedColor: GlobalConfig.dark == true || GlobalConfig.themeColorsCheckWhite == true
+            ? Colors.blue
+            : GlobalConfig.themeColor,
 
         items: [
           BottomNavigationBarItem(

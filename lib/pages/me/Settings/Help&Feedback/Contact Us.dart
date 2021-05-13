@@ -13,6 +13,7 @@ class ContactUsPage extends StatelessWidget {
       theme: GlobalConfig.themeData,
       home: new Scaffold(
         appBar: AppBar(
+          backgroundColor: GlobalConfig.themeColor,
           leading: new IconButton(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(

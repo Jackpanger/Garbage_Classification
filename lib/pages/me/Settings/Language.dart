@@ -24,6 +24,7 @@ class _LanguagePageState extends State<LanguagePage> {
         theme: GlobalConfig.themeData,
         home: Scaffold(
             appBar: AppBar(
+              backgroundColor: GlobalConfig.themeColor,
               leading: new IconButton(
                 onPressed: () {
                   Navigator.of(context).pop();

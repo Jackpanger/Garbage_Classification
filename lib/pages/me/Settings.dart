@@ -23,6 +23,7 @@ class _SettingsState extends State<Settings> {
       theme: GlobalConfig.themeData,
       home: new Scaffold(
           appBar: AppBar(
+            backgroundColor: GlobalConfig.themeColor,
             title: Text("Settings"),
             centerTitle: true,
             leading: IconButton(

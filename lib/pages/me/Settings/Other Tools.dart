@@ -14,6 +14,7 @@ class _OtherToolsPageState extends State<OtherToolsPage> {
       theme: GlobalConfig.themeData,
       home: new Scaffold(
         appBar: AppBar(
+          backgroundColor: GlobalConfig.themeColor,
           leading: new IconButton(
             onPressed: (){
               Navigator.of(context).pop();
