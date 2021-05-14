@@ -4,6 +4,9 @@ import 'package:garbage_classification/pages/me/image.dart';
 import 'package:garbage_classification/pages/me/user/RegisterFirst.dart';
 import 'package:garbage_classification/pages/me/user/RegisterSecond.dart';
 import 'package:garbage_classification/pages/me/user/RegisterThird.dart';
+import 'package:garbage_classification/pages/me/user/forget/ForgetFirst.dart';
+import 'package:garbage_classification/pages/me/user/forget/ForgetSecond.dart';
+import 'package:garbage_classification/pages/me/user/forget/ForgetThird.dart';
 import 'package:garbage_classification/pages/me/user/section/favorites.dart';
 import 'package:garbage_classification/pages/me/user/section/mywork.dart';
 import 'package:garbage_classification/pages/me/user/section/recent.dart';
@@ -26,6 +29,9 @@ final routes = {
   '/registerThird': (context,{arguments}) => RegisterThirdPage(arguments:arguments),
   "/images": (context) => ImagePickerPage(),
   "/voice":(context) => VoicePage(),
+  '/forgetFirst':(context) => ForgetFirstPage(),
+  '/forgetSecond':(context,{arguments}) => ForgetSecondPage(arguments:arguments),
+  '/forgetThird':(context,{arguments}) => ForgetThirdPage(arguments:arguments),
 
 };
 var onGenerateRoute = (RouteSettings settings) {

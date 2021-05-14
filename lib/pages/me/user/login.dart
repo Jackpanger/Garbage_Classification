@@ -102,9 +102,13 @@ class _LoginPageState extends State<LoginPage> {
               child: Stack(
                 children: <Widget>[
                   Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text('Forget password'),
-                  ),
+                      alignment: Alignment.centerLeft,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/forgetFirst');
+                        },
+                        child: Text('Forget password'),
+                      )),
                   Align(
                     alignment: Alignment.centerRight,
                     child: InkWell(
