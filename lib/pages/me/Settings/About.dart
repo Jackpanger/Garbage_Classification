@@ -34,6 +34,7 @@ class _AboutPageState extends State<AboutPage> {
       theme: GlobalConfig.themeData,
       home: new Scaffold(
         appBar: AppBar(
+          backgroundColor: GlobalConfig.themeColor,
           leading: new IconButton(
             onPressed: () {
               Navigator.of(context).pop();
@@ -53,8 +54,8 @@ class _AboutPageState extends State<AboutPage> {
                   height: 100,
                   // width: 300,
                   decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(20),
+                    //color: Colors.blue,
+                    //borderRadius: BorderRadius.circular(20),
                     image: DecorationImage(image:AssetImage("images/search.png"),
                         fit: BoxFit.cover)
                   ),

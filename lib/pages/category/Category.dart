@@ -85,24 +85,30 @@ class _CategoryState extends State<CategoryPage> {
                 actions: <Widget>[
                   new IconButton(icon: new Icon(Icons.list), onPressed: _favorites),
                 ],
-                backgroundColor: GlobalConfig.cardBackgroundColor,
+                backgroundColor: GlobalConfig.themeColor,
                 bottom: TabBar(
+                  // unselectedLabelColor: GlobalConfig.arrowColor,
+                  // labelColor: Colors.blue,
+                  indicatorColor: GlobalConfig.arrowColor,  //显示当前位置的指示器颜色
+                  indicatorWeight: 3.0,
                   //    backgroundColor: GlobalConfig.cardBackgroundColor,
                   tabs: <Widget>[
                     Tab(
-                      child: Text(
-                        "Residual",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: GlobalConfig.fontColor, fontSize: 18.0),
+                      child: Container(
+                        child: Text(
+                          "Residual",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 18.0),
+                        ),
                       ),
-                    ),
+                ),
                     Tab(
                       child: Text(
                         "Wet",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: GlobalConfig.fontColor, fontSize: 18.0),
+                             fontSize: 18.0),
                       ),
                     ),
                     Tab(
@@ -110,7 +116,7 @@ class _CategoryState extends State<CategoryPage> {
                         "Recyclable",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: GlobalConfig.fontColor, fontSize: 18.0),
+                             fontSize: 18.0),
                       ),
                     ),
                     Tab(
@@ -118,7 +124,7 @@ class _CategoryState extends State<CategoryPage> {
                         "Other",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: GlobalConfig.fontColor, fontSize: 18.0),
+                             fontSize: 18.0),
                       ),
                     ),
                   ],

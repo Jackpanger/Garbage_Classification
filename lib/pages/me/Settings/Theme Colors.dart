@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../config/global_config.dart';
+import '../Settings.dart';
 
 class ThemeColorsPage extends StatefulWidget {
   ThemeColorsPage({Key key}) : super(key: key);
@@ -23,8 +24,9 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
         appBar: AppBar(
           backgroundColor: GlobalConfig.themeColor,
           leading: new IconButton(
-            onPressed: (){
-              Navigator.of(context).pop();
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => Settings()));
             },
             icon: Icon(Icons.arrow_back, size: 25),
           ),
@@ -40,7 +42,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
               child: new TextButton(
                   onPressed: () {
                     setState(() {
-                      if (checkWhite == true) {
+                      if (checkWhite == true && GlobalConfig.dark == false) {
                         GlobalConfig.themeColorsCheckWhite = true;
                         GlobalConfig.themeColorsCheckBlack = false;
                         GlobalConfig.themeColorsCheckPink = false;
@@ -49,7 +51,31 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         GlobalConfig.themeColorsCheckRed = false;
                         GlobalConfig.themeColorsCheckGreen = false;
                         GlobalConfig.themeColor = Colors.white;
-                        //GlobalConfig.dark = false;
+                      }
+                      else if(checkWhite == true && GlobalConfig.dark == true){
+                        GlobalConfig.themeColorsCheckWhite = true;
+                        GlobalConfig.themeColorsCheckBlack = false;
+                        GlobalConfig.themeColorsCheckPink = false;
+                        GlobalConfig.themeColorsCheckYellow = false;
+                        GlobalConfig.themeColorsCheckBlue = false;
+                        GlobalConfig.themeColorsCheckRed = false;
+                        GlobalConfig.themeColorsCheckGreen = false;
+                        GlobalConfig.themeColor = Colors.white;
+                        GlobalConfig.themeData = new ThemeData(
+                          primaryColor: Colors.white,
+                          scaffoldBackgroundColor: new Color(0xFFEBEBEB),
+                        );
+                        GlobalConfig.barColor = Colors.grey;
+                        GlobalConfig.searchBackgroundColor = new Color(0xFFEBEBEB);
+                        GlobalConfig.cardBackgroundColor = Colors.white;
+                        GlobalConfig.fontColor = Colors.black54;
+                        GlobalConfig.rowColor = Colors.white;
+                        GlobalConfig.arrowColor = Colors.black;
+                        GlobalConfig.dark = false;
+                        GlobalConfig.fourPic['pic1'] = "images/residual.png";
+                        GlobalConfig.fourPic['pic2'] = "images/wet.png";
+                        GlobalConfig.fourPic['pic3'] = "images/recyclable.png";
+                        GlobalConfig.fourPic['pic4'] = "images/other.png";
                       }
                     });
                   },
@@ -89,7 +115,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
               child: new TextButton(
                   onPressed: () {
                     setState(() {
-                      if (checkBlack == true) {
+                      if (checkBlack == true && GlobalConfig.dark == false) {
                         GlobalConfig.themeColorsCheckWhite = false;
                         GlobalConfig.themeColorsCheckBlack = true;
                         GlobalConfig.themeColorsCheckPink = false;
@@ -97,7 +123,29 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         GlobalConfig.themeColorsCheckBlue = false;
                         GlobalConfig.themeColorsCheckRed = false;
                         GlobalConfig.themeColorsCheckGreen = false;
-                        GlobalConfig.themeColor = Colors.black45;
+                        GlobalConfig.themeColor = new Color(0xFF222222);
+                        GlobalConfig.themeData = new ThemeData.dark();
+                        GlobalConfig.searchBackgroundColor = Colors.white10;
+                        GlobalConfig.cardBackgroundColor = new Color(0xFF222222);
+                        GlobalConfig.barColor = Colors.white;
+                        GlobalConfig.fontColor = Colors.white30;
+                        GlobalConfig.rowColor = Colors.black45;
+                        GlobalConfig.arrowColor = Colors.white;
+                        GlobalConfig.dark = true;
+                        GlobalConfig.fourPic['pic1'] = "images/residual2.png";
+                        GlobalConfig.fourPic['pic2'] = "images/wet2.png";
+                        GlobalConfig.fourPic['pic3'] = "images/recyclable2.png";
+                        GlobalConfig.fourPic['pic4'] = "images/other2.png";
+                      }
+                      else if(checkBlack == true && GlobalConfig.dark == true){
+                        GlobalConfig.themeColorsCheckWhite = false;
+                        GlobalConfig.themeColorsCheckBlack = true;
+                        GlobalConfig.themeColorsCheckPink = false;
+                        GlobalConfig.themeColorsCheckYellow = false;
+                        GlobalConfig.themeColorsCheckBlue = false;
+                        GlobalConfig.themeColorsCheckRed = false;
+                        GlobalConfig.themeColorsCheckGreen = false;
+                        GlobalConfig.themeColor = new Color(0xFF222222);
                       }
                     });
                   },
@@ -136,7 +184,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
               child: new TextButton(
                   onPressed: () {
                     setState(() {
-                      if (checkPink == true) {
+                      if (checkPink == true && GlobalConfig.dark == false) {
                         GlobalConfig.themeColorsCheckWhite = false;
                         GlobalConfig.themeColorsCheckBlack = false;
                         GlobalConfig.themeColorsCheckPink = true;
@@ -145,6 +193,30 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         GlobalConfig.themeColorsCheckRed = false;
                         GlobalConfig.themeColorsCheckGreen = false;
                         GlobalConfig.themeColor = new Color(0xFFF06292);
+                      }else if(checkPink == true && GlobalConfig.dark == true){
+                        GlobalConfig.themeColorsCheckWhite = false;
+                        GlobalConfig.themeColorsCheckBlack = false;
+                        GlobalConfig.themeColorsCheckPink = true;
+                        GlobalConfig.themeColorsCheckYellow = false;
+                        GlobalConfig.themeColorsCheckBlue = false;
+                        GlobalConfig.themeColorsCheckRed = false;
+                        GlobalConfig.themeColorsCheckGreen = false;
+                        GlobalConfig.themeColor = new Color(0xFFF06292);
+                        GlobalConfig.themeData = new ThemeData(
+                          primaryColor: Colors.white,
+                          scaffoldBackgroundColor: new Color(0xFFEBEBEB),
+                        );
+                        GlobalConfig.barColor = Colors.grey;
+                        GlobalConfig.searchBackgroundColor = new Color(0xFFEBEBEB);
+                        GlobalConfig.cardBackgroundColor = Colors.white;
+                        GlobalConfig.fontColor = Colors.black54;
+                        GlobalConfig.rowColor = Colors.white;
+                        GlobalConfig.arrowColor = Colors.black;
+                        GlobalConfig.dark = false;
+                        GlobalConfig.fourPic['pic1'] = "images/residual.png";
+                        GlobalConfig.fourPic['pic2'] = "images/wet.png";
+                        GlobalConfig.fourPic['pic3'] = "images/recyclable.png";
+                        GlobalConfig.fourPic['pic4'] = "images/other.png";
                       }
                     });
                   },
@@ -184,7 +256,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
               child: new TextButton(
                   onPressed: () {
                     setState(() {
-                      if (checkYellow == true) {
+                      if (checkYellow == true && GlobalConfig.dark == false) {
                         GlobalConfig.themeColorsCheckWhite = false;
                         GlobalConfig.themeColorsCheckBlack = false;
                         GlobalConfig.themeColorsCheckPink = false;
@@ -193,6 +265,30 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         GlobalConfig.themeColorsCheckRed = false;
                         GlobalConfig.themeColorsCheckGreen = false;
                         GlobalConfig.themeColor = Colors.yellow;
+                      }else if(checkYellow == true && GlobalConfig.dark == true){
+                        GlobalConfig.themeColorsCheckWhite = false;
+                        GlobalConfig.themeColorsCheckBlack = false;
+                        GlobalConfig.themeColorsCheckPink = false;
+                        GlobalConfig.themeColorsCheckYellow = true;
+                        GlobalConfig.themeColorsCheckBlue = false;
+                        GlobalConfig.themeColorsCheckRed = false;
+                        GlobalConfig.themeColorsCheckGreen = false;
+                        GlobalConfig.themeColor = Colors.yellow;
+                        GlobalConfig.themeData = new ThemeData(
+                          primaryColor: Colors.white,
+                          scaffoldBackgroundColor: new Color(0xFFEBEBEB),
+                        );
+                        GlobalConfig.barColor = Colors.grey;
+                        GlobalConfig.searchBackgroundColor = new Color(0xFFEBEBEB);
+                        GlobalConfig.cardBackgroundColor = Colors.white;
+                        GlobalConfig.fontColor = Colors.black54;
+                        GlobalConfig.rowColor = Colors.white;
+                        GlobalConfig.arrowColor = Colors.black;
+                        GlobalConfig.dark = false;
+                        GlobalConfig.fourPic['pic1'] = "images/residual.png";
+                        GlobalConfig.fourPic['pic2'] = "images/wet.png";
+                        GlobalConfig.fourPic['pic3'] = "images/recyclable.png";
+                        GlobalConfig.fourPic['pic4'] = "images/other.png";
                       }
                     });
                   },
@@ -232,7 +328,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
               child: new TextButton(
                   onPressed: () {
                     setState(() {
-                      if (checkBlue == true) {
+                      if (checkBlue == true && GlobalConfig.dark == false) {
                         GlobalConfig.themeColorsCheckWhite = false;
                         GlobalConfig.themeColorsCheckBlack = false;
                         GlobalConfig.themeColorsCheckPink = false;
@@ -241,6 +337,30 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         GlobalConfig.themeColorsCheckRed = false;
                         GlobalConfig.themeColorsCheckGreen = false;
                         GlobalConfig.themeColor = Colors.blue;
+                      }else if(checkBlue == true && GlobalConfig.dark == true){
+                        GlobalConfig.themeColorsCheckWhite = false;
+                        GlobalConfig.themeColorsCheckBlack = false;
+                        GlobalConfig.themeColorsCheckPink = false;
+                        GlobalConfig.themeColorsCheckYellow = false;
+                        GlobalConfig.themeColorsCheckBlue = true;
+                        GlobalConfig.themeColorsCheckRed = false;
+                        GlobalConfig.themeColorsCheckGreen = false;
+                        GlobalConfig.themeColor = Colors.blue;
+                        GlobalConfig.themeData = new ThemeData(
+                          primaryColor: Colors.white,
+                          scaffoldBackgroundColor: new Color(0xFFEBEBEB),
+                        );
+                        GlobalConfig.barColor = Colors.grey;
+                        GlobalConfig.searchBackgroundColor = new Color(0xFFEBEBEB);
+                        GlobalConfig.cardBackgroundColor = Colors.white;
+                        GlobalConfig.fontColor = Colors.black54;
+                        GlobalConfig.rowColor = Colors.white;
+                        GlobalConfig.arrowColor = Colors.black;
+                        GlobalConfig.dark = false;
+                        GlobalConfig.fourPic['pic1'] = "images/residual.png";
+                        GlobalConfig.fourPic['pic2'] = "images/wet.png";
+                        GlobalConfig.fourPic['pic3'] = "images/recyclable.png";
+                        GlobalConfig.fourPic['pic4'] = "images/other.png";
                       }
                     });
                   },
@@ -280,7 +400,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
               child: new TextButton(
                   onPressed: () {
                     setState(() {
-                      if (checkRed == true) {
+                      if (checkRed == true && GlobalConfig.dark == false) {
                         GlobalConfig.themeColorsCheckWhite = false;
                         GlobalConfig.themeColorsCheckBlack = false;
                         GlobalConfig.themeColorsCheckPink = false;
@@ -289,6 +409,30 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         GlobalConfig.themeColorsCheckRed = true;
                         GlobalConfig.themeColorsCheckGreen = false;
                         GlobalConfig.themeColor = Colors.red;
+                      }else if(checkRed == true && GlobalConfig.dark == true){
+                        GlobalConfig.themeColorsCheckWhite = false;
+                        GlobalConfig.themeColorsCheckBlack = false;
+                        GlobalConfig.themeColorsCheckPink = false;
+                        GlobalConfig.themeColorsCheckYellow = false;
+                        GlobalConfig.themeColorsCheckBlue = false;
+                        GlobalConfig.themeColorsCheckRed = true;
+                        GlobalConfig.themeColorsCheckGreen = false;
+                        GlobalConfig.themeColor = Colors.red;
+                        GlobalConfig.themeData = new ThemeData(
+                          primaryColor: Colors.white,
+                          scaffoldBackgroundColor: new Color(0xFFEBEBEB),
+                        );
+                        GlobalConfig.barColor = Colors.grey;
+                        GlobalConfig.searchBackgroundColor = new Color(0xFFEBEBEB);
+                        GlobalConfig.cardBackgroundColor = Colors.white;
+                        GlobalConfig.fontColor = Colors.black54;
+                        GlobalConfig.rowColor = Colors.white;
+                        GlobalConfig.arrowColor = Colors.black;
+                        GlobalConfig.dark = false;
+                        GlobalConfig.fourPic['pic1'] = "images/residual.png";
+                        GlobalConfig.fourPic['pic2'] = "images/wet.png";
+                        GlobalConfig.fourPic['pic3'] = "images/recyclable.png";
+                        GlobalConfig.fourPic['pic4'] = "images/other.png";
                       }
                     });
                   },
@@ -328,7 +472,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
               child: new TextButton(
                   onPressed: () {
                     setState(() {
-                      if (checkGreen == true) {
+                      if (checkGreen == true && GlobalConfig.dark == false) {
                         GlobalConfig.themeColorsCheckWhite = false;
                         GlobalConfig.themeColorsCheckBlack = false;
                         GlobalConfig.themeColorsCheckPink = false;
@@ -337,6 +481,30 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         GlobalConfig.themeColorsCheckRed = false;
                         GlobalConfig.themeColorsCheckGreen = true;
                         GlobalConfig.themeColor = Colors.green;
+                      }else if(checkGreen == true && GlobalConfig.dark == true){
+                        GlobalConfig.themeColorsCheckWhite = false;
+                        GlobalConfig.themeColorsCheckBlack = false;
+                        GlobalConfig.themeColorsCheckPink = false;
+                        GlobalConfig.themeColorsCheckYellow = false;
+                        GlobalConfig.themeColorsCheckBlue = false;
+                        GlobalConfig.themeColorsCheckRed = true;
+                        GlobalConfig.themeColorsCheckGreen = false;
+                        GlobalConfig.themeColor = Colors.red;
+                        GlobalConfig.themeData = new ThemeData(
+                          primaryColor: Colors.white,
+                          scaffoldBackgroundColor: new Color(0xFFEBEBEB),
+                        );
+                        GlobalConfig.barColor = Colors.grey;
+                        GlobalConfig.searchBackgroundColor = new Color(0xFFEBEBEB);
+                        GlobalConfig.cardBackgroundColor = Colors.white;
+                        GlobalConfig.fontColor = Colors.black54;
+                        GlobalConfig.rowColor = Colors.white;
+                        GlobalConfig.arrowColor = Colors.black;
+                        GlobalConfig.dark = false;
+                        GlobalConfig.fourPic['pic1'] = "images/residual.png";
+                        GlobalConfig.fourPic['pic2'] = "images/wet.png";
+                        GlobalConfig.fourPic['pic3'] = "images/recyclable.png";
+                        GlobalConfig.fourPic['pic4'] = "images/other.png";
                       }
                     });
                   },
