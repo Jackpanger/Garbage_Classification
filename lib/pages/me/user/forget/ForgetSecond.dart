@@ -49,12 +49,12 @@ class _ForgetSecondPageState extends State<ForgetSecondPage> {
       this.seconds = 60;
       this._showTimer();
     });
-    var api = '${Config.home}auth/sendCode';
-    var response = await Dio().post(api, data: {"tel": this.tel});
-    Map data = json.decode(response.data);
-    if (data["success"]) {
-      print(response);
-    }
+    // var api = '${Config.home}auth/sendCode';
+    // var response = await Dio().post(api, data: {"tel": this.tel});
+    // Map data = json.decode(response.data);
+    // if (data["success"]) {
+    //   print(response);
+    // }
   }
 
   validateCode() async {
