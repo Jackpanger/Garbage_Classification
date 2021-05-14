@@ -31,19 +31,19 @@ class _ForgetThirdPageState extends State<ForgetThirdPage> {
   }
   //注册
   doRegister() async {
-    if (password.length < 6) {
-      Fluttertoast.showToast(
-        msg: 'Length of password cannot less than 6',
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-      );
-    } else if (rpassword != password) {
-      Fluttertoast.showToast(
-        msg: 'Not consistent',
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-      );
-    } else {
+    // if (password.length < 6) {
+    //   Fluttertoast.showToast(
+    //     msg: 'Length of password cannot less than 6',
+    //     toastLength: Toast.LENGTH_SHORT,
+    //     gravity: ToastGravity.CENTER,
+    //   );
+    // } else if (rpassword != password) {
+    //   Fluttertoast.showToast(
+    //     msg: 'Not consistent',
+    //     toastLength: Toast.LENGTH_SHORT,
+    //     gravity: ToastGravity.CENTER,
+    //   );
+    // } else {
       // var api = '${Config.home}auth/register';
       // var response = await Dio().post(api, data: {
       //   "tel": this.tel,
@@ -67,7 +67,7 @@ class _ForgetThirdPageState extends State<ForgetThirdPage> {
       //     gravity: ToastGravity.CENTER,
       //   );
       // }
-    }
+    // }
   }
 
   @override

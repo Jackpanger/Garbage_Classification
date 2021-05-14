@@ -25,7 +25,7 @@ class _ForgetSecondPageState extends State<ForgetSecondPage> {
     // TODO: implement initState
     super.initState();
     this.tel = widget.arguments['tel'];
-    this._showTimer();
+    // this._showTimer();
   }
 
   _showTimer() {
@@ -47,7 +47,7 @@ class _ForgetSecondPageState extends State<ForgetSecondPage> {
     setState(() {
       this.sendCodeBtn = false;
       this.seconds = 60;
-      this._showTimer();
+      // this._showTimer();
     });
     // var api = '${Config.home}auth/sendCode';
     // var response = await Dio().post(api, data: {"tel": this.tel});

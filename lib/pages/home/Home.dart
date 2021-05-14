@@ -101,7 +101,7 @@ class _HomepageState extends State<Homepage> {
         ),
         body: Container(
           width: 500,
-          height: 500,
+          // height: 500,
           alignment: Alignment(-1, 0),
           child: Column(
             children: <Widget>[
@@ -121,6 +121,7 @@ class _HomepageState extends State<Homepage> {
                 ),
               ),
               // _ImageView(_imgPath),
+              SizedBox(height: 10,),
               Container(
                   child: Row(
                 children: <Widget>[
@@ -173,6 +174,7 @@ class _HomepageState extends State<Homepage> {
                   ),
                 ],
               )),
+              // SizedBox(height: 10,),
               Container(
                   child: Expanded(
                 child: new Image.asset('images/Bottom.jpg'),

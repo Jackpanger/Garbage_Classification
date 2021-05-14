@@ -6,6 +6,7 @@ import 'package:garbage_classification/config/Config.dart';
 import 'package:garbage_classification/config/global_config.dart';
 import 'package:garbage_classification/pages/me/user/profile/userName.dart';
 import 'package:garbage_classification/services/UserServices.dart';
+import 'package:path_provider/path_provider.dart';
 import './phoneNumber.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
@@ -28,14 +29,17 @@ class _UserMessageState extends State<UserMessage> {
   String userSex = 'male';
   String avatar = "";
 
-  var _imgPath;
+  var _imgPath=File("images/proimage.jpg");
 
   @override
   void initState() {
     super.initState();
     this._getUserInfo();
+    print(_getCurrentPath());
   }
-
+  _getCurrentPath() async{
+    return await getTemporaryDirectory();
+  }
   _getUserInfo() async {
     var userInfo = await UserServices.getUserInfo();
     setState(() {
@@ -270,8 +274,8 @@ class _UserMessageState extends State<UserMessage> {
                             right: 100,
                             top: 10,
                             child: new CircleAvatar(
-                                backgroundImage: AssetImage(
-                                    "images/proimage.jpg"),
+                                backgroundImage:
+                                AssetImage(_imgPath.path),
                                 radius: 20.0),
                           ),
                           Positioned(

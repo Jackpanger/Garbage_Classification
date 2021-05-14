@@ -16,8 +16,8 @@ class ForgetFirstPage extends StatefulWidget {
 class _ForgetFirstPageState extends State<ForgetFirstPage> {
   String tel="";
   sendCode() async {
-    RegExp reg = new RegExp(r"^1\d{10}$");
-    if (reg.hasMatch(this.tel)) {
+    // RegExp reg = new RegExp(r"^1\d{10}$");
+    // if (reg.hasMatch(this.tel)) {
       // var api = '${Config.home}auth/sendCode';
       // var response = await Dio().post(api, data: {"tel": this.tel});
       // print(response.data is Map);
@@ -38,13 +38,14 @@ class _ForgetFirstPageState extends State<ForgetFirstPage> {
       //     gravity: ToastGravity.CENTER,
       //   );
       // }
-    } else {
-      Fluttertoast.showToast(
-        msg: 'Format of phone number is wrong',
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-      );
-    }
+    // }
+    // else {
+    //   Fluttertoast.showToast(
+    //     msg: 'Format of phone number is wrong',
+    //     toastLength: Toast.LENGTH_SHORT,
+    //     gravity: ToastGravity.CENTER,
+    //   );
+    // }
   }
 
   @override
