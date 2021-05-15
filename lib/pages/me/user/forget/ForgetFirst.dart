@@ -52,7 +52,7 @@ class _ForgetFirstPageState extends State<ForgetFirstPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("User registration-First"),
+        title: Text("Forget password-First"),
       ),
       body: Container(
         padding: EdgeInsets.all(20),

@@ -74,7 +74,7 @@ class _ForgetThirdPageState extends State<ForgetThirdPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("User registration-Third"),
+        title: Text("Forget password-Third"),
       ),
       body: Container(
         padding: EdgeInsets.all(20),
@@ -82,7 +82,7 @@ class _ForgetThirdPageState extends State<ForgetThirdPage> {
           children: <Widget>[
             SizedBox(height: 50),
             ConText(
-              text: "Please input your password",
+              text: "Please type in your new password",
               password: true,
               onChanged: (value) {
                 this.password=value;
@@ -98,7 +98,7 @@ class _ForgetThirdPageState extends State<ForgetThirdPage> {
             ),
             SizedBox(height: 20),
             ConButton(
-              text: "Registration",
+              text: "Finish",
               color: Colors.red,
               height: 74,
               cb: doRegister,
