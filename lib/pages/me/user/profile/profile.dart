@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+import 'dart:convert';
 import 'package:date_format/date_format.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +12,6 @@ import 'package:path_provider/path_provider.dart';
 import './phoneNumber.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
-
 
 class UserMessage extends StatefulWidget {
   UserMessage({
@@ -28,20 +29,30 @@ class _UserMessageState extends State<UserMessage> {
   String birthday = '2000年1月1号';
   String userSex = 'male';
   String avatar = "";
-
-  var _imgPath=File("images/proimage.jpg");
+  bool isImage = false;
+  var _imgPath = File("images/proimage.jpg");
 
   @override
   void initState() {
     super.initState();
     this._getUserInfo();
-    print(_getCurrentPath());
+    _getCurrentPath().then((e) => print(e.absolute.path));
   }
-  _getCurrentPath() async{
-    return await getTemporaryDirectory();
+
+  _getCurrentPath() async {
+    return await getApplicationDocumentsDirectory();
   }
+
+  _getUserImage() async {
+    var isImage = await UserServices.getUserImageState();
+    setState(() {
+      this.isImage = isImage;
+    });
+  }
+
   _getUserInfo() async {
     var userInfo = await UserServices.getUserInfo();
+
     setState(() {
       tel = userInfo[0]["tel"];
       userName = userInfo[0]["username"];
@@ -57,20 +68,18 @@ class _UserMessageState extends State<UserMessage> {
             height: 200.0,
             child: Column(
               children: <Widget>[
-                _ImageView(_imgPath),
+                // _ImageView(_imgPath),
                 TextButton(
                     onPressed: _takePhoto,
                     child: ListTile(
                       title: Text('拍照'),
-                )
-                ),
+                    )),
                 Divider(),
                 TextButton(
                     onPressed: _openGallery,
                     child: ListTile(
                       title: Text('本地照片'),
-                    )
-                ),
+                    )),
               ],
             ),
           );
@@ -82,7 +91,6 @@ class _UserMessageState extends State<UserMessage> {
     if (imgPath == null) {
       return Center(
         child: Text("请选择图片或拍照"),
-
       );
     } else {
       return Image.file(
@@ -168,6 +176,7 @@ class _UserMessageState extends State<UserMessage> {
         });
   }
 
+  // ignore: non_constant_identifier_names
   _upload_username() async {
     Navigator.of(context)
         .push(MaterialPageRoute(
@@ -248,15 +257,15 @@ class _UserMessageState extends State<UserMessage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: new MaterialApp(
-        theme: GlobalConfig.themeData,
-        home: Scaffold(
+        child: new MaterialApp(
+      theme: GlobalConfig.themeData,
+      home: Scaffold(
           appBar: AppBar(
             title: Text('User information'),
             centerTitle: true,
             leading: IconButton(
               icon: Icon(Icons.arrow_back_rounded),
-              onPressed: (){
+              onPressed: () {
                 Navigator.of(context).pop(true);
               },
             ),
@@ -274,8 +283,7 @@ class _UserMessageState extends State<UserMessage> {
                             right: 100,
                             top: 10,
                             child: new CircleAvatar(
-                                backgroundImage:
-                                AssetImage(_imgPath.path),
+                                backgroundImage: isImage?FileImage(_imgPath): AssetImage("images/proimage.jpg"),
                                 radius: 20.0),
                           ),
                           Positioned(
@@ -413,6 +421,6 @@ class _UserMessageState extends State<UserMessage> {
               ),
             ],
           )),
-      ) );
+    ));
   }
 }
