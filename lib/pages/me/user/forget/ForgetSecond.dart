@@ -81,7 +81,7 @@ class _ForgetSecondPageState extends State<ForgetSecondPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("User registration-Second"),
+        title: Text("Forget password-Second"),
       ),
       body: Container(
         padding: EdgeInsets.all(20),
