@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:garbage_classification/pages/me/user/profile/profile.dart';
 import 'package:garbage_classification/pages/tabs/Tabs.dart';
 import 'package:garbage_classification/services/UserServices.dart';
-import '../../config/global_config.dart';
+import 'package:garbage_classification/config/global_config.dart';
 import 'Settings.dart';
-import '../../services/Storage.dart';
+import 'package:garbage_classification/services/Storage.dart';
+import 'dart:io';
 
 class Me extends StatefulWidget {
   Me({
@@ -18,7 +19,8 @@ class Me extends StatefulWidget {
 class _MeState extends State<Me> {
   bool isLogin = false;
   List userInfo = [];
-
+  bool isImage = false;
+  var _imgPath;
   @override
   void initState() {
     super.initState();
@@ -28,9 +30,13 @@ class _MeState extends State<Me> {
   _getUserInfo() async {
     var isLogin = await UserServices.getUserLoginState();
     var userInfo = await UserServices.getUserInfo();
+    var state = await UserServices.getUserImageState();
+    var imagePath = await UserServices.getImageInfo();
     setState(() {
       this.userInfo = userInfo;
       this.isLogin = isLogin;
+      this.isImage = state;
+      if (isImage) _imgPath = File(imagePath);
     });
   }
 
@@ -78,7 +84,9 @@ class _MeState extends State<Me> {
                           leading: new Container(
                             child: new CircleAvatar(
                                 backgroundImage:
-                                    AssetImage("images/proimage.jpg"),
+                                isImage
+                                    ? FileImage(_imgPath)
+                                    : AssetImage("images/proimage.jpg"),
                                 radius: 20.0),
                           ),
                           title: new Container(
@@ -117,7 +125,9 @@ class _MeState extends State<Me> {
                           leading: new Container(
                             child: new CircleAvatar(
                                 backgroundImage:
-                                    AssetImage("images/proimage.jpg"),
+                                isImage
+                                    ? FileImage(_imgPath)
+                                    : AssetImage("images/proimage.jpg"),
                                 radius: 20.0),
                           ),
                           title: new Container(

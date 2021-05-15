@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/pages/tabs/Tabs.dart';
-import '../../../widgets/ConText.dart';
-import '../../../widgets/ConButton.dart';
+import 'package:garbage_classification/widgets/ConText.dart';
+import 'package:garbage_classification/widgets/ConButton.dart';
 
-import '../../../config/Config.dart';
+import 'package:garbage_classification/config/Config.dart';
 import 'package:dio/dio.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import '../../../services/Storage.dart';
+import 'package:garbage_classification/services/Storage.dart';
 import 'dart:convert';
 //引入Tabs
 

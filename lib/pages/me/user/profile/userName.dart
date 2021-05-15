@@ -26,7 +26,7 @@ class _UserNameState extends State<UserName> {
   }
   doUpload() async {
 
-      var api = '${Config.home}profile/username';
+      var api = '${Config.home}profile/details';
       var response = await Dio().post(api, data: {
         "tel":tel,
         "username": this.userNameController.text

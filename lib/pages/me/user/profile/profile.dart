@@ -12,6 +12,7 @@ import 'package:path_provider/path_provider.dart';
 import './phoneNumber.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
+import 'package:garbage_classification/services/Storage.dart';
 
 class UserMessage extends StatefulWidget {
   UserMessage({
@@ -24,19 +25,20 @@ class UserMessage extends StatefulWidget {
 
 class _UserMessageState extends State<UserMessage> {
   DateTime _dateTime = DateTime.now();
-  String userName = "";
-  String tel = "";
-  String birthday = '2000年1月1号';
-  String userSex = 'male';
+  String userName=' ';
+  String tel=' ';
+  String birthday="2000年1月1号";
+  String userSex=' ';
   String avatar = "";
   bool isImage = false;
-  var _imgPath = File("images/proimage.jpg");
+  var _imgPath;
 
   @override
   void initState() {
     super.initState();
     this._getUserInfo();
-    _getCurrentPath().then((e) => print(e.absolute.path));
+    this._getUserImage();
+    // _getCurrentPath().then((e) => print(e.absolute.path));
   }
 
   _getCurrentPath() async {
@@ -44,18 +46,21 @@ class _UserMessageState extends State<UserMessage> {
   }
 
   _getUserImage() async {
-    var isImage = await UserServices.getUserImageState();
+    var state = await UserServices.getUserImageState();
+    var imagePath = await UserServices.getImageInfo();
     setState(() {
-      this.isImage = isImage;
+      this.isImage = state;
+      if (isImage) _imgPath = File(imagePath);
     });
   }
 
   _getUserInfo() async {
     var userInfo = await UserServices.getUserInfo();
-
     setState(() {
       tel = userInfo[0]["tel"];
       userName = userInfo[0]["username"];
+      userSex = userInfo[0]["gender"];
+      birthday = userInfo[0]["birthday"];
       print(userInfo);
     });
   }
@@ -133,13 +138,20 @@ class _UserMessageState extends State<UserMessage> {
     print(imgPath.path is String);
     print(await MultipartFile.fromFile(imgPath.path));
     FormData formData = new FormData.fromMap({
+      "type": "profile",
       "tel": "17615322996",
       'image': await MultipartFile.fromFile(imgPath.path)
     });
     print("formData");
     var response =
         await Dio().post("${Config.home}profile/images", data: formData);
-    print(response is Map);
+    var data = json.decode(response.data);
+    print(response);
+    setState(() {
+      isImage = true;
+      Storage.setString('userInfo', json.encode(data["userinfo"]));
+      Storage.setString('image', json.encode(imgPath.path));
+    });
   }
 
   _changeSex() async {
@@ -155,6 +167,7 @@ class _UserMessageState extends State<UserMessage> {
                   onTap: () {
                     setState(() {
                       this.userSex = 'male';
+                      _doUpload("gender", "male");
                     });
 
                     Navigator.pop(context, 'male');
@@ -166,6 +179,7 @@ class _UserMessageState extends State<UserMessage> {
                   onTap: () {
                     setState(() {
                       this.userSex = 'female';
+                      _doUpload("gender", "female");
                     });
                     Navigator.pop(context, 'female');
                   },
@@ -176,6 +190,17 @@ class _UserMessageState extends State<UserMessage> {
         });
   }
 
+  _doUpload(param, content) async {
+    var api = '${Config.home}profile/details';
+    var response = await Dio().post(api, data: {"tel": tel, param: content});
+    Map data = json.decode(response.data);
+
+    if (data["success"]) {
+      //保存用户信息
+      Storage.setString('userInfo', json.encode(data["userinfo"]));
+    }
+  }
+
   // ignore: non_constant_identifier_names
   _upload_username() async {
     Navigator.of(context)
@@ -184,6 +209,15 @@ class _UserMessageState extends State<UserMessage> {
                   arguments: {"tel": this.tel, "username": userName},
                 )))
         .then((value) => _getName(value));
+  }
+  _upload_tel() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(
+        builder: (context) => PhoneNumber(
+          arguments: {"tel": this.tel},
+        )))
+        .then((value) => _getNumber(value));
+
   }
 
   _showDatePicker() {
@@ -211,6 +245,7 @@ class _UserMessageState extends State<UserMessage> {
           _dateTime = dateTime;
           this.birthday =
               '${formatDate(_dateTime, [yyyy, '年', mm, '月', 'dd'])}';
+          _doUpload("birthday", birthday);
         });
       },
     );
@@ -240,17 +275,17 @@ class _UserMessageState extends State<UserMessage> {
     });
   }
 
-  _getBirthday(value) {
-    if (value == '') {
-      value = this.birthday;
-    }
-    if (value == null) {
-      value = this.birthday;
-    }
-    setState(() {
-      this.birthday = value;
-    });
-  }
+  // _getBirthday(value) {
+  //   if (value == '') {
+  //     value = this.birthday;
+  //   }
+  //   if (value == null) {
+  //     value = this.birthday;
+  //   }
+  //   setState(() {
+  //     this.birthday = value;
+  //   });
+  // }
 
   // final arguments;
   // UserMessage({this.arguments});
@@ -283,7 +318,9 @@ class _UserMessageState extends State<UserMessage> {
                             right: 100,
                             top: 10,
                             child: new CircleAvatar(
-                                backgroundImage: isImage?FileImage(_imgPath): AssetImage("images/proimage.jpg"),
+                                backgroundImage: isImage
+                                    ? FileImage(_imgPath)
+                                    : AssetImage("images/proimage.jpg"),
                                 radius: 20.0),
                           ),
                           Positioned(
@@ -355,14 +392,7 @@ class _UserMessageState extends State<UserMessage> {
                       ),
                     ],
                   )),
-                  onPressed: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(
-                            builder: (context) => PhoneNumber(
-                                  arguments: tel,
-                                )))
-                        .then((value) => _getNumber(value));
-                  },
+                  onPressed: _upload_tel
                 ),
               ),
               Container(
@@ -402,8 +432,8 @@ class _UserMessageState extends State<UserMessage> {
                           right: 100,
                           top: 20,
                           child: Container(
-                            child: Text(birthday), //这里要改成this.动态的
-                          ),
+                              child: Text(birthday), //这里要改成this.动态的
+                              ),
                         ),
                         Positioned(
                           child: Container(

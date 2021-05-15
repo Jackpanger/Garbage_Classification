@@ -1,8 +1,14 @@
+import 'dart:convert';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:garbage_classification/services/Storage.dart';
+
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/config/Config.dart';
 import 'package:garbage_classification/config/global_config.dart';
 
 class PhoneNumber extends StatefulWidget {
-  String arguments;
+  Map arguments;
   PhoneNumber({Key key, this.arguments}) : super(key: key);
 
   @override
@@ -11,9 +17,37 @@ class PhoneNumber extends StatefulWidget {
 }
 
 class _PhoneNumberState extends State<PhoneNumber> {
-  String arguments;
+  Map arguments;
   _PhoneNumberState({this.arguments});
   TextEditingController phoneController = TextEditingController();
+  String tel;
+  void initState(){
+    this.tel = widget.arguments["tel"];
+  }
+  doUpload() async {
+
+    var api = '${Config.home}profile/tel';
+    var response = await Dio().post(api, data: {
+      "tel":tel,
+      "new_tel": this.phoneController.text
+    });
+    Map data = json.decode(response.data);
+
+    if (data["success"]) {
+      //保存用户信息
+      Storage.setString('userInfo', json.encode(data["userinfo"]));
+      //
+      //返回到根
+      Navigator.pop(context, phoneController.text);
+    } else {
+      Fluttertoast.showToast(
+        msg: '${data["message"]}',
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+      );
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +74,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
                         decoration: InputDecoration(
                           labelText: 'Please change phone number',
                           icon: Icon(Icons.phone),
-                          hintText: arguments,
+                          hintText: arguments["tel"],
                         ),
                       )
                     ],
@@ -51,7 +85,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
                     child: RaisedButton(
                         child: Text('Confirm'),
                         onPressed: () {
-                          Navigator.pop(context, phoneController.text);
+                          doUpload();
                         })),
               ],
             )));
