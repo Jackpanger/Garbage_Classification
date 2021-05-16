@@ -1,4 +1,4 @@
-import '../services/Storage.dart';
+import 'package:garbage_classification/services/Storage.dart';
 import 'dart:convert';
 
 class UserServices {

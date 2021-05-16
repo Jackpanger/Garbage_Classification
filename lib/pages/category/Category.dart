@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:garbage_classification/config/Config.dart';
 import 'package:garbage_classification/pages/me/user/section/favorites.dart';
+import 'package:garbage_classification/services/DataStorage.dart';
 import 'dart:convert';
-import '../../config/global_config.dart';
-import 'res/form1.dart';
-import 'res/form2.dart';
-import 'res/form3.dart';
-import 'res/form4.dart';
+import 'package:garbage_classification/services/Storage.dart';
+import 'package:garbage_classification/config/global_config.dart';
+// import 'res/form1.dart';
+// import 'res/form2.dart';
+// import 'res/form3.dart';
+// import 'res/form4.dart';
 
 class CategoryPage extends StatefulWidget {
   @override
@@ -23,53 +25,95 @@ class _CategoryState extends State<CategoryPage> {
 
   _getData1() async {
     var api = '${Config.home}data/category';
-    var response1 = await Dio().post(api, data: {"kind": "residual waste"});
+    var response =
+        await Dio().post(api, data: {"kind": "residual waste", "lan": "en"});
+    var data = response.data["message"];
     setState(() {
-      _data1 = response1.data["message"];
+      if (data != _data1) {
+        Storage.setString('data_res', json.encode(data));
+        _data1 = response.data["message"];
+      }
+      // _data1 = response1.data["message"];
       // print(_data1.toString());
     });
   }
 
   _getData2() async {
     var api = '${Config.home}data/category';
-    var response1 = await Dio().post(api, data: {"kind": "wet waste"});
+    var response =
+        await Dio().post(api, data: {"kind": "wet waste", "lan": "en"});
+    var data = response.data["message"];
     setState(() {
-      _data2 = response1.data["message"];
+      if (data != _data1) {
+        Storage.setString('data_wet', json.encode(data));
+        _data2 = response.data["message"];
+      }
+
       // print(_data1.toString());
     });
   }
 
   _getData3() async {
     var api = '${Config.home}data/category';
-    var response1 = await Dio().post(api, data: {"kind": "recyclable waste"});
+    var response =
+        await Dio().post(api, data: {"kind": "recyclable waste", "lan": "en"});
+    var data = response.data["message"];
     setState(() {
-      _data3 = response1.data["message"];
+      if (data != _data1) {
+        Storage.setString('data_rec', json.encode(data));
+        _data3 = response.data["message"];
+      }
+      //
       // print(_data1.toString());
     });
   }
 
   _getData4() async {
     var api = '${Config.home}data/category';
-    var response1 = await Dio().post(api, data: {"kind": "other waste"});
+    var response =
+        await Dio().post(api, data: {"kind": "other waste", "lan": "en"});
+    var data = response.data["message"];
     setState(() {
-      _data4 = response1.data["message"];
+      if (data != _data1) {
+        Storage.setString('data_other', json.encode(data));
+        _data4 = response.data["message"];
+      }
+      //
       // print(_data1.toString());
     });
   }
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
+  _localData() async {
+    var data1 = await DataStorage.getDataInfoRes();
+    var data2 = await DataStorage.getDataInfoWet();
+    var data3 = await DataStorage.getDataInfoRec();
+    var data4 = await DataStorage.getDataInfoOther();
+    setState(() {
+      _data1 = data1;
+      _data2 = data2;
+      _data3 = data3;
+      _data4 = data4;
+    });
+  }
+
+  _getData() async {
     _getData1();
     _getData2();
     _getData3();
     _getData4();
   }
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _localData();
+    _getData();
+  }
+
   void _favorites() {
-    Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => favoritesPage()));
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => favoritesPage()));
   }
 
   @override
@@ -83,13 +127,14 @@ class _CategoryState extends State<CategoryPage> {
                 title: new Text('Category'),
                 centerTitle: true,
                 actions: <Widget>[
-                  new IconButton(icon: new Icon(Icons.list), onPressed: _favorites),
+                  new IconButton(
+                      icon: new Icon(Icons.list), onPressed: _favorites),
                 ],
                 backgroundColor: GlobalConfig.themeColor,
                 bottom: TabBar(
                   // unselectedLabelColor: GlobalConfig.arrowColor,
                   // labelColor: Colors.blue,
-                  indicatorColor: GlobalConfig.arrowColor,  //显示当前位置的指示器颜色
+                  indicatorColor: GlobalConfig.arrowColor, //显示当前位置的指示器颜色
                   indicatorWeight: 3.0,
                   //    backgroundColor: GlobalConfig.cardBackgroundColor,
                   tabs: <Widget>[
@@ -98,33 +143,29 @@ class _CategoryState extends State<CategoryPage> {
                         child: Text(
                           "Residual",
                           textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 18.0),
+                          style: TextStyle(fontSize: 18.0),
                         ),
                       ),
-                ),
+                    ),
                     Tab(
                       child: Text(
                         "Wet",
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                             fontSize: 18.0),
+                        style: TextStyle(fontSize: 18.0),
                       ),
                     ),
                     Tab(
                       child: Text(
                         "Recyclable",
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                             fontSize: 18.0),
+                        style: TextStyle(fontSize: 18.0),
                       ),
                     ),
                     Tab(
                       child: Text(
                         "Other",
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                             fontSize: 18.0),
+                        style: TextStyle(fontSize: 18.0),
                       ),
                     ),
                   ],
@@ -156,11 +197,15 @@ class _CategoryState extends State<CategoryPage> {
                               onPressed: () {
                                 setState(() {
                                   if (alreadySaved1) {
-                                    GlobalConfig.favoritesGarbage.remove(_data1[index]);
-                                    GlobalConfig.favoritesPic.remove(_data1[index]);
+                                    GlobalConfig.favoritesGarbage
+                                        .remove(_data1[index]);
+                                    GlobalConfig.favoritesPic
+                                        .remove(_data1[index]);
                                   } else {
-                                    GlobalConfig.favoritesGarbage.add(_data1[index]);
-                                    GlobalConfig.favoritesPic[_data1[index]] = 'pic1';
+                                    GlobalConfig.favoritesGarbage
+                                        .add(_data1[index]);
+                                    GlobalConfig.favoritesPic[_data1[index]] =
+                                        'pic1';
                                   }
                                 });
                               },
@@ -192,11 +237,15 @@ class _CategoryState extends State<CategoryPage> {
                               onPressed: () {
                                 setState(() {
                                   if (alreadySaved2) {
-                                    GlobalConfig.favoritesGarbage.remove(_data2[index]);
-                                    GlobalConfig.favoritesPic.remove(_data2[index]);
+                                    GlobalConfig.favoritesGarbage
+                                        .remove(_data2[index]);
+                                    GlobalConfig.favoritesPic
+                                        .remove(_data2[index]);
                                   } else {
-                                    GlobalConfig.favoritesGarbage.add(_data2[index]);
-                                    GlobalConfig.favoritesPic[_data2[index]] = 'pic2';
+                                    GlobalConfig.favoritesGarbage
+                                        .add(_data2[index]);
+                                    GlobalConfig.favoritesPic[_data2[index]] =
+                                        'pic2';
                                   }
                                 });
                               },
@@ -228,11 +277,15 @@ class _CategoryState extends State<CategoryPage> {
                               onPressed: () {
                                 setState(() {
                                   if (alreadySaved3) {
-                                    GlobalConfig.favoritesGarbage.remove(_data3[index]);
-                                    GlobalConfig.favoritesPic.remove(_data3[index]);
+                                    GlobalConfig.favoritesGarbage
+                                        .remove(_data3[index]);
+                                    GlobalConfig.favoritesPic
+                                        .remove(_data3[index]);
                                   } else {
-                                    GlobalConfig.favoritesGarbage.add(_data3[index]);
-                                    GlobalConfig.favoritesPic[_data3[index]] = 'pic3';
+                                    GlobalConfig.favoritesGarbage
+                                        .add(_data3[index]);
+                                    GlobalConfig.favoritesPic[_data3[index]] =
+                                        'pic3';
                                   }
                                 });
                               },
@@ -264,11 +317,15 @@ class _CategoryState extends State<CategoryPage> {
                               onPressed: () {
                                 setState(() {
                                   if (alreadySaved4) {
-                                    GlobalConfig.favoritesGarbage.remove(_data4[index]);
-                                    GlobalConfig.favoritesPic.remove(_data4[index]);
+                                    GlobalConfig.favoritesGarbage
+                                        .remove(_data4[index]);
+                                    GlobalConfig.favoritesPic
+                                        .remove(_data4[index]);
                                   } else {
-                                    GlobalConfig.favoritesGarbage.add(_data4[index]);
-                                    GlobalConfig.favoritesPic[_data4[index]] = 'pic4';
+                                    GlobalConfig.favoritesGarbage
+                                        .add(_data4[index]);
+                                    GlobalConfig.favoritesPic[_data4[index]] =
+                                        'pic4';
                                   }
                                 });
                               },
@@ -279,4 +336,3 @@ class _CategoryState extends State<CategoryPage> {
             )));
   }
 }
-
