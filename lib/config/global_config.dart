@@ -36,10 +36,10 @@ class GlobalConfig {
   static bool Languagec = false;
 
   static Map<String, String> fourPic = {
-    'pic1' : "images/residual2.png",
-    'pic2' : "images/wet2.png",
-    'pic3' : "images/recyclable2.png",
-    'pic4' : "images/other2.png",
+    'pic1' : "images/residual.png",
+    'pic2' : "images/wet.png",
+    'pic3' : "images/recyclable.png",
+    'pic4' : "images/other.png",
   };
 
   static List favoritesGarbage = [];
