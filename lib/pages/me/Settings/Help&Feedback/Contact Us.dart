@@ -1,13 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/generated/l10n.dart';
-import '../../../../config/global_config.dart';
+import 'package:garbage_classification/config/global_config.dart';
 import 'package:garbage_classification/pages/me/Settings.dart';
 
 
-class ContactUsPage extends StatelessWidget {
-  const ContactUsPage({Key key}) : super(key: key);
-
+class ContactUsPage extends StatefulWidget {
+  ContactUsPage({Key key}) : super(key: key);
+  _ContactUsPageState createState() => _ContactUsPageState();
+}
+class _ContactUsPageState extends State<ContactUsPage> {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(

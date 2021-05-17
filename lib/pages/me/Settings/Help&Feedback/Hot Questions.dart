@@ -3,9 +3,12 @@ import 'package:garbage_classification/generated/l10n.dart';
 import 'package:garbage_classification/config/global_config.dart';
 import 'package:garbage_classification/pages/me/Settings.dart';
 
-
-class HotQuestionsPage extends StatelessWidget {
+class HotQuestionsPage extends StatefulWidget {
   const HotQuestionsPage({Key key}) : super (key: key);
+  _HotQuestionsPageState createState() => _HotQuestionsPageState();
+}
+
+class _HotQuestionsPageState extends State<HotQuestionsPage> {
 
   @override
   Widget build(BuildContext context) {
