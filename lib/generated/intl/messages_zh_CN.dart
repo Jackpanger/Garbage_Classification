@@ -48,7 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "dv_four" : MessageLookupByLibrary.simpleMessage("汤佩宣"),
     "dv_one" : MessageLookupByLibrary.simpleMessage("段景誉"),
     "dv_six" : MessageLookupByLibrary.simpleMessage("邹俊佳"),
-    "dv_three" : MessageLookupByLibrary.simpleMessage("逄景昊"),
+    "dv_three" : MessageLookupByLibrary.simpleMessage("逄锦昊"),
     "dv_two" : MessageLookupByLibrary.simpleMessage("刘谨铭"),
     "e_mail" : MessageLookupByLibrary.simpleMessage("邮箱"),
     "e_mail_address" : MessageLookupByLibrary.simpleMessage("邮件邮箱"),

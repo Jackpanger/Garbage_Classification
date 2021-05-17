@@ -51,7 +51,7 @@ class _LanguagePageState extends State<LanguagePage> {
               backgroundColor: GlobalConfig.themeColor,
               leading: new IconButton(
                 onPressed: () {
-                  Navigator.of(context).pop();
+                  Navigator.of(context).pop(true);
                 },
                 icon: Icon(Icons.arrow_back, size: 25),
               ),

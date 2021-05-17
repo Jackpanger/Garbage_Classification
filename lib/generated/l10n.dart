@@ -12,27 +12,27 @@ import 'intl/messages_all.dart';
 // ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
 // ignore_for_file: avoid_redundant_argument_values
 
-class LanguageChange {
-  LanguageChange();
+class S {
+  S();
   
-  static LanguageChange current;
+  static S current;
   
   static const AppLocalizationDelegate delegate =
     AppLocalizationDelegate();
 
-  static Future<LanguageChange> load(Locale locale) {
+  static Future<S> load(Locale locale) {
     final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
     final localeName = Intl.canonicalizedLocale(name); 
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
-      LanguageChange.current = LanguageChange();
+      S.current = S();
       
-      return LanguageChange.current;
+      return S.current;
     });
   } 
 
-  static LanguageChange of(BuildContext context) {
-    return Localizations.of<LanguageChange>(context, LanguageChange);
+  static S of(BuildContext context) {
+    return Localizations.of<S>(context, S);
   }
 
   /// `language`
@@ -1516,7 +1516,7 @@ class LanguageChange {
   }
 }
 
-class AppLocalizationDelegate extends LocalizationsDelegate<LanguageChange> {
+class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
@@ -1530,7 +1530,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<LanguageChange> {
   @override
   bool isSupported(Locale locale) => _isSupported(locale);
   @override
-  Future<LanguageChange> load(Locale locale) => LanguageChange.load(locale);
+  Future<S> load(Locale locale) => S.load(locale);
   @override
   bool shouldReload(AppLocalizationDelegate old) => false;
 
