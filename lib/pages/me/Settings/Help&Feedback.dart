@@ -21,9 +21,11 @@ class _HelpFeedbackPageState extends State<HelpFeedbackPage> {
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      theme: GlobalConfig.themeData,
-      home: Scaffold(
+    return
+      // new MaterialApp(
+      // theme: GlobalConfig.themeData,
+      // home:
+      Scaffold(
         // appBar: AppBar(
         //   title: Text("Help & Feedback"),
         // ),
@@ -48,19 +50,19 @@ class _HelpFeedbackPageState extends State<HelpFeedbackPage> {
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.help_center_outlined),
-              title: Text(LanguageChange.of(context).hot_questions),
+              label: LanguageChange.of(context).hot_questions,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.feedback_outlined),
-              title: Text(LanguageChange.of(context).feedback),
+              label: LanguageChange.of(context).feedback,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.contact_page_outlined),
-              title: Text(LanguageChange.of(context).contact_us),
+              label: LanguageChange.of(context).contact_us,
             ),
           ],
         ),
-      ),
+      // ),
     );
   }
 }
