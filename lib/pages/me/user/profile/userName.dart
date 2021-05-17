@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:garbage_classification/config/global_config.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 
 import '../../../../services/Storage.dart';
 import 'package:dio/dio.dart';
@@ -54,7 +55,7 @@ class _UserNameState extends State<UserName> {
     return new MaterialApp(
         theme: GlobalConfig.themeData,
         home: Scaffold(
-            appBar: (AppBar(title: Text('Username'),
+            appBar: (AppBar(title: Text(LanguageChange.of(context).username),
               centerTitle: true,
               leading: IconButton(
                 icon: Icon(Icons.arrow_back_rounded),
@@ -72,9 +73,9 @@ class _UserNameState extends State<UserName> {
                       TextField(
                         controller: userNameController,
                         decoration: InputDecoration(
-                          labelText: 'Please change username',
+                          labelText: LanguageChange.of(context).please_change_name,
                           icon: Icon(Icons.people),
-                          hintText: widget.arguments["username"],
+                          hintText: widget.arguments[LanguageChange.of(context).username],
                         ),
                       )
                     ],
@@ -83,7 +84,7 @@ class _UserNameState extends State<UserName> {
                 Padding(
                     padding: EdgeInsets.all(20.0),
                     child: ElevatedButton(
-                        child: Text('Confirm'),
+                        child: Text(LanguageChange.of(context).confirm),
                         onPressed:doUpload,
                     )),
               ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 class LoadingWidget extends StatelessWidget {
   const LoadingWidget({Key key}) : super(key: key);
 
@@ -14,7 +15,7 @@ class LoadingWidget extends StatelessWidget {
             CircularProgressIndicator(
               strokeWidth: 1.0,
             ),Text(
-              '加载中...',
+              LanguageChange.of(context).loading,
               style: TextStyle(fontSize: 16.0),
             )
           ],

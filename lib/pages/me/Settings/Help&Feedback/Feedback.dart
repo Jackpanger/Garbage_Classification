@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import '../../../../config/global_config.dart';
 import 'package:garbage_classification/pages/me/Settings.dart';
 
@@ -34,7 +35,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
             },
             icon: Icon(Icons.arrow_back, size: 25),
           ),
-          title: Text("Feedback"),
+          title: Text(LanguageChange.of(context).feedback),
           centerTitle: true,
         ),
         body: Padding(
@@ -44,21 +45,21 @@ class _FeedbackPageState extends State<FeedbackPage> {
 
               Row(
                 children: <Widget>[
-                  Text("微信", style: new TextStyle(fontSize: GlobalConfig.fontSize)),
+                  Text(LanguageChange.of(context).we_chat, style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                   Radio(
                     value: 1,
                     onChanged: _contactWay,
                     groupValue: this.contactWay,
                   ),
                   SizedBox(width: 20,),
-                  Text("QQ", style: new TextStyle(fontSize: GlobalConfig.fontSize)),
+                  Text(LanguageChange.of(context).qq, style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                   Radio(
                     value: 2,
                     onChanged: _contactWay,
                     groupValue: this.contactWay,
                   ),
                   SizedBox(width: 20,),
-                  Text("邮箱", style: new TextStyle(fontSize: GlobalConfig.fontSize)),
+                  Text(LanguageChange.of(context).e_mail, style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                   Radio(
                     value: 3,
                     onChanged: _contactWay,
@@ -71,7 +72,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
 
               TextField(
                 decoration: InputDecoration(
-                  hintText: "请输入联系方式",
+                  hintText: LanguageChange.of(context).please_contact,
                   //labelText: "请输入联系方式",
                   border: OutlineInputBorder()
                 ),
@@ -87,7 +88,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
               TextField(
                 maxLines: 6,
                 decoration: InputDecoration(
-                    hintText: "请输入反馈内容",
+                    hintText: LanguageChange.of(context).please_feedback,
                     //labelText: "请输入联系方式",
                     border: OutlineInputBorder()
                 ),
@@ -104,7 +105,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
                 width: double.infinity,
                 height: 40,
                 child: RaisedButton(
-                  child: Text("提交信息"),
+                  child: Text(LanguageChange.of(context).submit_information),
                   onPressed: (){
                     print(this.contactWay);
                     print(this.contactInformation);

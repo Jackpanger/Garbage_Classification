@@ -6,6 +6,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/config/Config.dart';
 import 'package:garbage_classification/config/global_config.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 
 class PhoneNumber extends StatefulWidget {
   Map arguments;
@@ -54,7 +55,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
     return new MaterialApp(
         theme: GlobalConfig.themeData,
         home: Scaffold(
-            appBar: (AppBar(title: Text('Tel'),
+            appBar: (AppBar(title: Text(LanguageChange.of(context).tel),
               centerTitle: true,
               leading: IconButton(
                 icon: Icon(Icons.arrow_back_rounded),
@@ -72,7 +73,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
                       TextField(
                         controller: phoneController,
                         decoration: InputDecoration(
-                          labelText: 'Please change phone number',
+                          labelText: LanguageChange.of(context).please_change_phone,
                           icon: Icon(Icons.phone),
                           hintText: arguments["tel"],
                         ),
@@ -83,7 +84,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
                 Padding(
                     padding: EdgeInsets.all(20.0),
                     child: RaisedButton(
-                        child: Text('Confirm'),
+                        child: Text(LanguageChange.of(context).confirm),
                         onPressed: () {
                           doUpload();
                         })),

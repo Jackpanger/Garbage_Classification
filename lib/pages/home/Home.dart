@@ -5,6 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:garbage_classification/config/Config.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import 'package:garbage_classification/services/UserServices.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../config/global_config.dart';
@@ -43,7 +44,7 @@ class _HomepageState extends State<Homepage> {
       if (image != null) {
         _imgPath = File(image.path);
       } else {
-        print('No image selected.');
+        print(LanguageChange.of(context).no_image_selected);
       }
     });
   }
@@ -96,7 +97,7 @@ class _HomepageState extends State<Homepage> {
       home: new Scaffold(
         appBar: AppBar(
           backgroundColor: GlobalConfig.themeColor,
-          title: Text("Search"),
+          title: Text(LanguageChange.of(context).search),
           centerTitle: true,
         ),
         body: Container(

@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:garbage_classification/config/Config.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import 'package:garbage_classification/pages/me/user/section/favorites.dart';
 import 'package:garbage_classification/services/DataStorage.dart';
 import 'dart:convert';
@@ -124,7 +125,7 @@ class _CategoryState extends State<CategoryPage> {
             theme: GlobalConfig.themeData,
             home: Scaffold(
               appBar: AppBar(
-                title: new Text('Category'),
+                title: new Text(LanguageChange.of(context).category),
                 centerTitle: true,
                 actions: <Widget>[
                   new IconButton(
@@ -139,33 +140,35 @@ class _CategoryState extends State<CategoryPage> {
                   //    backgroundColor: GlobalConfig.cardBackgroundColor,
                   tabs: <Widget>[
                     Tab(
-                      child: Container(
-                        child: Text(
-                          "Residual",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 18.0),
-                        ),
+                      child: Text(
+                        LanguageChange.of(context).residual,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: GlobalConfig.fontColor, fontSize: 18.0),
                       ),
                     ),
                     Tab(
                       child: Text(
-                        "Wet",
+                        LanguageChange.of(context).wet,
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18.0),
+                        style: TextStyle(
+                            color: GlobalConfig.fontColor, fontSize: 18.0),
                       ),
                     ),
                     Tab(
                       child: Text(
-                        "Recyclable",
+                        LanguageChange.of(context).recyclable,
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18.0),
+                        style: TextStyle(
+                            color: GlobalConfig.fontColor, fontSize: 18.0),
                       ),
                     ),
                     Tab(
                       child: Text(
-                        "Other",
+                        LanguageChange.of(context).other,
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18.0),
+                        style: TextStyle(
+                            color: GlobalConfig.fontColor, fontSize: 18.0),
                       ),
                     ),
                   ],
@@ -336,3 +339,4 @@ class _CategoryState extends State<CategoryPage> {
             )));
   }
 }
+

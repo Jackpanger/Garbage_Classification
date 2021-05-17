@@ -1,18 +1,20 @@
-import 'dart:typed_data';
 import 'dart:convert';
+
 import 'package:date_format/date_format.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cupertino_date_picker_fork/flutter_cupertino_date_picker_fork.dart';
 import 'package:garbage_classification/config/Config.dart';
 import 'package:garbage_classification/config/global_config.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import 'package:garbage_classification/pages/me/user/profile/userName.dart';
+import 'package:garbage_classification/services/Storage.dart';
 import 'package:garbage_classification/services/UserServices.dart';
 import 'package:path_provider/path_provider.dart';
 import './phoneNumber.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
-import 'package:garbage_classification/services/Storage.dart';
+
 
 class UserMessage extends StatefulWidget {
   UserMessage({
@@ -25,10 +27,10 @@ class UserMessage extends StatefulWidget {
 
 class _UserMessageState extends State<UserMessage> {
   DateTime _dateTime = DateTime.now();
-  String userName=' ';
-  String tel=' ';
-  String birthday="2000年1月1号";
-  String userSex=' ';
+  String userName = "";
+  String tel = "";
+  String birthday = '2000年1月1号';
+  String userSex = 'male';
   String avatar = "";
   bool isImage = false;
   var _imgPath;
@@ -77,14 +79,16 @@ class _UserMessageState extends State<UserMessage> {
                 TextButton(
                     onPressed: _takePhoto,
                     child: ListTile(
-                      title: Text('拍照'),
-                    )),
+                      title: Text(LanguageChange.of(context).take_photo),
+                )
+                ),
                 Divider(),
                 TextButton(
                     onPressed: _openGallery,
                     child: ListTile(
-                      title: Text('本地照片'),
-                    )),
+                      title: Text(LanguageChange.of(context).choose_picture),
+                    )
+                ),
               ],
             ),
           );
@@ -95,7 +99,8 @@ class _UserMessageState extends State<UserMessage> {
   Widget _ImageView(imgPath) {
     if (imgPath == null) {
       return Center(
-        child: Text("请选择图片或拍照"),
+        child: Text(LanguageChange.of(context).please_c_t),
+
       );
     } else {
       return Image.file(
@@ -113,7 +118,7 @@ class _UserMessageState extends State<UserMessage> {
       if (image != null) {
         _imgPath = File(image.path);
       } else {
-        print('No image selected.');
+        print(LanguageChange.of(context).no_image_selected);
       }
     });
   }
@@ -126,7 +131,7 @@ class _UserMessageState extends State<UserMessage> {
       if (image != null) {
         _imgPath = File(image.path);
       } else {
-        print('No image selected.');
+        print(LanguageChange.of(context).no_image_selected);
       }
     });
   }
@@ -163,25 +168,25 @@ class _UserMessageState extends State<UserMessage> {
             child: Column(
               children: <Widget>[
                 ListTile(
-                  title: Text('male'),
+                  title: Text(LanguageChange.of(context).male),
                   onTap: () {
                     setState(() {
-                      this.userSex = 'male';
+                      this.userSex = LanguageChange.of(context).male;
                       _doUpload("gender", "male");
                     });
 
-                    Navigator.pop(context, 'male');
+                    Navigator.pop(context, LanguageChange.of(context).male);
                   },
                 ),
                 Divider(),
                 ListTile(
-                  title: Text('female'),
+                  title: Text(LanguageChange.of(context).female),
                   onTap: () {
                     setState(() {
-                      this.userSex = 'female';
+                      this.userSex = LanguageChange.of(context).female;
                       _doUpload("gender", "female");
                     });
-                    Navigator.pop(context, 'female');
+                    Navigator.pop(context, LanguageChange.of(context).female);
                   },
                 ),
               ],
@@ -206,7 +211,7 @@ class _UserMessageState extends State<UserMessage> {
     Navigator.of(context)
         .push(MaterialPageRoute(
             builder: (context) => UserName(
-                  arguments: {"tel": this.tel, "username": userName},
+                  arguments: {LanguageChange.of(context).tel: this.tel, LanguageChange.of(context).username: userName},
                 )))
         .then((value) => _getName(value));
   }
@@ -226,7 +231,7 @@ class _UserMessageState extends State<UserMessage> {
       onMonthChangeStartWithFirstDate: true,
       pickerTheme: DateTimePickerTheme(
         showTitle: true,
-        confirm: Text('确定', style: TextStyle(color: Colors.red)),
+        confirm: Text(LanguageChange.of(context).confirm, style: TextStyle(color: Colors.red)),
       ),
       minDateTime: DateTime.parse("1980-01-01"),
       maxDateTime: DateTime.parse("2021-05-05"),
@@ -244,7 +249,8 @@ class _UserMessageState extends State<UserMessage> {
         setState(() {
           _dateTime = dateTime;
           this.birthday =
-              '${formatDate(_dateTime, [yyyy, '年', mm, '月', 'dd'])}';
+              '${formatDate(_dateTime, [yyyy, LanguageChange.of(context).year, mm, LanguageChange.of(context).month, 'dd'])}';
+
           _doUpload("birthday", birthday);
         });
       },
@@ -296,7 +302,7 @@ class _UserMessageState extends State<UserMessage> {
       theme: GlobalConfig.themeData,
       home: Scaffold(
           appBar: AppBar(
-            title: Text('User information'),
+            title: Text(LanguageChange.of(context).user_information),
             centerTitle: true,
             leading: IconButton(
               icon: Icon(Icons.arrow_back_rounded),
@@ -328,7 +334,7 @@ class _UserMessageState extends State<UserMessage> {
                               child: ListTile(
                                   title: Container(
                                     margin: const EdgeInsets.all(10.0),
-                                    child: Text('Profile'),
+                                    child: Text(LanguageChange.of(context).profile),
                                   ),
                                   trailing: Icon(Icons.chevron_right)),
                             ),
@@ -358,7 +364,7 @@ class _UserMessageState extends State<UserMessage> {
                             child: ListTile(
                                 title: Container(
                                   margin: const EdgeInsets.all(10.0),
-                                  child: Text('Username'),
+                                  child: Text(LanguageChange.of(context).username),
                                 ),
                                 trailing: Icon(Icons.chevron_right)),
                           ),
@@ -385,7 +391,7 @@ class _UserMessageState extends State<UserMessage> {
                           child: ListTile(
                               title: Container(
                                 margin: const EdgeInsets.all(10.0),
-                                child: Text('Tel'),
+                                child: Text(LanguageChange.of(context).tel),
                               ),
                               trailing: Icon(Icons.chevron_right)),
                         ),
@@ -413,7 +419,7 @@ class _UserMessageState extends State<UserMessage> {
                             child: ListTile(
                                 title: Container(
                                   margin: const EdgeInsets.all(10.0),
-                                  child: Text('Gender'),
+                                  child: Text(LanguageChange.of(context).gender),
                                 ),
                                 trailing: Icon(Icons.chevron_right)),
                           ),
@@ -440,7 +446,7 @@ class _UserMessageState extends State<UserMessage> {
                             child: ListTile(
                                 title: Container(
                                   margin: const EdgeInsets.all(10.0),
-                                  child: Text('Birthday'),
+                                  child: Text(LanguageChange.of(context).birthday),
                                 ),
                                 trailing: Icon(Icons.chevron_right)),
                           ),

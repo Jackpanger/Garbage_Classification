@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import 'package:garbage_classification/pages/tabs/Tabs.dart';
 import 'package:garbage_classification/widgets/ConText.dart';
 import 'package:garbage_classification/widgets/ConButton.dart';
@@ -35,13 +36,13 @@ class _RegisterThirdPageState extends State<RegisterThirdPage> {
   doRegister() async {
     if (password.length < 6) {
       Fluttertoast.showToast(
-        msg: 'Length of password cannot less than 6',
+        msg: LanguageChange.of(context).length_of_password_less_6,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
       );
     } else if (rpassword != password) {
       Fluttertoast.showToast(
-        msg: 'Not consistent',
+        msg: LanguageChange.of(context).not_consistent,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
       );
@@ -76,7 +77,7 @@ class _RegisterThirdPageState extends State<RegisterThirdPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("User registration-Third"),
+        title: Text(LanguageChange.of(context).user_registration_three),
       ),
       body: Container(
         padding: EdgeInsets.all(20),
@@ -84,7 +85,7 @@ class _RegisterThirdPageState extends State<RegisterThirdPage> {
           children: <Widget>[
             SizedBox(height: 50),
             ConText(
-              text: "Please input your password",
+              text: LanguageChange.of(context).please_input_password,
               password: true,
               onChanged: (value) {
                 this.password=value;
@@ -92,7 +93,7 @@ class _RegisterThirdPageState extends State<RegisterThirdPage> {
             ),
             SizedBox(height: 10),
             ConText(
-              text: "Please confirm your password",
+              text: LanguageChange.of(context).please_confirm_password,
               password: true,
               onChanged: (value) {
                 this.rpassword=value;
@@ -100,7 +101,7 @@ class _RegisterThirdPageState extends State<RegisterThirdPage> {
             ),
             SizedBox(height: 20),
             ConButton(
-              text: "Registration",
+              text: LanguageChange.of(context).registration,
               color: Colors.red,
               height: 74,
               cb: doRegister,

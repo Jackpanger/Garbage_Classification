@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import '../../../../config/global_config.dart';
 import 'package:garbage_classification/pages/me/Settings.dart';
 
@@ -20,7 +21,7 @@ class HotQuestionsPage extends StatelessWidget {
             },
             icon: Icon(Icons.arrow_back, size: 25),
           ),
-          title: Text("Hot Questions"),
+          title: Text(LanguageChange.of(context).hot_questions),
           centerTitle: true,
         ),
         body: new Container(
@@ -38,7 +39,7 @@ class HotQuestionsPage extends StatelessWidget {
                     child: new Container(
                       child: new ListTile(
                         title: new Container(
-                          child: new Text("怎么才能吃不胖？",
+                          child: new Text(LanguageChange.of(context).question_one,
                               style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                         ),
                         trailing: new Container(
@@ -61,7 +62,7 @@ class HotQuestionsPage extends StatelessWidget {
                     child: new Container(
                       child: new ListTile(
                         title: new Container(
-                          child: new Text("女朋友去哪里可以领？",
+                          child: new Text(LanguageChange.of(context).question_two,
                               style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                         ),
                         trailing: new Container(
@@ -84,7 +85,7 @@ class HotQuestionsPage extends StatelessWidget {
                     child: new Container(
                       child: new ListTile(
                         title: new Container(
-                          child: new Text("为什么我的头像不够帅？",
+                          child: new Text(LanguageChange.of(context).question_three,
                               style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                         ),
                         trailing: new Container(

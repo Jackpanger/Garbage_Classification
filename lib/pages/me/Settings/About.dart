@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import '../../../config/global_config.dart';
 import 'About/Development Team.dart';
 import 'About/Software License Agreement.dart';
@@ -15,11 +16,11 @@ class _AboutPageState extends State<AboutPage> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text("Hint!"),
-            content: Text("No Updates"),
+            title: Text(LanguageChange.of(context).hint),
+            content: Text(LanguageChange.of(context).no_updates),
             actions: <Widget>[
               FlatButton(
-                  child: Text("OK"),
+                  child: Text(LanguageChange.of(context).ok),
                   onPressed: () {
                     Navigator.pop(context);
                   }),
@@ -41,7 +42,7 @@ class _AboutPageState extends State<AboutPage> {
             },
             icon: Icon(Icons.arrow_back, size: 25),
           ),
-          title: Text("About"),
+          title: Text(LanguageChange.of(context).about),
           centerTitle: true,
         ),
         body: new Container(
@@ -68,7 +69,7 @@ class _AboutPageState extends State<AboutPage> {
                   child: new ListTile(
                     title: new Container(
                       child: new Text(
-                        "Trash Assistant",
+                        LanguageChange.of(context).trash_assistant,
                         style: new TextStyle(fontSize: GlobalConfig.fontSize),
                         textAlign: TextAlign.center,
                       ),
@@ -76,7 +77,7 @@ class _AboutPageState extends State<AboutPage> {
                     subtitle: new Container(
                       //margin: const EdgeInsets.only(top: 2.0),
                       child: new Text(
-                        "Version 1.0.1",
+                        LanguageChange.of(context).version,
                         style: new TextStyle(fontSize: GlobalConfig.fontSize),
                         textAlign: TextAlign.center,
                       ),
@@ -92,7 +93,7 @@ class _AboutPageState extends State<AboutPage> {
                     child: new Container(
                       child: new ListTile(
                         title: new Container(
-                          child: new Text("Check for Updates",
+                          child: new Text(LanguageChange.of(context).check_for_update,
                               style: new TextStyle(
                                   fontSize: GlobalConfig.fontSize)),
                         ),
@@ -114,7 +115,7 @@ class _AboutPageState extends State<AboutPage> {
                     child: new Container(
                       child: new ListTile(
                         title: new Container(
-                          child: new Text("Development Team",
+                          child: new Text(LanguageChange.of(context).development_team,
                               style: new TextStyle(
                                   fontSize: GlobalConfig.fontSize)),
                         ),
@@ -136,7 +137,7 @@ class _AboutPageState extends State<AboutPage> {
                     child: new Container(
                       child: new ListTile(
                         title: new Container(
-                          child: new Text("Software License Agreement",
+                          child: new Text(LanguageChange.of(context).software_license_agreement,
                               style: new TextStyle(
                                   fontSize: GlobalConfig.fontSize)),
                         ),

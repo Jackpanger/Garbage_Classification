@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import '../../../config/global_config.dart';
 import 'package:garbage_classification/pages/me/Settings.dart';
 
@@ -27,7 +28,7 @@ class _TextSizePageState extends State<TextSizePage> {
               },
               icon: Icon(Icons.arrow_back, size: 25),
             ),
-            title: Text("Text Size"),
+            title: Text(LanguageChange.of(context).text_size),
             centerTitle: true,
           ),
           body: new ListView(
@@ -51,7 +52,7 @@ class _TextSizePageState extends State<TextSizePage> {
                       child: new ListTile(
                         title: new Container(
                           child: new Text(
-                            "Large",
+                            LanguageChange.of(context).large,
                             style: new TextStyle(
                               fontSize: GlobalConfig.fontSize,
                             ),
@@ -85,7 +86,7 @@ class _TextSizePageState extends State<TextSizePage> {
                       child: new ListTile(
                         title: new Container(
                           child: new Text(
-                            "Middle",
+                            LanguageChange.of(context).middle,
                             style: new TextStyle(
                               fontSize: GlobalConfig.fontSize,
                               //fontSize: FontSize.getFontSize(),
@@ -120,7 +121,7 @@ class _TextSizePageState extends State<TextSizePage> {
                       child: new ListTile(
                         title: new Container(
                           child: new Text(
-                            "Small",
+                            LanguageChange.of(context).small,
                             style: new TextStyle(
                               fontSize: GlobalConfig.fontSize,
                               //fontSize: FontSize.getFontSize(),

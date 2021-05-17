@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import 'package:garbage_classification/pages/me/user/profile/profile.dart';
 import 'package:garbage_classification/pages/tabs/Tabs.dart';
 import 'package:garbage_classification/services/UserServices.dart';
@@ -91,13 +92,13 @@ class _MeState extends State<Me> {
                           ),
                           title: new Container(
                             margin: const EdgeInsets.only(bottom: 2.0),
-                            child: new Text("user",
+                            child: new Text(LanguageChange.of(context).user,
                                 style: new TextStyle(
                                     fontSize: GlobalConfig.fontSize)),
                           ),
                           subtitle: new Container(
                             margin: const EdgeInsets.only(top: 2.0),
-                            child: new Text("Login",
+                            child: new Text(LanguageChange.of(context).login,
                                 style: new TextStyle(
                                     fontSize: GlobalConfig.fontSize - 2)),
                           ),
@@ -165,7 +166,7 @@ class _MeState extends State<Me> {
                             ),
                             new Container(
                               child: new Text(
-                                "My work",
+                                  LanguageChange.of(context).my_work,
                                 style: new TextStyle(
                                     fontSize: 12.0,
                                     color: GlobalConfig.fontColor),
@@ -206,7 +207,7 @@ class _MeState extends State<Me> {
                             ),
                             new Container(
                               child: new Text(
-                                "subscribe",
+                                LanguageChange.of(context).subscribe,
                                 style: new TextStyle(
                                     fontSize: 12.0,
                                     color: GlobalConfig.fontColor),
@@ -247,7 +248,7 @@ class _MeState extends State<Me> {
                             ),
                             new Container(
                               child: new Text(
-                                "favorites",
+                                LanguageChange.of(context).favorites,
                                 style: new TextStyle(
                                     fontSize: 12.0,
                                     color: GlobalConfig.fontColor),
@@ -288,7 +289,7 @@ class _MeState extends State<Me> {
                               ),
                               new Container(
                                 child: new Text(
-                                  "recent",
+                                  LanguageChange.of(context).recent,
                                   style: new TextStyle(
                                       fontSize: 12.0,
                                       color: GlobalConfig.fontColor),
@@ -392,7 +393,7 @@ class _MeState extends State<Me> {
                     ),
                     new Container(
                       child: new Text(
-                          GlobalConfig.dark == true ? "Day" : "Night",
+                          GlobalConfig.dark == true ?  LanguageChange.of(context).day :  LanguageChange.of(context).night,
                           style: new TextStyle(
                               color: GlobalConfig.fontColor,
                               fontSize: GlobalConfig.fontSize - 2)),
@@ -424,7 +425,7 @@ class _MeState extends State<Me> {
                         ),
                       ),
                       new Container(
-                        child: new Text("Settings",
+                        child: new Text( LanguageChange.of(context).Settings,
                             style: new TextStyle(
                                 color: GlobalConfig.fontColor,
                                 fontSize: GlobalConfig.fontSize - 2)),

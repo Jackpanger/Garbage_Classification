@@ -21,6 +21,8 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  flutter_localizations:
+    sdk: flutter
   flutter:
     sdk: flutter
   provider: ^5.0.0
@@ -39,14 +41,17 @@ dependencies:
   cupertino_icons: ^1.0.2
   image_picker: ^0.7.4
   flutter_cupertino_date_picker_fork: ^1.0.3
+  flutter_i18n: ^0.22.3
   date_format: ^2.0.2
   flutter_swiper: ^1.1.6
-  flutter_sound: ^8.1.1
   permission_handler: ^7.1.0
   path_provider: ^2.0.1
+  flutter_sound: ^8.1.1
 
 
 dev_dependencies:
+  flutter_localizations:
+    sdk: flutter
   flutter_test:
     sdk: flutter
 
@@ -108,3 +113,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_intl:
+  enabled: true

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 
 class GarbageInfo extends StatefulWidget {
   Map arguments;
@@ -36,7 +37,7 @@ class _GarbageInfoState extends State<GarbageInfo> {
         theme: ThemeData.dark(),
         home: Scaffold(
             appBar: AppBar(
-              title: Text('详细信息'),
+              title: Text(LanguageChange.of(context).detailed_information),
             ),
             body: Column(
               children: <Widget>[
@@ -50,7 +51,7 @@ class _GarbageInfoState extends State<GarbageInfo> {
                       width: 70.0,
                     ),
                     Text(
-                      '物品详情:',
+                      LanguageChange.of(context).trash_details,
                       style: TextStyle(fontSize: 40.0, color: Colors.blue),
                     )
                   ],
@@ -71,7 +72,7 @@ class _GarbageInfoState extends State<GarbageInfo> {
                     SizedBox(
                       width: 10.0,
                     ),
-                    Text('物品名称:  $name'),
+                    Text(LanguageChange.of(context).trash_name+':  $name'),
                   ],
                 ),
                 Row(
@@ -80,7 +81,7 @@ class _GarbageInfoState extends State<GarbageInfo> {
                     SizedBox(
                       width: 10.0,
                     ),
-                    Text('类型:  $type'),
+                    Text(LanguageChange.of(context).type+':  $type'),
                   ],
                 ),
                 SizedBox(
@@ -91,7 +92,7 @@ class _GarbageInfoState extends State<GarbageInfo> {
                   children: [
                     Expanded(
                         child: Text(
-                      '  类型注释：',
+                          LanguageChange.of(context).type_annotation,
                       style: TextStyle(fontSize: 25.0, color: Colors.green),
                     )),
                   ],
@@ -110,7 +111,7 @@ class _GarbageInfoState extends State<GarbageInfo> {
                   children: [
                     Expanded(
                         child: Text(
-                      '  同类垃圾：',
+                          LanguageChange.of(context).similar_trash,
                       style: TextStyle(fontSize: 25.0, color: Colors.green),
                     )),
                   ],
@@ -129,7 +130,7 @@ class _GarbageInfoState extends State<GarbageInfo> {
                   children: [
                     Expanded(
                         child: Text(
-                      '  处理方法：',
+                          LanguageChange.of(context).handling_method,
                       style: TextStyle(fontSize: 25.0, color: Colors.green),
                     )),
                   ],

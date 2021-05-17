@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import '../../../config/global_config.dart';
 
 class ServicesPage extends StatefulWidget {
@@ -20,7 +21,7 @@ class _ServicesPageState extends State<ServicesPage> {
             },
             icon: Icon(Icons.arrow_back, size: 25),
           ),
-          title: Text("XXX Services"),
+          title: Text(LanguageChange.of(context).xxx_services),
           centerTitle: true,
         ),
         body: Container(
@@ -39,7 +40,7 @@ class _ServicesPageState extends State<ServicesPage> {
                       child: new ListTile(
                         title: new Container(
                           child: new Text(
-                            "XXX Services",
+                            LanguageChange.of(context).xxx_services,
                             style: new TextStyle(fontSize: GlobalConfig.fontSize),
                             textAlign: TextAlign.center,
                           ),
@@ -47,7 +48,7 @@ class _ServicesPageState extends State<ServicesPage> {
                         subtitle: new Container(
                           //margin: const EdgeInsets.only(top: 2.0),
                           child: new Text(
-                            "Explore recently released XXX services",
+                            LanguageChange.of(context).err,
                             style: new TextStyle(fontSize: GlobalConfig.fontSize-4.0),
                             textAlign: TextAlign.center,
                           ),
@@ -63,7 +64,7 @@ class _ServicesPageState extends State<ServicesPage> {
                       child: new ListTile(
                         title: new Container(
                           child: new Text(
-                            "————  No services available  ————",
+                            LanguageChange.of(context).no_services_available,
                             style: new TextStyle(fontSize: GlobalConfig.fontSize-6.0),
                             textAlign: TextAlign.center,
                           ),

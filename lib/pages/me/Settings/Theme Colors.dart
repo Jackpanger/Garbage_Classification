@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import '../../../config/global_config.dart';
 import '../Settings.dart';
 
@@ -30,7 +31,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
             },
             icon: Icon(Icons.arrow_back, size: 25),
           ),
-          title: Text("Theme Colors"),
+          title: Text(LanguageChange.of(context).theme_colors),
           centerTitle: true,
         ),
         body: new Column(
@@ -92,7 +93,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         ),
                       ),
                       title: new Container(
-                        child: new Text("White",
+                        child: new Text(LanguageChange.of(context).white,
                           style: new TextStyle(
                             fontSize: GlobalConfig.fontSize,
                           ),
@@ -162,7 +163,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         ),
                       ),
                       title: new Container(
-                        child: new Text("Black",
+                        child: new Text(LanguageChange.of(context).black,
                           style: new TextStyle(
                             fontSize: GlobalConfig.fontSize,
                           ),
@@ -233,7 +234,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         ),
                       ),
                       title: new Container(
-                        child: new Text("Pink",
+                        child: new Text(LanguageChange.of(context).pink,
                           style: new TextStyle(
                             fontSize: GlobalConfig.fontSize,
                           ),
@@ -305,7 +306,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         ),
                       ),
                       title: new Container(
-                        child: new Text("Yellow",
+                        child: new Text(LanguageChange.of(context).yellow,
                           style: new TextStyle(
                             fontSize: GlobalConfig.fontSize,
                           ),
@@ -377,7 +378,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         ),
                       ),
                       title: new Container(
-                        child: new Text("Blue",
+                        child: new Text(LanguageChange.of(context).blue,
                           style: new TextStyle(
                             fontSize: GlobalConfig.fontSize,
                           ),
@@ -449,7 +450,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         ),
                       ),
                       title: new Container(
-                        child: new Text("Red",
+                        child: new Text(LanguageChange.of(context).red,
                           style: new TextStyle(
                             fontSize: GlobalConfig.fontSize,
                           ),
@@ -521,7 +522,7 @@ class _ThemeColorsPageState extends State<ThemeColorsPage> {
                         ),
                       ),
                       title: new Container(
-                        child: new Text("Green",
+                        child: new Text(LanguageChange.of(context).green,
                           style: new TextStyle(
                             fontSize: GlobalConfig.fontSize,
                           ),

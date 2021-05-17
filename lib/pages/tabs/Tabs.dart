@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:garbage_classification/generated/l10n.dart';
 import '../home/Home.dart';
 import '../category/Category.dart';
 import '../me/Me.dart';
@@ -48,15 +49,15 @@ class _TabState extends State<Tabs> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            label: "Search",
+            label: LanguageChange.of(context).search,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.category),
-            label: "Category",
+            label: LanguageChange.of(context).category,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_rounded),
-            label: "Me",
+            label: LanguageChange.of(context).me,
           ),
         ],
       ),

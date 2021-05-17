@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import 'package:garbage_classification/pages/tabs/Tabs.dart';
 
 class Open extends StatefulWidget {
@@ -35,7 +36,7 @@ class _OpenState extends State<Open> {
               color: Color.fromRGBO(0, 0, 0, 0.3),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
               child: Text(
-                "$count 跳过",
+                "$count"+ LanguageChange.of(context).skip,
                 style: TextStyle(color: Colors.white, fontSize: 15.0),
               ),
               onPressed: () {

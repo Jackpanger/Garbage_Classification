@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import 'package:garbage_classification/services/UserServices.dart';
 import '../../config/global_config.dart';
 import 'Settings/Language.dart';
@@ -8,6 +9,7 @@ import 'Settings/Help&Feedback.dart';
 import 'Settings/About.dart';
 import 'Settings/Services.dart';
 import 'Settings/Switch Account.dart';
+import 'package:intl/intl.dart';
 import 'Settings/Theme Colors.dart';
 import 'package:garbage_classification/pages/tabs/Tabs.dart';
 
@@ -24,7 +26,7 @@ class _SettingsState extends State<Settings> {
       home: new Scaffold(
           appBar: AppBar(
             backgroundColor: GlobalConfig.themeColor,
-            title: Text("Settings"),
+            title: Text(LanguageChange.of(context).settings),
             centerTitle: true,
             leading: IconButton(
               icon: Icon(Icons.arrow_back_rounded),
@@ -52,7 +54,7 @@ class _SettingsState extends State<Settings> {
                       child: new Row(
                         children: <Widget>[
                           new Container(
-                            child: new Text("Language",
+                            child: new Text(LanguageChange.of(context).Language,
                                 style: new TextStyle(
                                     color: GlobalConfig.fontColor,
                                     fontSize: GlobalConfig.fontSize)),
@@ -76,7 +78,7 @@ class _SettingsState extends State<Settings> {
                       child: new Row(
                         children: <Widget>[
                           new Container(
-                            child: new Text("Text Size",
+                            child: new Text(LanguageChange.of(context).text_size,
                                 style: new TextStyle(
                                     color: GlobalConfig.fontColor,
                                     fontSize: GlobalConfig.fontSize)),
@@ -100,7 +102,7 @@ class _SettingsState extends State<Settings> {
                       child: new Row(
                         children: <Widget>[
                           new Container(
-                            child: new Text("Theme Colors",
+                            child: new Text(LanguageChange.of(context).theme_colors,
                                 style: new TextStyle(
                                     color: GlobalConfig.fontColor,
                                     fontSize: GlobalConfig.fontSize)),
@@ -124,7 +126,7 @@ class _SettingsState extends State<Settings> {
                       child: new Row(
                         children: <Widget>[
                           new Container(
-                            child: new Text("Other Tools",
+                            child: new Text(LanguageChange.of(context).other_tools,
                                 style: new TextStyle(
                                     color: GlobalConfig.fontColor,
                                     fontSize: GlobalConfig.fontSize)),
@@ -148,7 +150,7 @@ class _SettingsState extends State<Settings> {
                       child: new Row(
                         children: <Widget>[
                           new Container(
-                            child: new Text("Help & Feedback",
+                            child: new Text(LanguageChange.of(context).help,
                                 style: new TextStyle(
                                     color: GlobalConfig.fontColor,
                                     fontSize: GlobalConfig.fontSize)),
@@ -172,7 +174,7 @@ class _SettingsState extends State<Settings> {
                       child: new Row(
                         children: <Widget>[
                           new Container(
-                            child: new Text("About",
+                            child: new Text(LanguageChange.of(context).about,
                                 style: new TextStyle(
                                     color: GlobalConfig.fontColor,
                                     fontSize: GlobalConfig.fontSize)),
@@ -196,7 +198,7 @@ class _SettingsState extends State<Settings> {
                       child: new Row(
                         children: <Widget>[
                           new Container(
-                            child: new Text("Services",
+                            child: new Text(LanguageChange.of(context).services,
                                 style: new TextStyle(
                                     color: GlobalConfig.fontColor,
                                     fontSize: GlobalConfig.fontSize)),
@@ -215,7 +217,7 @@ class _SettingsState extends State<Settings> {
                           builder: (context) => SwitchAccountPage()));
                     },
                     child: new Container(
-                      child: new Text("Switch Account",
+                      child: new Text(LanguageChange.of(context).switch_account,
                           style: new TextStyle(
                               color: GlobalConfig.fontColor, fontSize: GlobalConfig.fontSize)),
                     )),
@@ -229,7 +231,7 @@ class _SettingsState extends State<Settings> {
                     Navigator.pop(context, true);
                   },
                   child: Text(
-                    "Log Out",
+                    LanguageChange.of(context).log_out,
                     textAlign: TextAlign.center,
                     style:
                         TextStyle(fontSize: GlobalConfig.fontSize, color: GlobalConfig.fontColor),

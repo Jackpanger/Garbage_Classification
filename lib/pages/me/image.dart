@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/config/Config.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:dio/dio.dart';
 import 'dart:io';
@@ -18,7 +19,7 @@ class _ImagePickerState extends State<ImagePickerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("ImagePicker"),
+          title: Text(LanguageChange.of(context).image_picker),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -27,11 +28,11 @@ class _ImagePickerState extends State<ImagePickerPage> {
               _ImageView(_imgPath),
               RaisedButton(
                 onPressed: _takePhoto,
-                child: Text("拍照"),
+                child: Text(LanguageChange.of(context).take_photo),
               ),
               RaisedButton(
                 onPressed: _openGallery,
-                child: Text("选择照片"),
+                child: Text(LanguageChange.of(context).choose_picture),
               ),
             ],
           ),
@@ -42,7 +43,7 @@ class _ImagePickerState extends State<ImagePickerPage> {
   Widget _ImageView(imgPath) {
     if (imgPath == null) {
       return Center(
-        child: Text("请选择图片或拍照"),
+        child: Text(LanguageChange.of(context).please_c_t),
       );
     } else {
       return Image.file(
@@ -60,7 +61,7 @@ class _ImagePickerState extends State<ImagePickerPage> {
       if (image != null) {
         _imgPath = File(image.path);
       } else {
-        print('No image selected.');
+        print(LanguageChange.of(context).no_image_selected);
       }
     });
   }
@@ -73,7 +74,7 @@ class _ImagePickerState extends State<ImagePickerPage> {
       if (image != null) {
         _imgPath = File(image.path);
       } else {
-        print('No image selected.');
+        print(LanguageChange.of(context).no_image_selected);
       }
     });
   }

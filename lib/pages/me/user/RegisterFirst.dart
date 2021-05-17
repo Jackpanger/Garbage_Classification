@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import '../../../widgets/ConText.dart';
 import '../../../widgets/ConButton.dart';
 import '../../../config/Config.dart';
@@ -40,7 +41,7 @@ class _RegisterFirstPageState extends State<RegisterFirstPage> {
       }
     } else {
       Fluttertoast.showToast(
-        msg: 'Format of phone number is wrong',
+        msg: LanguageChange.of(context).format_of_number_wrong,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
       );
@@ -51,7 +52,7 @@ class _RegisterFirstPageState extends State<RegisterFirstPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("User registration-First"),
+        title: Text(LanguageChange.of(context).user_registration_one),
       ),
       body: Container(
         padding: EdgeInsets.all(20),
@@ -59,7 +60,7 @@ class _RegisterFirstPageState extends State<RegisterFirstPage> {
           children: <Widget>[
             SizedBox(height: 50),
             ConText(
-              text: "Please type in your number",
+              text: LanguageChange.of(context).please_type_your_number,
               onChanged: (value) {
                 // print(value);
                 this.tel = value;
@@ -67,7 +68,7 @@ class _RegisterFirstPageState extends State<RegisterFirstPage> {
             ),
             SizedBox(height: 20),
             ConButton(
-              text: "Next",
+              text: LanguageChange.of(context).next,
               color: Colors.red,
               height: 74,
               cb: sendCode,

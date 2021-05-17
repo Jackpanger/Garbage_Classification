@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:garbage_classification/config/Config.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import 'package:garbage_classification/pages/tabs/Tabs.dart';
 import '../../../config/global_config.dart';
 import '../../../services/Storage.dart';
@@ -23,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
   doLogin() async {
     if (password.length < 6) {
       Fluttertoast.showToast(
-        msg: 'Length of password can not be less than 6',
+        msg: LanguageChange.of(context).length_of_password_less_6,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
       );
@@ -61,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
         actions: <Widget>[
           TextButton(
             child: Text(
-              "Serve",
+              LanguageChange.of(context).serve,
               style: TextStyle(color: Colors.white),
             ),
             onPressed: () {},
@@ -83,14 +84,14 @@ class _LoginPageState extends State<LoginPage> {
             ),
             SizedBox(height: 30),
             ConText(
-              text: "Username",
+              text: LanguageChange.of(context).username,
               onChanged: (value) {
                 this.username = value;
               },
             ),
             SizedBox(height: 10),
             ConText(
-              text: "Password",
+              text:  LanguageChange.of(context).password,
               password: true,
               onChanged: (value) {
                 this.password = value;
@@ -107,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                         onTap: () {
                           Navigator.pushNamed(context, '/forgetFirst');
                         },
-                        child: Text('Forget password'),
+                        child: Text( LanguageChange.of(context).forget_password),
                       )),
                   Align(
                     alignment: Alignment.centerRight,
@@ -115,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                       onTap: () {
                         Navigator.pushNamed(context, '/registerFirst');
                       },
-                      child: Text('Sign in'),
+                      child: Text( LanguageChange.of(context).sign_in),
                     ),
                   )
                 ],
@@ -123,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             SizedBox(height: 20),
             ConButton(
-              text: "Login",
+              text:  LanguageChange.of(context).login,
               color: Colors.red,
               height: 74,
               cb: doLogin,

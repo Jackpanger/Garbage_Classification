@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import '../../../config/global_config.dart';
+import 'package:intl/intl.dart';
 
 class ButtonColors {
   static Color colorOrigin = Colors.white;
@@ -14,6 +16,28 @@ class LanguagePage extends StatefulWidget {
 }
 
 class _LanguagePageState extends State<LanguagePage> {
+  void _changeLanguageen() async {
+    print('修改前语言环境:${Intl.getCurrentLocale()}');
+    await LanguageChange.load(Locale('en', 'US'));
+    //setState刷新页面改变语言
+    setState(() {});
+    print('修改后语言环境:${Intl.getCurrentLocale()}');
+  }
+  void _changeLanguageCn() async {
+    print('修改前语言环境:${Intl.getCurrentLocale()}');
+    await LanguageChange.load(Locale('zh', 'CN'));
+    //setState刷新页面改变语言
+    setState(() {});
+    print('修改后语言环境:${Intl.getCurrentLocale()}');
+  }
+  void _changeLanguageTw() async {
+    print('修改前语言环境:${Intl.getCurrentLocale()}');
+    await LanguageChange.load(Locale('zh', 'TW'));
+    //setState刷新页面改变语言
+    setState(() {});
+    print('修改后语言环境:${Intl.getCurrentLocale()}');
+  }
+
   bool checka = true;
   bool checkb = true;
   bool checkc = true;
@@ -31,7 +55,7 @@ class _LanguagePageState extends State<LanguagePage> {
                 },
                 icon: Icon(Icons.arrow_back, size: 25),
               ),
-              title: Text('Language'),
+              title: Text(LanguageChange.of(context).language),
               centerTitle: true,
             ),
           body: new ListView(
@@ -43,6 +67,7 @@ class _LanguagePageState extends State<LanguagePage> {
                 child: new TextButton(
                     onPressed: () {
                       setState(() {
+                        _changeLanguageCn();
                         if (checka == true) {
                           GlobalConfig.Languagea = true;
                           GlobalConfig.Languageb = false;
@@ -54,7 +79,7 @@ class _LanguagePageState extends State<LanguagePage> {
                       child: new ListTile(
                         title: new Container(
                           child: new Text(
-                            "English",
+                            "简体中文",
                             style: new TextStyle(
                               fontSize: GlobalConfig.fontSize,
                             ),
@@ -76,6 +101,7 @@ class _LanguagePageState extends State<LanguagePage> {
                 child: new TextButton(
                     onPressed: () {
                       setState(() {
+                        _changeLanguageTw();
                         if (checkb == true) {
                           GlobalConfig.Languagea = false;
                           GlobalConfig.Languageb = true;
@@ -87,7 +113,7 @@ class _LanguagePageState extends State<LanguagePage> {
                       child: new ListTile(
                         title: new Container(
                           child: new Text(
-                            "简体中文",
+                            "繁體中文",
                             style: new TextStyle(
                               fontSize: GlobalConfig.fontSize,
                               //fontSize: FontSize.getFontSize(),
@@ -111,6 +137,7 @@ class _LanguagePageState extends State<LanguagePage> {
                     onPressed: () {
                       setState(() {
                         if (checkc == true) {
+                          _changeLanguageen();
                           GlobalConfig.Languagea = false;
                           GlobalConfig.Languageb = false;
                           GlobalConfig.Languagec = true;
@@ -121,7 +148,7 @@ class _LanguagePageState extends State<LanguagePage> {
                       child: new ListTile(
                         title: new Container(
                           child: new Text(
-                            "繁體中文",
+                            "English",
                             style: new TextStyle(
                               fontSize: GlobalConfig.fontSize,
                             ),

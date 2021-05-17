@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import '../../../config/global_config.dart';
 
 class OtherToolsPage extends StatefulWidget {
@@ -21,7 +22,7 @@ class _OtherToolsPageState extends State<OtherToolsPage> {
             },
             icon: Icon(Icons.arrow_back, size: 25),
           ),
-          title: Text("Other Tools"),
+          title: Text(LanguageChange.of(context).other_tools),
           centerTitle: true,
         ),
         body: new Container(
@@ -36,7 +37,7 @@ class _OtherToolsPageState extends State<OtherToolsPage> {
                           child: new Icon(Icons.pan_tool_rounded,color: Colors.green),
                         ),
                         title: new Container(
-                          child: new Text("Enabled",
+                          child: new Text(LanguageChange.of(context).enabled,
                               style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                         ),
                       ),
@@ -53,7 +54,7 @@ class _OtherToolsPageState extends State<OtherToolsPage> {
                     child: new Container(
                       child: new ListTile(
                         title: new Container(
-                          child: new Text("苏州话语言输入功能",
+                          child: new Text(LanguageChange.of(context).suzhou,
                               style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                         ),
                         trailing: new Container(
@@ -76,7 +77,7 @@ class _OtherToolsPageState extends State<OtherToolsPage> {
                     child: new Container(
                       child: new ListTile(
                         title: new Container(
-                          child: new Text("粤语语言输入功能",
+                          child: new Text(LanguageChange.of(context).yue,
                               style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                         ),
                         trailing: new Container(
@@ -97,7 +98,7 @@ class _OtherToolsPageState extends State<OtherToolsPage> {
                           child: new Icon(Icons.pan_tool_rounded,color: Colors.grey),
                         ),
                         title: new Container(
-                          child: new Text("Disabled",
+                          child: new Text(LanguageChange.of(context).disabled,
                               style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                         ),
                       ),
@@ -114,7 +115,7 @@ class _OtherToolsPageState extends State<OtherToolsPage> {
                     child: new Container(
                       child: new ListTile(
                         title: new Container(
-                          child: new Text("XXX News",
+                          child: new Text(LanguageChange.of(context).xxx_news,
                               style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                         ),
                         trailing: new Container(
@@ -137,7 +138,7 @@ class _OtherToolsPageState extends State<OtherToolsPage> {
                     child: new Container(
                       child: new ListTile(
                         title: new Container(
-                          child: new Text("XXX Mail",
+                          child: new Text(LanguageChange.of(context).xxx_mail,
                               style: new TextStyle(fontSize: GlobalConfig.fontSize)),
                         ),
                         trailing: new Container(

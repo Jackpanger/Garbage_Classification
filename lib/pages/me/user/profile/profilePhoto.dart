@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 
 class ProfilePhoto extends StatefulWidget {
   ProfilePhoto({Key key}) : super(key: key);
@@ -13,10 +14,10 @@ class _ProfilePhotoState extends State<ProfilePhoto> {
     return Container(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Profile'),
+          title: Text(LanguageChange.of(context).profile),
         ),
         body: Container(
-          child: Text('Profile'),
+          child: Text(LanguageChange.of(context).profile),
         ),
       ),
     );

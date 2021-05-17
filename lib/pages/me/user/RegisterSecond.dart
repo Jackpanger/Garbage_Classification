@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import '../../../widgets/ConText.dart';
 import '../../../widgets/ConButton.dart';
 import '../../../config/Config.dart';
@@ -81,7 +82,7 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("User registration-Second"),
+        title: Text(LanguageChange.of(context).user_registration_two),
       ),
       body: Container(
         padding: EdgeInsets.all(20),
@@ -90,14 +91,14 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
             SizedBox(height: 50),
             Container(
               padding: EdgeInsets.only(left: 10),
-              child: Text("Code has sent to your number ${this.tel}，Please type in the code"),
+              child: Text(LanguageChange.of(context).code_has_sent_number+ "${this.tel}" + LanguageChange.of(context).please_type_in_code),
             ),
             SizedBox(height: 40),
             Stack(
               children: <Widget>[
                 Container(
                   child: ConText(
-                    text: "Code",
+                    text: LanguageChange.of(context).code,
                     onChanged: (value) {
                       // print(value);
                       this.code = value;
@@ -110,11 +111,11 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
                   top: 0,
                   child: this.sendCodeBtn
                       ? ElevatedButton(
-                          child: Text('Resend'),
+                          child: Text(LanguageChange.of(context).resend),
                           onPressed: this.sendCode,
                         )
                       : ElevatedButton(
-                          child: Text('Send after ${this.seconds}'),
+                          child: Text(LanguageChange.of(context).send_after+ "${this.seconds}"),
                           onPressed: () {},
                         ),
                 )
@@ -122,7 +123,7 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
             ),
             SizedBox(height: 20),
             ConButton(
-              text: "Next",
+              text: LanguageChange.of(context).next,
               color: Colors.red,
               height: 74,
               cb: this.validateCode,

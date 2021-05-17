@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/config/global_config.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 
 class SwitchAccountPage extends StatefulWidget {
   SwitchAccountPage({Key key}) : super(key: key);
@@ -29,7 +30,7 @@ class _SwitchAccountPageState extends State<SwitchAccountPage> {
               },
               icon: Icon(Icons.arrow_back, size: 25),
             ),
-            title: Text("Switch Account"),
+            title: Text(LanguageChange.of(context).switch_account),
             centerTitle: true,
           ),
           body: new ListView(
@@ -59,7 +60,7 @@ class _SwitchAccountPageState extends State<SwitchAccountPage> {
                         ),
                         title: new Container(
                           child: new Text(
-                            "Solitary square root of three",
+                            LanguageChange.of(context).account_one,
                             style: new TextStyle(
                               fontSize: GlobalConfig.fontSize,
                             ),
@@ -99,7 +100,7 @@ class _SwitchAccountPageState extends State<SwitchAccountPage> {
                         ),
                         title: new Container(
                           //margin: const EdgeInsets.only(bottom: 2.0),
-                          child: new Text("Sweet strawberry flavor",
+                          child: new Text(LanguageChange.of(context).account_two,
                             style: new TextStyle(
                               fontSize: GlobalConfig.fontSize,
                             ),
@@ -139,7 +140,7 @@ class _SwitchAccountPageState extends State<SwitchAccountPage> {
                         ),
                         title: new Container(
                           //margin: const EdgeInsets.only(bottom: 2.0),
-                          child: new Text("Keyboard warrior",
+                          child: new Text(LanguageChange.of(context).account_three,
                             style: new TextStyle(
                               fontSize: GlobalConfig.fontSize,
                             ),
@@ -171,7 +172,7 @@ class _SwitchAccountPageState extends State<SwitchAccountPage> {
                               child: Icon(Icons.add), radius: 20.0),
                         ),
                         title: new Container(
-                          child: new Text("Add or Register an Account",
+                          child: new Text(LanguageChange.of(context).add_account,
                             style: new TextStyle(
                               fontSize: GlobalConfig.fontSize,
                             ),
