@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/generated/l10n.dart';
-import '../../../config/global_config.dart';
+import 'package:garbage_classification/config/global_config.dart';
 import 'Help&Feedback/Hot Questions.dart';
 import 'Help&Feedback/Contact Us.dart';
 import 'Help&Feedback/Feedback.dart';

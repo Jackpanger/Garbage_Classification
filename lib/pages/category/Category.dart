@@ -24,10 +24,10 @@ class _CategoryState extends State<CategoryPage> {
   List _data3 = [];
   List _data4 = [];
 
-  _getData1() async {
+  _getData1(lan) async {
     var api = '${Config.home}data/category';
     var response =
-        await Dio().post(api, data: {"kind": "residual waste", "lan": "en"});
+        await Dio().post(api, data: {"kind": "residual waste", "lan": lan});
     var data = response.data["message"];
     setState(() {
       if (data != _data1) {
@@ -39,7 +39,7 @@ class _CategoryState extends State<CategoryPage> {
     });
   }
 
-  _getData2() async {
+  _getData2(lan) async {
     var api = '${Config.home}data/category';
     var response =
         await Dio().post(api, data: {"kind": "wet waste", "lan": "en"});
@@ -54,10 +54,10 @@ class _CategoryState extends State<CategoryPage> {
     });
   }
 
-  _getData3() async {
+  _getData3(lan) async {
     var api = '${Config.home}data/category';
     var response =
-        await Dio().post(api, data: {"kind": "recyclable waste", "lan": "en"});
+        await Dio().post(api, data: {"kind": "recyclable waste", "lan": lan});
     var data = response.data["message"];
     setState(() {
       if (data != _data1) {
@@ -69,10 +69,10 @@ class _CategoryState extends State<CategoryPage> {
     });
   }
 
-  _getData4() async {
+  _getData4(lan) async {
     var api = '${Config.home}data/category';
     var response =
-        await Dio().post(api, data: {"kind": "other waste", "lan": "en"});
+        await Dio().post(api, data: {"kind": "other waste", "lan": lan});
     var data = response.data["message"];
     setState(() {
       if (data != _data1) {
@@ -97,11 +97,11 @@ class _CategoryState extends State<CategoryPage> {
     });
   }
 
-  _getData() async {
-    _getData1();
-    _getData2();
-    _getData3();
-    _getData4();
+  _getData(lan) async {
+    _getData1(lan);
+    _getData2(lan);
+    _getData3(lan);
+    _getData4(lan);
   }
 
   @override
@@ -109,7 +109,7 @@ class _CategoryState extends State<CategoryPage> {
     // TODO: implement initState
     super.initState();
     _localData();
-    _getData();
+    _getData("en");
   }
 
   void _favorites() {

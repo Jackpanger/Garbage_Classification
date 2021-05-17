@@ -6,10 +6,10 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:garbage_classification/config/Config.dart';
 import 'package:garbage_classification/generated/l10n.dart';
 import 'package:garbage_classification/pages/tabs/Tabs.dart';
-import '../../../config/global_config.dart';
-import '../../../services/Storage.dart';
-import '../../../widgets/ConText.dart';
-import '../../../widgets/ConButton.dart';
+import 'package:garbage_classification/config/global_config.dart';
+import 'package:garbage_classification/services/Storage.dart';
+import 'package:garbage_classification/widgets/ConButton.dart';
+import 'package:garbage_classification/widgets/ConText.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key}) : super(key: key);

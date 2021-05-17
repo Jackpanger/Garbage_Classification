@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/generated/l10n.dart';
-import '../../../widgets/ConText.dart';
-import '../../../widgets/ConButton.dart';
-import '../../../config/Config.dart';
+import 'package:garbage_classification/widgets/ConButton.dart';
+import 'package:garbage_classification/widgets/ConText.dart';
+import 'package:garbage_classification/config/Config.dart';
 import 'package:dio/dio.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 

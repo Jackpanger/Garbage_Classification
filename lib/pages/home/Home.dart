@@ -8,7 +8,7 @@ import 'package:garbage_classification/config/Config.dart';
 import 'package:garbage_classification/generated/l10n.dart';
 import 'package:garbage_classification/services/UserServices.dart';
 import 'package:image_picker/image_picker.dart';
-import '../../config/global_config.dart';
+import 'package:garbage_classification/config/global_config.dart';
 import 'Search.dart';
 
 class Homepage extends StatefulWidget {

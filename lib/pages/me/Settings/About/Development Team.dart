@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/generated/l10n.dart';
-import '../../../../config/global_config.dart';
+import 'package:garbage_classification/config/global_config.dart';
 import 'package:garbage_classification/pages/me/Settings/About.dart';
 
 

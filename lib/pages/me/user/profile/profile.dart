@@ -11,7 +11,7 @@ import 'package:garbage_classification/pages/me/user/profile/userName.dart';
 import 'package:garbage_classification/services/Storage.dart';
 import 'package:garbage_classification/services/UserServices.dart';
 import 'package:path_provider/path_provider.dart';
-import './phoneNumber.dart';
+import 'package:garbage_classification/pages/me/user/profile/phoneNumber.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 

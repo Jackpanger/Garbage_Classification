@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/generated/l10n.dart';
 import 'package:garbage_classification/services/UserServices.dart';
-import '../../config/global_config.dart';
+import 'package:garbage_classification/config/global_config.dart';
 import 'Settings/Language.dart';
 import 'Settings/Text Size.dart';
 import 'Settings/Other Tools.dart';
