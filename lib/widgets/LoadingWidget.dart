@@ -21,6 +21,6 @@ class LoadingWidget extends StatelessWidget {
           ],
         ),
       ),
-    );;
+    );
   }
 }

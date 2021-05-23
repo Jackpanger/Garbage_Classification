@@ -154,7 +154,7 @@ class _CategoryState extends State<CategoryPage> {
 
   void _favorites() {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => favoritesPage()));
+        .push(MaterialPageRoute(builder: (context) => FavoritesPage()));
   }
 
   @override

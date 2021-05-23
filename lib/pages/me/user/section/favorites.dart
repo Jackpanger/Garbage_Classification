@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/config/global_config.dart';
 
-class favoritesPage extends StatefulWidget {
+class FavoritesPage extends StatefulWidget {
   @override
-  _favoritesState createState() => _favoritesState();
+  _FavoritesState createState() => _FavoritesState();
 }
 
-class _favoritesState extends State<favoritesPage> {
+class _FavoritesState extends State<FavoritesPage> {
   @override
 
 

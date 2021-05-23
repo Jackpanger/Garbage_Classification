@@ -22,7 +22,7 @@ class ConButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(10)),
         child: Center(
           child: Text(
-            "${text}",
+            "$text",
             style: TextStyle(color: Colors.white),
           ),
         ),

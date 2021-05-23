@@ -23,6 +23,7 @@ class _UserNameState extends State<UserName> {
   TextEditingController userNameController = TextEditingController();
   @override
   void initState(){
+    super.initState();
     this.tel = widget.arguments["tel"];
   }
   doUpload() async {

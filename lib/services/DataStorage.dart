@@ -27,8 +27,8 @@ class DataStorage {
   static getDataInfoRec() async {
     List dataRec;
     try {
-      List data_recData = json.decode(await Storage.getString('data_rec'));
-      dataRec = data_recData;
+      List dataRecData = json.decode(await Storage.getString('data_rec'));
+      dataRec = dataRecData;
     } catch (e) {
       dataRec = [];
     }
