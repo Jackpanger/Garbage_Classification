@@ -26,7 +26,7 @@ class _OpenState extends State<Open> {
         children: [
           ConstrainedBox(
             constraints: BoxConstraints.expand(),
-            child: Image.asset('images/open.jpeg',
+            child: Image.asset('images/open.png',
               fit: BoxFit.fill,
             ),
           ),

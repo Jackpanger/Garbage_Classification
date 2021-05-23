@@ -1,7 +1,6 @@
 import 'package:garbage_classification/services/Storage.dart';
 import 'dart:convert';
 
-
 class DataStorage {
   static getDataInfoRes() async {
     List dataRes;
@@ -13,6 +12,7 @@ class DataStorage {
     }
     return dataRes;
   }
+
   static getDataInfoWet() async {
     List dataWet;
     try {
@@ -23,6 +23,7 @@ class DataStorage {
     }
     return dataWet;
   }
+
   static getDataInfoRec() async {
     List dataRec;
     try {
@@ -32,7 +33,9 @@ class DataStorage {
       dataRec = [];
     }
     return dataRec;
-  }static getDataInfoOther() async {
+  }
+
+  static getDataInfoOther() async {
     List dataOther;
     try {
       List dataOtherData = json.decode(await Storage.getString('data_other'));
@@ -42,5 +45,4 @@ class DataStorage {
     }
     return dataOther;
   }
-
 }

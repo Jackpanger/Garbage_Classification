@@ -9,28 +9,30 @@ import 'kind.dart';
 import 'dart:convert';
 import 'package:dio/dio.dart';
 
-const recentSuggest = ['fish', 'aaa', 'b'];
+const recentSuggest = ['fish', 'bone', 'paper'];
 const popSuggest = [
-  'a',
-  'b',
-  'c',
-  'd',
-  'e',
-  'f',
-  'g',
-  'h'
+  'alcohol',
+  'animal',
+  'bone',
+  'carrot',
+  'cloth',
+  'toys',
+  'tap',
+  'lock'
 ];
 
 class SearchBarDelegate extends SearchDelegate<String> {
 
   Future<Map> _getData(query, context) async {
-    var apiUrl = Uri.parse(
-        'http://api.tianapi.com/txapi/lajifenlei/index?key=c68b31c7fd6da492daceb9b059456e41&word=' +
-            query);
-    var response = await Dio().post(apiUrl.toString());
-    print(response.data is Map);
+    // var apiUrl = Uri.parse(
+    //     'http://api.tianapi.com/txapi/lajifenlei/index?key=c68b31c7fd6da492daceb9b059456e41&word=' +
+    //         query);
+    var api = '${Config.home}data/search';
+    var response = await Dio().post(api, data: {"title": query});
+    print(json.decode(response.data) is Map);
     return await Future.delayed(Duration(seconds: 2), () {
-      return response.data;
+      print( json.decode(response.data));
+      return json.decode(response.data);
     });
   }
 
@@ -88,7 +90,7 @@ class SearchBarDelegate extends SearchDelegate<String> {
               return Container(
                 child: Center(
                   child: Text(
-                    "load data fail",
+                    "Not found",
                     style: TextStyle(fontSize: 24),
                   ),
                 ),
@@ -97,16 +99,16 @@ class SearchBarDelegate extends SearchDelegate<String> {
               print("--------->data");
               if (snapshot.data["msg"] == "success") {
                 var data = snapshot.data["newslist"][0];
-                var type;
-                if (data["type"] == 0) {
-                  type = "recyclable waste";
-                } else if (data["type"] == 1) {
-                  type = "other waste";
-                } else if (data["type"] == 2) {
-                  type = "wet waste";
-                } else if (data["type"] == 3) {
-                  type = "residual waste";
-                }
+                var type = data["type"];
+                // if (data["type"] == 0) {
+                //   type = "recyclable waste";
+                // } else if (data["type"] == 1) {
+                //   type = "other waste";
+                // } else if (data["type"] == 2) {
+                //   type = "wet waste";
+                // } else if (data["type"] == 3) {
+                //   type = "residual waste";
+                // }
                 return Scaffold(
                   body: garbageInfo(data["name"], type, data["explain"],
                       data["contain"], data["tip"]),
@@ -207,8 +209,8 @@ class SearchBarDelegate extends SearchDelegate<String> {
               children: <Widget>[
                 Container(
                   child: Image.asset('images/search.png', fit: BoxFit.cover),
-                  width: 200,
-                  height: 200,
+                  width: 150,
+                  height: 150,
                 ),
               ],
             ),

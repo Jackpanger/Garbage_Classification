@@ -12,7 +12,7 @@ import 'package:garbage_classification/config/global_config.dart';
 // import 'res/form2.dart';
 // import 'res/form3.dart';
 // import 'res/form4.dart';
-
+import 'package:intl/intl.dart';
 class CategoryPage extends StatefulWidget {
   @override
   _CategoryState createState() => _CategoryState();
@@ -26,8 +26,16 @@ class _CategoryState extends State<CategoryPage> {
 
   _getData1(lan) async {
     var api = '${Config.home}data/category';
+    var kind;
+    if (lan == "en") {
+      kind = "residual waste";
+    }else if(lan=="cn"){
+      kind = "干垃圾";
+    }else{
+      kind = "幹垃圾";
+    }
     var response =
-        await Dio().post(api, data: {"kind": "residual waste", "lan": lan});
+        await Dio().post(api, data: {"kind": kind, "lan": lan});
     var data = response.data["message"];
     setState(() {
       if (data != _data1) {
@@ -41,8 +49,16 @@ class _CategoryState extends State<CategoryPage> {
 
   _getData2(lan) async {
     var api = '${Config.home}data/category';
+    var kind;
+    if (lan == "en") {
+      kind = "wet waste";
+    }else if(lan=="cn"){
+      kind = "湿垃圾";
+    }else{
+      kind = "濕垃圾";
+    }
     var response =
-        await Dio().post(api, data: {"kind": "wet waste", "lan": "en"});
+        await Dio().post(api, data: {"kind": kind, "lan": lan});
     var data = response.data["message"];
     setState(() {
       if (data != _data1) {
@@ -56,8 +72,16 @@ class _CategoryState extends State<CategoryPage> {
 
   _getData3(lan) async {
     var api = '${Config.home}data/category';
+    var kind;
+    if (lan == "en") {
+      kind = "recyclable waste";
+    }else if(lan=="cn"){
+      kind = "可回收垃圾";
+    }else{
+      kind = "可回收垃圾";
+    }
     var response =
-        await Dio().post(api, data: {"kind": "recyclable waste", "lan": lan});
+        await Dio().post(api, data: {"kind": kind, "lan": lan});
     var data = response.data["message"];
     setState(() {
       if (data != _data1) {
@@ -71,8 +95,16 @@ class _CategoryState extends State<CategoryPage> {
 
   _getData4(lan) async {
     var api = '${Config.home}data/category';
+    var kind;
+    if (lan == "en") {
+      kind = "Hazardous waste";
+    }else if(lan=="cn"){
+      kind = "有害垃圾";
+    }else{
+      kind = "有害垃圾";
+    }
     var response =
-        await Dio().post(api, data: {"kind": "other waste", "lan": lan});
+        await Dio().post(api, data: {"kind": kind, "lan": lan});
     var data = response.data["message"];
     setState(() {
       if (data != _data1) {
@@ -109,7 +141,15 @@ class _CategoryState extends State<CategoryPage> {
     // TODO: implement initState
     super.initState();
     _localData();
-    _getData("en");
+    print(Intl.getCurrentLocale());
+    if(Intl.getCurrentLocale() =="en_US"){
+      _getData("en");
+    }else if(Intl.getCurrentLocale() =="zh_TW"){
+      _getData("tc");
+    }else{
+      _getData("cn");
+    }
+
   }
 
   void _favorites() {
