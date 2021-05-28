@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/config/global_config.dart';
 
 class SubPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Subscribe'),
-      ),
-      body: Text('Subscribe界面'),
+    return new MaterialApp(
+        theme: GlobalConfig.themeData,
+        home: Scaffold(
+          appBar: AppBar(
+            title: Text('Subscribe'),
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back_rounded),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ),
+          body: Center(
+            child: Text('To be developed'),
+          ),
+        )
     );
   }
 }

@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/config/global_config.dart';
 
 class RecentPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Recent'),
-      ),
-      body: Text('Recent界面'),
-    );
+    return new MaterialApp(
+        theme: GlobalConfig.themeData,
+        home: Scaffold(
+          appBar: AppBar(
+            title: Text('Recent'),
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back_rounded),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ),
+          body: Center(child: Text('To be developed'),),
+        ));
   }
 }

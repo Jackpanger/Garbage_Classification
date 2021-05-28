@@ -19,7 +19,7 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
-  var _settings = 'settings';
+  var _settings = 'Settings';
   var _language = 'language';
   var _text_size = 'Text Size';
   var _theme_colors  = 'Theme Colors';

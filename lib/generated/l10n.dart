@@ -48,8 +48,8 @@ class LanguageChange {
   /// `settings`
   String get settings {
     return Intl.message(
-      'settings',
-      name: 'settings',
+      'Settings',
+      name: 'Settings',
       desc: '',
       args: [],
     );
