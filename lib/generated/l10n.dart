@@ -38,8 +38,8 @@ class LanguageChange {
   /// `language`
   String get language {
     return Intl.message(
-      'language',
-      name: 'language',
+      'Language',
+      name: 'Language',
       desc: '',
       args: [],
     );
@@ -129,7 +129,7 @@ class LanguageChange {
   String get Settings {
     return Intl.message(
       'Settings',
-      name: 'Settings',
+      name: 'settings',
       desc: '',
       args: [],
     );
@@ -149,7 +149,7 @@ class LanguageChange {
   String get Language {
     return Intl.message(
       'Language',
-      name: 'Language',
+      name: 'language',
       desc: '',
       args: [],
     );

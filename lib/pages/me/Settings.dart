@@ -20,13 +20,13 @@ class Settings extends StatefulWidget {
 
 class _SettingsState extends State<Settings> {
   var _settings = 'Settings';
-  var _language = 'language';
+  var _language = 'Language';
   var _text_size = 'Text Size';
   var _theme_colors  = 'Theme Colors';
   var _other_tools='Other Tools';
   var _help='Help & Feedback';
   var _about='About';
-  var _services='services';
+  var _services='Services';
   var _switch_account='Switch Account';
   var _log_out='Log Out';
 
