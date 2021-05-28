@@ -19,7 +19,7 @@ class MyworkPage extends StatelessWidget {
               },
             ),
           ),
-          body: Center(child: Text(LanguageChange.of(context).to_be_developed)),
+          body: Center(child: Text(LanguageChange.of(context).to_be_developed,style: TextStyle(fontSize:18),)),
         ));
   }
 }

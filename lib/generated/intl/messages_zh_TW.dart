@@ -145,6 +145,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "tel" : MessageLookupByLibrary.simpleMessage("電話"),
     "text_size" : MessageLookupByLibrary.simpleMessage("字體大小"),
     "theme_colors" : MessageLookupByLibrary.simpleMessage("主題顏色"),
+    "to_be_developed" : MessageLookupByLibrary.simpleMessage("正在開發"),
     "trash_assistant" : MessageLookupByLibrary.simpleMessage("垃圾分類助手"),
     "trash_details" : MessageLookupByLibrary.simpleMessage("垃圾信息"),
     "trash_name" : MessageLookupByLibrary.simpleMessage("垃圾名稱"),

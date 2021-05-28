@@ -17,7 +17,7 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en_US';
+  String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
@@ -146,6 +146,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "tel" : MessageLookupByLibrary.simpleMessage("tel"),
     "text_size" : MessageLookupByLibrary.simpleMessage("Text Size"),
     "theme_colors" : MessageLookupByLibrary.simpleMessage("Theme Colors"),
+    "to_be_developed" : MessageLookupByLibrary.simpleMessage("to be developed"),
     "trash_assistant" : MessageLookupByLibrary.simpleMessage("Trash Assistant"),
     "trash_details" : MessageLookupByLibrary.simpleMessage("Trash details"),
     "trash_name" : MessageLookupByLibrary.simpleMessage("Trash name"),

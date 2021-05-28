@@ -19,7 +19,7 @@ class RecentPage extends StatelessWidget {
             ),
           ),
           body: Center(
-            child: Text(LanguageChange.of(context).to_be_developed),
+            child: Text(LanguageChange.of(context).to_be_developed,style: TextStyle(fontSize:18)),
           ),
         ));
   }
