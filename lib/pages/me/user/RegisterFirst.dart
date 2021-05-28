@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/config/global_config.dart';
 import 'package:garbage_classification/generated/l10n.dart';
 import 'package:garbage_classification/widgets/ConButton.dart';
 import 'package:garbage_classification/widgets/ConText.dart';
@@ -15,7 +16,8 @@ class RegisterFirstPage extends StatefulWidget {
 }
 
 class _RegisterFirstPageState extends State<RegisterFirstPage> {
-  String tel="";
+  String tel = "";
+
   sendCode() async {
     RegExp reg = new RegExp(r"^1\d{10}$");
     if (reg.hasMatch(this.tel)) {
@@ -28,10 +30,8 @@ class _RegisterFirstPageState extends State<RegisterFirstPage> {
       if (data["success"]) {
         print(response);
         print({"tel": this.tel});
-        Navigator.pushNamed(context, '/registerSecond',arguments: {
-          "tel":this.tel
-        });
-
+        Navigator.pushNamed(context, '/registerSecond',
+            arguments: {"tel": this.tel});
       } else {
         Fluttertoast.showToast(
           msg: '${data["message"]}',
@@ -50,32 +50,41 @@ class _RegisterFirstPageState extends State<RegisterFirstPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(LanguageChange.of(context).user_registration_one),
-      ),
-      body: Container(
-        padding: EdgeInsets.all(20),
-        child: ListView(
-          children: <Widget>[
-            SizedBox(height: 50),
-            ConText(
-              text: LanguageChange.of(context).please_type_your_number,
-              onChanged: (value) {
-                // print(value);
-                this.tel = value;
+    return new MaterialApp(
+        theme: GlobalConfig.themeData,
+        home: Scaffold(
+          appBar: AppBar(
+            title: Text(LanguageChange.of(context).user_registration_one),
+            backgroundColor: GlobalConfig.themeColor,
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back_rounded),
+              onPressed: () {
+                Navigator.of(context).pop();
               },
             ),
-            SizedBox(height: 20),
-            ConButton(
-              text: LanguageChange.of(context).next,
-              color: Colors.red,
-              height: 74,
-              cb: sendCode,
-            )
-          ],
-        ),
-      ),
-    );
+          ),
+          body: Container(
+            padding: EdgeInsets.all(20),
+            child: ListView(
+              children: <Widget>[
+                SizedBox(height: 50),
+                ConText(
+                  text: LanguageChange.of(context).please_type_your_number,
+                  onChanged: (value) {
+                    // print(value);
+                    this.tel = value;
+                  },
+                ),
+                SizedBox(height: 20),
+                ConButton(
+                  text: LanguageChange.of(context).next,
+                  color: Colors.red,
+                  height: 74,
+                  cb: sendCode,
+                )
+              ],
+            ),
+          ),
+        ));
   }
 }

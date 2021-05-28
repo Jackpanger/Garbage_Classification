@@ -297,12 +297,12 @@ class _UserMessageState extends State<UserMessage> {
   // UserMessage({this.arguments});
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: new MaterialApp(
+    return  new MaterialApp(
       theme: GlobalConfig.themeData,
       home: Scaffold(
           appBar: AppBar(
             title: Text(LanguageChange.of(context).user_information),
+            backgroundColor: GlobalConfig.themeColor,
             centerTitle: true,
             leading: IconButton(
               icon: Icon(Icons.arrow_back_rounded),
@@ -457,6 +457,6 @@ class _UserMessageState extends State<UserMessage> {
               ),
             ],
           )),
-    ));
+    );
   }
 }

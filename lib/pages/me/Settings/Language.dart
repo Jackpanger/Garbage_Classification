@@ -20,7 +20,7 @@ class _LanguagePageState extends State<LanguagePage> {
   void _changeLanguageen() async {
     var before = Intl.getCurrentLocale();
     print('修改前语言环境:${Intl.getCurrentLocale()}');
-    await LanguageChange.load(Locale('en', 'US'));
+    await LanguageChange.load(Locale('en', ''));
     //setState刷新页面改变语言
     setState(() {
       if (before != Intl.getCurrentLocale()) {

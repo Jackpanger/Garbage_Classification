@@ -1078,8 +1078,8 @@ class LanguageChange {
   /// `User registration-First`
   String get user_registration_one {
     return Intl.message(
-      'User registration-First',
-      name: 'user_registration_one',
+      'User registration',
+      name: 'user_registration',
       desc: '',
       args: [],
     );
@@ -1118,8 +1118,8 @@ class LanguageChange {
   /// `User registration-Second`
   String get user_registration_two {
     return Intl.message(
-      'User registration-Second',
-      name: 'user_registration_two',
+      'User registration',
+      name: 'user_registration',
       desc: '',
       args: [],
     );
@@ -1128,8 +1128,8 @@ class LanguageChange {
   /// `User registration-Third`
   String get user_registration_three {
     return Intl.message(
-      'User registration-Third',
-      name: 'user_registration_three',
+      'User registration',
+      name: 'user_registration',
       desc: '',
       args: [],
     );

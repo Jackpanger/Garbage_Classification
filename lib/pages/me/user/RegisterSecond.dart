@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:garbage_classification/config/global_config.dart';
 import 'package:garbage_classification/generated/l10n.dart';
 import 'package:garbage_classification/widgets/ConButton.dart';
 import 'package:garbage_classification/widgets/ConText.dart';
@@ -10,6 +11,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 class RegisterSecondPage extends StatefulWidget {
   Map arguments;
+
   RegisterSecondPage({Key key, this.arguments}) : super(key: key);
 
   _RegisterSecondPageState createState() => _RegisterSecondPageState();
@@ -65,10 +67,8 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
     Map data = json.decode(response.data);
     print(data);
     if (data["success"]) {
-      Navigator.pushNamed(context, '/registerThird',arguments: {
-        "tel":this.tel,
-        "code":this.code
-      });
+      Navigator.pushNamed(context, '/registerThird',
+          arguments: {"tel": this.tel, "code": this.code});
     } else {
       Fluttertoast.showToast(
         msg: '${data["message"]}',
@@ -80,57 +80,70 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(LanguageChange.of(context).user_registration_two),
-      ),
-      body: Container(
-        padding: EdgeInsets.all(20),
-        child: ListView(
-          children: <Widget>[
-            SizedBox(height: 50),
-            Container(
-              padding: EdgeInsets.only(left: 10),
-              child: Text(LanguageChange.of(context).code_has_sent_number+ "${this.tel}" + LanguageChange.of(context).please_type_in_code),
+    return new MaterialApp(
+        theme: GlobalConfig.themeData,
+        home: Scaffold(
+          appBar: AppBar(
+            title: Text(LanguageChange.of(context).user_registration_two),
+            backgroundColor: GlobalConfig.themeColor,
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back_rounded),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
             ),
-            SizedBox(height: 40),
-            Stack(
+          ),
+          body: Container(
+            padding: EdgeInsets.all(20),
+            child: ListView(
               children: <Widget>[
+                SizedBox(height: 50),
                 Container(
-                  child: ConText(
-                    text: LanguageChange.of(context).code,
-                    onChanged: (value) {
-                      // print(value);
-                      this.code = value;
-                    },
-                  ),
-                  height: 100,
+                  padding: EdgeInsets.only(left: 10),
+                  child: Text(LanguageChange.of(context).code_has_sent_number +
+                      "${this.tel}" +
+                      LanguageChange.of(context).please_type_in_code),
                 ),
-                Positioned(
-                  right: 0,
-                  top: 0,
-                  child: this.sendCodeBtn
-                      ? ElevatedButton(
-                          child: Text(LanguageChange.of(context).resend),
-                          onPressed: this.sendCode,
-                        )
-                      : ElevatedButton(
-                          child: Text(LanguageChange.of(context).send_after+ "${this.seconds}"),
-                          onPressed: () {},
-                        ),
+                SizedBox(height: 40),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      child: ConText(
+                        text: LanguageChange.of(context).code,
+                        onChanged: (value) {
+                          // print(value);
+                          this.code = value;
+                        },
+                      ),
+                      height: 100,
+                    ),
+                    Positioned(
+                      right: 0,
+                      top: 0,
+                      child: this.sendCodeBtn
+                          ? ElevatedButton(
+                              child: Text(LanguageChange.of(context).resend),
+                              onPressed: this.sendCode,
+                            )
+                          : ElevatedButton(
+                              child: Text(
+                                  LanguageChange.of(context).send_after +
+                                      "${this.seconds}"),
+                              onPressed: () {},
+                            ),
+                    )
+                  ],
+                ),
+                SizedBox(height: 20),
+                ConButton(
+                  text: LanguageChange.of(context).next,
+                  color: Colors.red,
+                  height: 74,
+                  cb: this.validateCode,
                 )
               ],
             ),
-            SizedBox(height: 20),
-            ConButton(
-              text: LanguageChange.of(context).next,
-              color: Colors.red,
-              height: 74,
-              cb: this.validateCode,
-            )
-          ],
-        ),
-      ),
-    );
+          ),
+        ));
   }
 }

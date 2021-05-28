@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/config/Config.dart';
+import 'package:garbage_classification/config/global_config.dart';
 import 'package:garbage_classification/widgets/ConButton.dart';
 import 'package:garbage_classification/widgets/ConText.dart';
 import 'package:dio/dio.dart';
@@ -9,6 +10,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 class ForgetSecondPage extends StatefulWidget {
   Map arguments;
+
   ForgetSecondPage({Key key, this.arguments}) : super(key: key);
 
   _ForgetSecondPageState createState() => _ForgetSecondPageState();
@@ -64,10 +66,8 @@ class _ForgetSecondPageState extends State<ForgetSecondPage> {
     // Map data = json.decode(response.data);
     // print(data);
     // if (data["success"]) {
-      Navigator.pushNamed(context, '/forgetThird',arguments: {
-        "tel":this.tel,
-        "code":this.code
-      });
+    Navigator.pushNamed(context, '/forgetThird',
+        arguments: {"tel": this.tel, "code": this.code});
     // } else {
     //   Fluttertoast.showToast(
     //     msg: '${data["message"]}',
@@ -79,57 +79,67 @@ class _ForgetSecondPageState extends State<ForgetSecondPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Forget password-Second"),
-      ),
-      body: Container(
-        padding: EdgeInsets.all(20),
-        child: ListView(
-          children: <Widget>[
-            SizedBox(height: 50),
-            Container(
-              padding: EdgeInsets.only(left: 10),
-              child: Text("Code has sent to your number ${this.tel}，Please type in the code"),
+    return new MaterialApp(
+        theme: GlobalConfig.themeData,
+        home: Scaffold(
+          appBar: AppBar(
+            title: Text("Forget password"),
+            backgroundColor: GlobalConfig.themeColor,
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back_rounded),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
             ),
-            SizedBox(height: 40),
-            Stack(
+          ),
+          body: Container(
+            padding: EdgeInsets.all(20),
+            child: ListView(
               children: <Widget>[
+                SizedBox(height: 50),
                 Container(
-                  child: ConText(
-                    text: "Code",
-                    onChanged: (value) {
-                      // print(value);
-                      this.code = value;
-                    },
-                  ),
-                  height: 100,
+                  padding: EdgeInsets.only(left: 10),
+                  child: Text(
+                      "Code has sent to your number ${this.tel}，Please type in the code"),
                 ),
-                Positioned(
-                  right: 0,
-                  top: 0,
-                  child: this.sendCodeBtn
-                      ? ElevatedButton(
-                          child: Text('Resend'),
-                          onPressed: this.sendCode,
-                        )
-                      : ElevatedButton(
-                          child: Text('Send after ${this.seconds}'),
-                          onPressed: () {},
-                        ),
+                SizedBox(height: 40),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      child: ConText(
+                        text: "Code",
+                        onChanged: (value) {
+                          // print(value);
+                          this.code = value;
+                        },
+                      ),
+                      height: 100,
+                    ),
+                    Positioned(
+                      right: 0,
+                      top: 0,
+                      child: this.sendCodeBtn
+                          ? ElevatedButton(
+                              child: Text('Resend'),
+                              onPressed: this.sendCode,
+                            )
+                          : ElevatedButton(
+                              child: Text('Send after ${this.seconds}'),
+                              onPressed: () {},
+                            ),
+                    )
+                  ],
+                ),
+                SizedBox(height: 20),
+                ConButton(
+                  text: "Next",
+                  color: Colors.red,
+                  height: 74,
+                  cb: this.validateCode,
                 )
               ],
             ),
-            SizedBox(height: 20),
-            ConButton(
-              text: "Next",
-              color: Colors.red,
-              height: 74,
-              cb: this.validateCode,
-            )
-          ],
-        ),
-      ),
-    );
+          ),
+        ));
   }
 }

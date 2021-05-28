@@ -8,11 +8,13 @@ import 'package:garbage_classification/services/DataStorage.dart';
 import 'dart:convert';
 import 'package:garbage_classification/services/Storage.dart';
 import 'package:garbage_classification/config/global_config.dart';
+
 // import 'res/form1.dart';
 // import 'res/form2.dart';
 // import 'res/form3.dart';
 // import 'res/form4.dart';
 import 'package:intl/intl.dart';
+
 class CategoryPage extends StatefulWidget {
   @override
   _CategoryState createState() => _CategoryState();
@@ -29,13 +31,12 @@ class _CategoryState extends State<CategoryPage> {
     var kind;
     if (lan == "en") {
       kind = "residual waste";
-    }else if(lan=="cn"){
+    } else if (lan == "cn") {
       kind = "干垃圾";
-    }else{
+    } else {
       kind = "幹垃圾";
     }
-    var response =
-        await Dio().post(api, data: {"kind": kind, "lan": lan});
+    var response = await Dio().post(api, data: {"kind": kind, "lan": lan});
     var data = response.data["message"];
     setState(() {
       if (data != _data1) {
@@ -52,13 +53,12 @@ class _CategoryState extends State<CategoryPage> {
     var kind;
     if (lan == "en") {
       kind = "wet waste";
-    }else if(lan=="cn"){
+    } else if (lan == "cn") {
       kind = "湿垃圾";
-    }else{
+    } else {
       kind = "濕垃圾";
     }
-    var response =
-        await Dio().post(api, data: {"kind": kind, "lan": lan});
+    var response = await Dio().post(api, data: {"kind": kind, "lan": lan});
     var data = response.data["message"];
     setState(() {
       if (data != _data1) {
@@ -75,13 +75,12 @@ class _CategoryState extends State<CategoryPage> {
     var kind;
     if (lan == "en") {
       kind = "recyclable waste";
-    }else if(lan=="cn"){
+    } else if (lan == "cn") {
       kind = "可回收垃圾";
-    }else{
+    } else {
       kind = "可回收垃圾";
     }
-    var response =
-        await Dio().post(api, data: {"kind": kind, "lan": lan});
+    var response = await Dio().post(api, data: {"kind": kind, "lan": lan});
     var data = response.data["message"];
     setState(() {
       if (data != _data1) {
@@ -98,13 +97,12 @@ class _CategoryState extends State<CategoryPage> {
     var kind;
     if (lan == "en") {
       kind = "Hazardous waste";
-    }else if(lan=="cn"){
+    } else if (lan == "cn") {
       kind = "有害垃圾";
-    }else{
+    } else {
       kind = "有害垃圾";
     }
-    var response =
-        await Dio().post(api, data: {"kind": kind, "lan": lan});
+    var response = await Dio().post(api, data: {"kind": kind, "lan": lan});
     var data = response.data["message"];
     setState(() {
       if (data != _data1) {
@@ -142,14 +140,13 @@ class _CategoryState extends State<CategoryPage> {
     super.initState();
     _localData();
     print(Intl.getCurrentLocale());
-    if(Intl.getCurrentLocale() =="en_US"){
+    if (Intl.getCurrentLocale() == "en") {
       _getData("en");
-    }else if(Intl.getCurrentLocale() =="zh_TW"){
+    } else if (Intl.getCurrentLocale() == "zh_TW") {
       _getData("tc");
-    }else{
+    } else {
       _getData("cn");
     }
-
   }
 
   void _favorites() {
@@ -186,6 +183,7 @@ class _CategoryState extends State<CategoryPage> {
                         style: TextStyle(
                             color: GlobalConfig.fontColor, fontSize: 18.0),
                       ),
+
                     ),
                     Tab(
                       child: Text(
@@ -379,4 +377,3 @@ class _CategoryState extends State<CategoryPage> {
             )));
   }
 }
-
