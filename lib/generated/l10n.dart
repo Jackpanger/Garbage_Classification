@@ -49,7 +49,7 @@ class LanguageChange {
   String get settings {
     return Intl.message(
       'Settings',
-      name: 'Settings',
+      name: 'settings',
       desc: '',
       args: [],
     );
@@ -129,7 +129,7 @@ class LanguageChange {
   String get Settings {
     return Intl.message(
       'Settings',
-      name: 'settings',
+      name: 'Settings',
       desc: '',
       args: [],
     );
@@ -140,6 +140,15 @@ class LanguageChange {
     return Intl.message(
       'My work',
       name: 'my_work',
+      desc: '',
+      args: [],
+    );
+  }
+  /// `to be developed`
+  String get to_be_developed {
+    return Intl.message(
+      'To be developed',
+      name: 'to_be_developed',
       desc: '',
       args: [],
     );

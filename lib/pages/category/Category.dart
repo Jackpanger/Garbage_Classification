@@ -27,91 +27,107 @@ class _CategoryState extends State<CategoryPage> {
   List _data4 = [];
 
   _getData1(lan) async {
-    var api = '${Config.home}data/category';
-    var kind;
-    if (lan == "en") {
-      kind = "residual waste";
-    } else if (lan == "cn") {
-      kind = "干垃圾";
-    } else {
-      kind = "幹垃圾";
-    }
-    var response = await Dio().post(api, data: {"kind": kind, "lan": lan});
-    var data = response.data["message"];
-    setState(() {
-      if (data != _data1) {
-        Storage.setString('data_res', json.encode(data));
-        _data1 = response.data["message"];
+    try {
+      var api = '${Config.home}data/category';
+      var kind;
+      if (lan == "en") {
+        kind = "residual waste";
+      } else if (lan == "cn") {
+        kind = "干垃圾";
+      } else {
+        kind = "幹垃圾";
       }
-      // _data1 = response1.data["message"];
-      // print(_data1.toString());
-    });
+      var response = await Dio().post(api, data: {"kind": kind, "lan": lan});
+      var data = response.data["message"];
+      setState(() {
+        if (data != _data1) {
+          Storage.setString('data_res', json.encode(data));
+          _data1 = response.data["message"];
+        }
+        // _data1 = response1.data["message"];
+        // print(_data1.toString());
+      });
+    } catch (value) {
+      _getData1(lan);
+    }
   }
 
   _getData2(lan) async {
-    var api = '${Config.home}data/category';
-    var kind;
-    if (lan == "en") {
-      kind = "wet waste";
-    } else if (lan == "cn") {
-      kind = "湿垃圾";
-    } else {
-      kind = "濕垃圾";
-    }
-    var response = await Dio().post(api, data: {"kind": kind, "lan": lan});
-    var data = response.data["message"];
-    setState(() {
-      if (data != _data1) {
-        Storage.setString('data_wet', json.encode(data));
-        _data2 = response.data["message"];
+    try {
+      var api = '${Config.home}data/category';
+      var kind;
+      if (lan == "en") {
+        kind = "wet waste";
+      } else if (lan == "cn") {
+        kind = "湿垃圾";
+      } else {
+        kind = "濕垃圾";
       }
+      var response = await Dio().post(api, data: {"kind": kind, "lan": lan});
+      var data = response.data["message"];
+      setState(() {
+        if (data != _data1) {
+          Storage.setString('data_wet', json.encode(data));
+          _data2 = response.data["message"];
+        }
 
-      // print(_data1.toString());
-    });
+        // print(_data1.toString());
+      });
+    } catch (value) {
+      _getData2(lan);
+    }
   }
 
   _getData3(lan) async {
-    var api = '${Config.home}data/category';
-    var kind;
-    if (lan == "en") {
-      kind = "recyclable waste";
-    } else if (lan == "cn") {
-      kind = "可回收垃圾";
-    } else {
-      kind = "可回收垃圾";
-    }
-    var response = await Dio().post(api, data: {"kind": kind, "lan": lan});
-    var data = response.data["message"];
-    setState(() {
-      if (data != _data1) {
-        Storage.setString('data_rec', json.encode(data));
-        _data3 = response.data["message"];
+    try {
+      var api = '${Config.home}data/category';
+      var kind;
+      if (lan == "en") {
+        kind = "recyclable waste";
+      } else if (lan == "cn") {
+        kind = "可回收垃圾";
+      } else {
+        kind = "可回收垃圾";
       }
-      //
-      // print(_data1.toString());
-    });
+      var response = await Dio().post(api, data: {"kind": kind, "lan": lan});
+      var data = response.data["message"];
+      setState(() {
+        if (data != _data1) {
+          Storage.setString('data_rec', json.encode(data));
+          _data3 = response.data["message"];
+        }
+        //
+        // print(_data1.toString());
+      });
+    } catch (value) {
+      _getData3(lan);
+    }
   }
 
   _getData4(lan) async {
-    var api = '${Config.home}data/category';
-    var kind;
-    if (lan == "en") {
-      kind = "Hazardous waste";
-    } else if (lan == "cn") {
-      kind = "有害垃圾";
-    } else {
-      kind = "有害垃圾";
-    }
-    var response = await Dio().post(api, data: {"kind": kind, "lan": lan});
-    var data = response.data["message"];
-    setState(() {
-      if (data != _data1) {
-        Storage.setString('data_other', json.encode(data));
-        _data4 = response.data["message"];
+    try {
+      var api = '${Config.home}data/category';
+      var kind;
+      if (lan == "en") {
+        kind = "Hazardous waste";
+      } else if (lan == "cn") {
+        kind = "有害垃圾";
+      } else {
+        kind = "有害垃圾";
       }
-      //
-      // print(_data1.toString());
-    });
+      var response = await Dio().post(api, data: {"kind": kind, "lan": lan});
+      var data = response.data["message"];
+      setState(() {
+        if (data != _data1) {
+          Storage.setString('data_other', json.encode(data));
+          _data4 = response.data["message"];
+        }
+        //
+        // print(_data1.toString());
+      });
+    } catch (value) {
+      _getData4(lan);
+    }
   }
 
   _localData() async {
@@ -134,19 +150,23 @@ class _CategoryState extends State<CategoryPage> {
     _getData4(lan);
   }
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _localData();
-    print(Intl.getCurrentLocale());
-    if (Intl.getCurrentLocale() == "en") {
+  _judgeLanguage() {
+    if (Intl.getCurrentLocale() == "en_US") {
       _getData("en");
     } else if (Intl.getCurrentLocale() == "zh_TW") {
       _getData("tc");
     } else {
       _getData("cn");
     }
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _localData();
+    print(Intl.getCurrentLocale());
+    _judgeLanguage();
   }
 
   void _favorites() {
@@ -183,7 +203,6 @@ class _CategoryState extends State<CategoryPage> {
                         style: TextStyle(
                             color: GlobalConfig.fontColor, fontSize: 18.0),
                       ),
-
                     ),
                     Tab(
                       child: Text(

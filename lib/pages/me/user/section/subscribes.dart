@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/config/global_config.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 
 class SubPage extends StatelessWidget {
   @override
@@ -8,7 +9,8 @@ class SubPage extends StatelessWidget {
         theme: GlobalConfig.themeData,
         home: Scaffold(
           appBar: AppBar(
-            title: Text('Subscribe'),
+            title: Text(LanguageChange.of(context).subscribe),
+            centerTitle: true,
             leading: IconButton(
               icon: Icon(Icons.arrow_back_rounded),
               onPressed: () {
@@ -17,9 +19,8 @@ class SubPage extends StatelessWidget {
             ),
           ),
           body: Center(
-            child: Text('To be developed'),
+            child: Text(LanguageChange.of(context).to_be_developed),
           ),
-        )
-    );
+        ));
   }
 }

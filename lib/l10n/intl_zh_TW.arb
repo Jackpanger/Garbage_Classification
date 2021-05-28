@@ -145,5 +145,6 @@
  "type": "類型",
  "type_annotation": "類型註釋",
  "similar_trash": "同類垃圾",
- "handling_method": "處理方法"
+ "handling_method": "處理方法",
+ "to_be_developed": "正在開發"
 }

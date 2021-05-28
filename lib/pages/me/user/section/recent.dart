@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/config/global_config.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 
 class RecentPage extends StatelessWidget {
   @override
@@ -8,7 +9,8 @@ class RecentPage extends StatelessWidget {
         theme: GlobalConfig.themeData,
         home: Scaffold(
           appBar: AppBar(
-            title: Text('Recent'),
+            title: Text(LanguageChange.of(context).recent),
+            centerTitle: true,
             leading: IconButton(
               icon: Icon(Icons.arrow_back_rounded),
               onPressed: () {
@@ -16,7 +18,9 @@ class RecentPage extends StatelessWidget {
               },
             ),
           ),
-          body: Center(child: Text('To be developed'),),
+          body: Center(
+            child: Text(LanguageChange.of(context).to_be_developed),
+          ),
         ));
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/config/global_config.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 
 class FavoritesPage extends StatefulWidget {
   @override
@@ -23,7 +24,7 @@ class _FavoritesState extends State<FavoritesPage> {
                 },
                 icon: Icon(Icons.arrow_back, size: 25),
               ),
-              title: Text("Favorites"),
+              title: Text(LanguageChange.of(context).favorites),
               centerTitle: true,
             ),
             body: ListView.builder(

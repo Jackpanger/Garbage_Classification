@@ -31,9 +31,9 @@ class GlobalConfig {
   static bool switchAccountb = false;
   static bool switchAccountc = false;
 
-  static bool Languagea = true;
+  static bool Languagea = false;
   static bool Languageb = false;
-  static bool Languagec = false;
+  static bool Languagec = true;
 
   static Map<String, String> fourPic = {
     'pic1' : "images/residual.png",
