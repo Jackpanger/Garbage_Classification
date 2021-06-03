@@ -169,6 +169,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "xxx_services" : MessageLookupByLibrary.simpleMessage("XXX 服务项目"),
     "year" : MessageLookupByLibrary.simpleMessage("年"),
     "yellow" : MessageLookupByLibrary.simpleMessage("黄"),
-    "yue" : MessageLookupByLibrary.simpleMessage("粤语语言输入功能")
+    "yue" : MessageLookupByLibrary.simpleMessage("粤语语言输入功能"),
+    "commonSearch" : MessageLookupByLibrary.simpleMessage("常用搜索"),
+    "hotSearch" : MessageLookupByLibrary.simpleMessage("热门搜索")
   };
 }

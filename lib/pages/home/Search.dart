@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:garbage_classification/config/Config.dart';
+import 'package:garbage_classification/generated/l10n.dart';
 import 'package:garbage_classification/pages/category/res/form1.dart';
 import 'package:garbage_classification/pages/category/res/form2.dart';
 import 'package:garbage_classification/pages/category/res/form3.dart';
@@ -139,8 +140,7 @@ class SearchBarDelegate extends SearchDelegate<String> {
       return Column(
         children: [
           ListTile(
-            title: Text(
-              '常用搜索',
+            title: Text(LanguageChange.of(context).commonSearch,
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 20.0,
@@ -150,8 +150,7 @@ class SearchBarDelegate extends SearchDelegate<String> {
           ),
           recommendButtom(recentSuggest),
           ListTile(
-            title: Text(
-              '热门搜索',
+            title: Text(LanguageChange.of(context).hotSearch,
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 20.0,

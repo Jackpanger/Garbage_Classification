@@ -64,7 +64,24 @@ class LanguageChange {
       args: [],
     );
   }
-
+  ///  '常用搜索'
+  String get commonSearch {
+    return Intl.message(
+      'Common Search',
+      name: 'commonSearch',
+      desc: '',
+      args: [],
+    );
+  }
+  ///'热门搜索'
+  String get hotSearch {
+    return Intl.message(
+      'Hot Search',
+      name: 'hotSearch',
+      desc: '',
+      args: [],
+    );
+  }
   /// `Login`
   String get login {
     return Intl.message(

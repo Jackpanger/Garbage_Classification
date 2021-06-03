@@ -26,6 +26,7 @@ class _MeState extends State<Me> {
   void initState() {
     super.initState();
     this._getUserInfo();
+    print(isImage);
   }
 
   _getUserInfo() async {

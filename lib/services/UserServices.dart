@@ -41,4 +41,7 @@ class UserServices {
   static loginOut() {
     Storage.remove('userInfo');
   }
+  static clearImage(){
+    Storage.remove("image");
+  }
 }

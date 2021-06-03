@@ -169,6 +169,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "xxx_services" : MessageLookupByLibrary.simpleMessage("XXX Services"),
     "year" : MessageLookupByLibrary.simpleMessage("Year"),
     "yellow" : MessageLookupByLibrary.simpleMessage("Yellow"),
-    "yue" : MessageLookupByLibrary.simpleMessage("Cantonese language input function")
+    "yue" : MessageLookupByLibrary.simpleMessage("Cantonese language input function"),
+    "commonSearch" : MessageLookupByLibrary.simpleMessage("Common Search"),
+    "hotSearch" : MessageLookupByLibrary.simpleMessage("Hot Search")
   };
 }
