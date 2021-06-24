@@ -1,16 +1,23 @@
 # garbage_classification
 
-A new Flutter application.
+Group project in dart and flutter
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+| Font End                                  |                                | Back End         |
+| ----------------------------------------- | ------------------------------ | ---------------- |
+| Dart: 2.12.0 (with plugin)                | fluttertoast: 8.0.4            | Flask:1.1.2      |
+| Flutter:2.0.0 (with plugin)               | dio: 4.0.0                     | Python:3.6.9     |
+| Flutter Intl:1.14.0 (plugin)              | shared_preferences: 2.0.5      | Werkzeug:1.0.1   |
+| cupertino_icons: 1.0.2                    | http: 0.13.1                   | CentOS: 7.9.2009 |
+| image_picker: 0.7.4                       | Android  studio: 4.1.3         | Sqlite3: 3.7.17  |
+| flutter_cupertino_date_picker_fork: 1.0.3 | Android  SDK: Android 9.0(Pie) |                  |
+| date_format: 2.0.2                        | flutter_swiper:  1.1.6         |                  |
+| permission_handler: 7.1.0                 | flutter_sound: 8.1.1           |                  |
+| path_provider: 2.0.1                      | provider:  3.1.0+1             |                  |
 
-A few resources to get you started if this is your first Flutter project:
+**Plugins**
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| Dart     | Flutter | Flutter_Intl |
+| -------- | ------- | ------------ |
+| 201.9380 | 56.0.1  | 1.14.0       |
