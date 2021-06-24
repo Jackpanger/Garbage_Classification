@@ -1,4 +1,4 @@
-# garbage_classification
+# Garbage_Classification
 
 Group project in dart and flutter
 
