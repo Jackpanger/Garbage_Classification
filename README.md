@@ -25,8 +25,7 @@ Group project in dart and flutter
 ## Partial display
 
 1. Poster
-
-   <img src="readme_image\image-20210624231036745.png" alt="image-20210624231036745" style="zoom:40%;" />
+    <img src="readme_image\image-20210624234027687.png" alt="image-20210624234027687" style="zoom:99%;" />
 
 2. Home page for textual searching, image recognition and voice recognition.
 
