@@ -21,3 +21,30 @@ Group project in dart and flutter
 | Dart     | Flutter | Flutter_Intl |
 | -------- | ------- | ------------ |
 | 201.9380 | 56.0.1  | 1.14.0       |
+
+## Partial display
+
+1. Poster
+
+   <img src="C:\Users\ADMIN\AppData\Roaming\Typora\typora-user-images\image-20210624231036745.png" alt="image-20210624231036745" style="zoom: 40%;" />
+
+2. Home page for textual searching, image recognition and voice recognition.
+
+    ![image-20210624230528168](C:\Users\ADMIN\AppData\Roaming\Typora\typora-user-images\image-20210624230528168.png)![image-20210624230555298](C:\Users\ADMIN\AppData\Roaming\Typora\typora-user-images\image-20210624230555298.png)![image-20210624230549243](C:\Users\ADMIN\AppData\Roaming\Typora\typora-user-images\image-20210624230549243.png)![image-20210624230538419](C:\Users\ADMIN\AppData\Roaming\Typora\typora-user-images\image-20210624230538419.png)
+
+2. Category page for display data and favorites.
+
+     ![image-20210624230616509](C:\Users\ADMIN\AppData\Roaming\Typora\typora-user-images\image-20210624230616509.png)![image-20210624230624030](C:\Users\ADMIN\AppData\Roaming\Typora\typora-user-images\image-20210624230624030.png)![image-20210624230619498](C:\Users\ADMIN\AppData\Roaming\Typora\typora-user-images\image-20210624230619498.png)
+
+3. Login/log out / registration: without display because of easily understood.
+
+    ![image-20210624230700512](C:\Users\ADMIN\AppData\Roaming\Typora\typora-user-images\image-20210624230700512.png)
+
+   Click the place pointing at can enter profile to change the user information.
+
+4. Other functions: Text Size/ Theme Colour/ Night mode
+
+   ![image-20210624230712623](C:\Users\ADMIN\AppData\Roaming\Typora\typora-user-images\image-20210624230712623.png)![image-20210624230719229](C:\Users\ADMIN\AppData\Roaming\Typora\typora-user-images\image-20210624230719229.png)![image-20210624230721717](C:\Users\ADMIN\AppData\Roaming\Typora\typora-user-images\image-20210624230721717.png)
+
+​     
+
