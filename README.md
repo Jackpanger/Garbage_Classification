@@ -1,4 +1,4 @@
-garbage_classification
+# garbage_classification
 
 Group project in dart and flutter
 
@@ -25,7 +25,8 @@ Group project in dart and flutter
 ## Partial display
 
 1. Poster
-    <img src="readme_image\image-20210624234027687.png" alt="image-20210624234027687" style="zoom:99%;" />
+
+   <img src="readme_image\image-20210624234027687.png" alt="image-20210624234027687" style="zoom:99%;" />
 
 2. Home page for textual searching, image recognition and voice recognition.
 
@@ -36,10 +37,13 @@ Group project in dart and flutter
     <img src="readme_image\image-20210624230616509.png" alt="image-20210624230616509" style="zoom:99%;" /><img src="readme_image\image-20210624230624030.png" alt="image-20210624230624030" style="zoom:99%;" /><img src="readme_image\image-20210624230619498.png" alt="image-20210624230619498" style="zoom:99%;" />
 
 4. Login/log out / registration: without display because of easily understood.
-   <img src="readme_image\image-20210624230700512.png" alt="image-20210624230700512" style="zoom:99%;" />
-   Click the place pointing at can enter profile to change the user information.
+
+    <img src="readme_image\image-20210624230700512.png" alt="image-20210624230700512" style="zoom:99%;" />
+    
+    Click the place pointing at can enter profile to change the user information.
 
 5. Other functions: Text Size/ Theme Colour/ Night mode
+
     <img src="readme_image\image-20210624230712623.png" alt="image-20210624230712623" style="zoom:99%;" /><img src="readme_image\image-20210624230719229.png" alt="image-20210624230719229" style="zoom:99%;" /><img src="readme_image\image-20210624230721717.png" alt="image-20210624230721717" style="zoom:99%;" />
 
 ​     
